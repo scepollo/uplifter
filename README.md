@@ -1,4 +1,4 @@
 uplifter
 ========
 
-Uplifter Wellness A[[
+Uplifter Wellness App
