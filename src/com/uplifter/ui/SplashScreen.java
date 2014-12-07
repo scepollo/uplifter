@@ -1,4 +1,8 @@
-package com.uplifter;
+package com.uplifter.ui;
+
+import com.uplifter.R;
+import com.uplifter.R.layout;
+import com.uplifter.util.PersistData;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +17,7 @@ public class SplashScreen extends Activity {
     @Override
     public void onCreate(final Bundle icicle) {
         super.onCreate(icicle);
+        PersistData.init(this);
         setContentView(R.layout.splash_screen);
 
         /* New Handler to start the Menu-Activity 
@@ -21,7 +26,8 @@ public class SplashScreen extends Activity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                final Intent mainIntent = new Intent(SplashScreen.this, OnboardingScreen1.class);
+                final Intent mainIntent = new Intent(SplashScreen.this,
+                    PersistData.isAlreadyOnboarded() ? TodaysTrainingScreen.class : OnboardingScreen1.class);
                 SplashScreen.this.startActivity(mainIntent);
                 SplashScreen.this.finish();
             }

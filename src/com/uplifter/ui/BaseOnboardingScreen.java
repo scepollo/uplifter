@@ -1,4 +1,4 @@
-package com.uplifter;
+package com.uplifter.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -40,11 +40,11 @@ public class BaseOnboardingScreen extends Activity implements GestureDetector.On
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(swipeDirection < 0 && _prev != null) {
+                if(swipeDirection > 0 && _prev != null) {
                     final Intent mainIntent = new Intent(_this, _prev);
                     _this.startActivity(mainIntent);
                     _this.finish();
-                } else if(swipeDirection > 0 && _next != null) {
+                } else if(swipeDirection < 0 && _next != null) {
                     final Intent mainIntent = new Intent(_this, _next);
                     _this.startActivity(mainIntent);
                     _this.finish();

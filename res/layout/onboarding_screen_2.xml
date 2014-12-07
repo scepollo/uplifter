@@ -1,10 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:orientation="vertical" android:layout_width="fill_parent"
-     android:layout_height="fill_parent">
-
-     <ImageView android:id="@+id/onboarding_screen_2" android:layout_width="wrap_content"
-       android:layout_height="fill_parent"
-       android:src="@drawable/onboarding2"
-       android:layout_gravity="center"/>
-  </LinearLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:id="@+id/onboarding_screen_2"
+  android:background="@color/green"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <TextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_marginTop="60dp"
+    android:textSize="20sp"
+    android:textColor="@color/white"
+    android:text="@string/onboarding_2_1"/>
+  <TextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_marginTop="40dp"
+    android:textSize="20sp"
+    android:textStyle="normal|italic"
+    android:textColor="@color/white"
+    android:text="@string/onboarding_2_2"/>
+  <TextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_marginTop="40dp"
+    android:textSize="20sp"
+    android:textStyle="normal|italic"
+    android:textColor="@color/white"
+    android:text="@string/onboarding_2_3"/>
+  <TextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_marginTop="40dp"
+    android:textSize="20sp"
+    android:textStyle="normal|italic"
+    android:textColor="@color/white"
+    android:text="@string/onboarding_2_4"/>
+  <TextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_marginTop="40dp"
+    android:textSize="20sp"
+    android:textColor="@color/white"
+    android:text="@string/onboarding_2_5"/>
+</LinearLayout>

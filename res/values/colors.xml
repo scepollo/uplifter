@@ -1,5 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <color name="black_overlay">#66000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="pink">#FF8888</color>
+    <color name="green">#50E26E</color>
+    <color name="purple">#EA8CFF</color>
+    <color name="yellow">#FFC91F</color>
+    <color name="blue">#3DCFFF</color>
+    <color name="royalBlue">#4169e1</color>
 
 </resources>

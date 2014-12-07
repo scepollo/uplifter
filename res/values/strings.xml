@@ -2,7 +2,12 @@
 <resources>
 
     <string name="app_name">Uplifter</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="lets_go">Let\'s Go!</string>
+    <string name="onboarding_4">Keep Track of\nYour Mood\nand\nGet Daily\nMotivation!</string>
+    <string name="onboarding_2_1">Make Time For\nWhat\'s Important:</string>
+    <string name="onboarding_2_2">Expressing\nGratitude</string>
+    <string name="onboarding_2_3">Enjoying\nthe Moment</string>
+    <string name="onboarding_2_4">Deepening\nRelationships</string>
+    <string name="onboarding_2_5">and more...</string>
 
 </resources>
