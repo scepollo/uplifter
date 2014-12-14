@@ -2,6 +2,7 @@ package com.uplifter.ui;
 
 import com.uplifter.R;
 import com.uplifter.R.layout;
+import com.uplifter.util.FontManager;
 
 import android.os.Bundle;
 

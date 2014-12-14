@@ -40,7 +40,6 @@ public class UplifterData {
             for(int i = 0; i < DAILY_QUESTION_COUNT; ++i) {
                 _todaysTrainingIndex[i] = getRandomInt(_todaysTrainingIndex, yesterdaysTrainingIndex, 1, training.size());
                 _todaysTraining[i] = training.get(_todaysTrainingIndex[i]);
-                System.out.println("_todaysTrainingIndex[" + i + "] = " + _todaysTrainingIndex[i]);
             }
         }
         return _todaysTraining;
@@ -62,9 +61,6 @@ public class UplifterData {
         }
         final Object [] newList = (Object []) newArrayList.toArray();
         Arrays.sort(newList);
-        for(int j = 0, jj = newList.length; j < jj; ++j) {
-            System.out.println("newList[" + j + "] = " + newList[j]);
-        }
         int val = (r.nextInt(range - newList.length) + minValue);
         for(int j = 0, jj = newList.length; j < jj; ++j) {
             if(val < (Integer) newList[j]) {
