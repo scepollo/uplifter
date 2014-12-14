@@ -2,6 +2,7 @@
    "training":[
       {
          "title":"Anticipation",
+         "index" : 1,
          "questions":[
             "What is one event in the future that you are looking forward to? (it can be anything ranging from a good meal you will have to a vacation)",
             "What specifically about that event are you looking forward to?"
@@ -9,6 +10,7 @@
       },
       {
          "title":"Gratitude",
+         "index" : 2,
          "multipart":{
             "question":"What are three things that you are grateful for?",
             "number":"3"
@@ -16,6 +18,7 @@
       },
       {
          "title":"Appreciation For Others",
+         "index" : 3,
          "questions":[
             "Name one person that you are grateful towards",
             "Why are you grateful towards this individual?",
@@ -24,6 +27,7 @@
       },
       {
          "title":"Accomplishments",
+         "index" : 4,
          "questions":[
             "What is an accomplishment that you’ve made recently that you are proud of",
             "What makes you proud about it?"
@@ -31,6 +35,7 @@
       },
       {
          "title":"Enjoy The Moment",
+         "index" : 5,
          "questions":[
             "Take 10 slow and deep breaths. Are you feeling calmer?",
             "Take a scan of your surroundings. What pleasant things come to mind? (If you’d like, you can substitute surroundings with your favourite place)"
@@ -38,6 +43,7 @@
       },
       {
          "title":"Express Gratitude",
+         "index" : 6,
          "questions":[
             "Who is one person that you are grateful towards?",
             "What would you say to them?"
@@ -45,6 +51,7 @@
       },
       {
          "title":"3 Good Things",
+         "index" : 7,
          "multipart":{
             "question":"What are 3 Good things that have happened to you recently?",
             "number":"3"
@@ -52,6 +59,7 @@
       },
       {
          "title":"Compassion",
+         "index" : 8,
          "questions":[
             "Think of your loved ones. Now write 3 blessings to them (e.g. I wish you happiness, I wish you love, I wish you joy)",
             "Now think of some people who are your acquaintances. Now write 3 blessings to them.",

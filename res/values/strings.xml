@@ -9,5 +9,7 @@
     <string name="onboarding_2_3">Enjoying\nthe Moment</string>
     <string name="onboarding_2_4">Deepening\nRelationships</string>
     <string name="onboarding_2_5">and more...</string>
+    <string name="todays_training_title">Today\'s Training</string>
+    <string name="start">START</string>
 
 </resources>

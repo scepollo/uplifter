@@ -1,10 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:orientation="vertical" android:layout_width="fill_parent"
-     android:layout_height="fill_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:id="@+id/todays_training_screen"
+  android:background="@color/purple"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <TextView android:id="@+id/training_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="60dp"
+    android:textSize="20sp"
+    android:textColor="@color/white"
+    android:text="@string/todays_training_title"/>
+  <TextView android:id="@+id/q1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="60dp"
+    android:textSize="20sp"
+    android:textColor="@color/white"
+    android:text=""/>
+  <TextView android:id="@+id/q2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="40dp"
+    android:textSize="20sp"
+    android:textColor="@color/white"
+    android:text=""/>
+  <TextView android:id="@+id/q3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="40dp"
+    android:textSize="20sp"
+    android:textColor="@color/white"
+    android:text=""/>
 
-     <ImageView android:id="@+id/todays_training_screen" android:layout_width="wrap_content"
-       android:layout_height="fill_parent"
-       android:src="@drawable/todays_training"
-       android:layout_gravity="center"/>
-  </LinearLayout>
+  <Button
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:background="@color/green"
+    android:textColor="@color/white"
+    android:layout_marginTop="100dp"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:onClick="sendMessage"
+    android:text="@string/start"
+  />
+</LinearLayout>

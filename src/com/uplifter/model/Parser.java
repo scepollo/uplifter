@@ -1,5 +1,8 @@
 package com.uplifter.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -7,15 +10,16 @@ import org.json.JSONObject;
 public class Parser {
     private static final String TRAINING_KEY = "training";
 
-    public static TrainingModel[] parseTraining(final String json) {
+    public static Map<Integer, TrainingModel> parseTraining(final String json) {
         if(json.length() > 0) {
             try {
                 final JSONObject jsonObject = new JSONObject(json);
                 final JSONArray array = (JSONArray) jsonObject.getJSONArray(TRAINING_KEY);
                 final int size = array.length();
-                final TrainingModel [] training = new TrainingModel [size];
+                final Map<Integer, TrainingModel> training = new HashMap<Integer, TrainingModel>(size);
                 for(int i = 0; i < size; ++i) {
-                    training[i] = new TrainingModel((JSONObject) array.get(i));
+                    final TrainingModel model = new TrainingModel((JSONObject) array.get(i));
+                    training.put(model.getIndex(), model);
                 }
                 return training;
             } catch (final JSONException e) {
@@ -24,6 +28,6 @@ public class Parser {
                 e.printStackTrace();
             }
         }
-        return new TrainingModel [0];
+        return new HashMap<Integer, TrainingModel>(0);
     }
 }

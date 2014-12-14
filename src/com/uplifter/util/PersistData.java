@@ -1,18 +1,23 @@
 package com.uplifter.util;
 
+import java.util.Map;
+
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 public class PersistData {
+    private static final String COMMA = ",";
     private static final String UPLIFTER_PREFS = "UPLIFTER_PREFS";
     private static final String ALREADY_ONBOARDED = "ALREADY_ONBOARDED";
     private static final String ALARM_DATE_TIME_KEY = "ALARM_DATE_TIME_KEY";
     private static final String NOTIFICATIONS_KEY = "NOTIFICATIONS_KEY";
+    private static final String YESTERDAYS_QUESTIONS_KEY = "YESTERDAYS_QUESTIONS_KEY";
 
     private static long _alarmDateTime;
     private static boolean _notifications;
     private static boolean _alreadyOnboarded;
+    private static int [] _yesterdaysQuestions;
 
     private static boolean _init;
     private static Editor _editor;
@@ -22,10 +27,35 @@ public class PersistData {
             _init = true;
             final SharedPreferences settings = activity.getSharedPreferences(UPLIFTER_PREFS, 0);
             _editor = settings.edit();
-            _alreadyOnboarded = settings.getBoolean(ALREADY_ONBOARDED, false);
-            _alarmDateTime = settings.getLong(ALARM_DATE_TIME_KEY, 0L);
-            _notifications = settings.getBoolean(NOTIFICATIONS_KEY, false);
+            final Map<String,?> map = settings.getAll();
+            if(map.containsKey(ALREADY_ONBOARDED)) {
+                _alreadyOnboarded = (Boolean) map.get(ALREADY_ONBOARDED);
+            }
+            if(map.containsKey(ALARM_DATE_TIME_KEY)) {
+                _alarmDateTime = (Long) map.get(ALARM_DATE_TIME_KEY);
+            }
+            if(map.containsKey(NOTIFICATIONS_KEY)) {
+                _notifications = (Boolean) map.get(NOTIFICATIONS_KEY);
+            }
+            if(map.containsKey(YESTERDAYS_QUESTIONS_KEY)) {
+                _yesterdaysQuestions = parseIntArray((String) map.get(YESTERDAYS_QUESTIONS_KEY));
+            } else {
+                // This assumes that the questions are indexed from 1.
+                _yesterdaysQuestions = new int [0];
+            }
         }
+    }
+
+    private static final int [] parseIntArray(final String list) {
+        final String [] array = list.split(COMMA);
+        final int [] intArray = new int [array.length];
+        for(int i = 0; i < array.length; ++i) {
+            try {
+                intArray[i] = Integer.parseInt(array[i]);
+            } catch(final NumberFormatException e) {
+            }
+        }
+        return intArray;
     }
 
     public static final boolean isAlreadyOnboarded() {
@@ -55,6 +85,16 @@ public class PersistData {
         return _notifications;
     }
 
+    public static final void setYesterdaysQuestions(final int [] yesterdaysQuestions) {
+        _yesterdaysQuestions = yesterdaysQuestions;
+        writePersistString(YESTERDAYS_QUESTIONS_KEY,
+            "" + yesterdaysQuestions[0] + ',' + yesterdaysQuestions[1] + ',' + yesterdaysQuestions[2]);
+    }
+
+    public static final int [] getYesterdaysTrainingIndex() {
+        return _yesterdaysQuestions;
+    }
+
     private static final void writePersistBoolean(final String key, final boolean data) {
         _editor.putBoolean(key, data);
         _editor.commit();
@@ -62,6 +102,11 @@ public class PersistData {
 
     private static final void writePersistLong(final String key, final long data) {
         _editor.putLong(key, data);
+        _editor.commit();
+    }
+
+    private static final void writePersistString(final String key, final String data) {
+        _editor.putString(key, data);
         _editor.commit();
     }
 }

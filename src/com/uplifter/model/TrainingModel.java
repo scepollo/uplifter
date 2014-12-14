@@ -4,6 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class TrainingModel extends BaseModel {
+    private static final String INDEX_KEY = "index";
     private static final String MULTIPART_KEY = "multipart";
     private static final String QUESTIONS_KEY = "questions";
     private static final String TITLE_KEY = "title";
@@ -11,6 +12,7 @@ public class TrainingModel extends BaseModel {
     private String _title;
     private String[] _questions;
     private MultipartModel _multipart;
+    private int _index;
 
     TrainingModel(final JSONObject json) {
         if(json.has(TITLE_KEY)) {
@@ -18,6 +20,12 @@ public class TrainingModel extends BaseModel {
                 _title = json.getString(TITLE_KEY);
             } catch (final JSONException e) {
                 _title = "";
+            }
+        }
+        if(json.has(INDEX_KEY)) {
+            try {
+                _index = json.getInt(INDEX_KEY);
+            } catch (final JSONException e) {
             }
         }
         if(json.has(QUESTIONS_KEY)) {
@@ -39,6 +47,10 @@ public class TrainingModel extends BaseModel {
         return _title;
     }
 
+    public final int getIndex() {
+        return _index;
+    }
+
     public final String[] getQuestions() {
         return _questions;
     }
@@ -49,7 +61,8 @@ public class TrainingModel extends BaseModel {
 
     public final String toString() {
         final StringBuffer buff = new StringBuffer();
-        buff.append(_title);
+        buff.append("TrainingModel\nTitle: " + _title);
+        buff.append("\nIndex: " + _index);
         if (_multipart != null) {
             buff.append('\n').append(_multipart);
         }
