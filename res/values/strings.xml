@@ -21,5 +21,6 @@
     <string name="onboarding_3_1">Easily Schedule Positivity\nInto Your Day!</string>
     <string name="notification">Notification</string>
     <string name="time">Time</string>
+    <string name="todays_training">Today\'s Training</string>
 
 </resources>
