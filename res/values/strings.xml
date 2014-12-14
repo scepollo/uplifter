@@ -22,5 +22,11 @@
     <string name="notification">Notification</string>
     <string name="time">Time</string>
     <string name="todays_training">Today\'s Training</string>
+    <string name="you_are_a">You are a</string>
+    <string name="positivity_superstar">Positivity Superstar!</string>
+    <string name="yeah_baby">Yeah Baby!</string>
+    <string name="title_activity_positivity_superstar_screen">PositivitySuperstarScreen</string>
+    <string name="title_activity_quote_screen">QuoteScreen</string>
+    <string name="come_back_tomorrow">Come back tomorrow\nfor more training</string>
 
 </resources>

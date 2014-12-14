@@ -10,6 +10,7 @@ import java.util.Random;
 import android.content.Context;
 
 import com.uplifter.model.Parser;
+import com.uplifter.model.QuoteModel;
 import com.uplifter.model.TrainingModel;
 import com.uplifter.ui.ScreenController;
 
@@ -17,15 +18,16 @@ public class UplifterData {
     private static final String UTF_8 = "UTF-8";
     private static final String QUOTES = "quotes.json";
     private static final String TRAINING = "training.json";
-    private static final int DAILY_QUESTION_COUNT = 3;
+    public static final int DAILY_QUESTION_COUNT = 3;
 
     private static Map<Integer, TrainingModel> _training;
     private static TrainingModel [] _todaysTraining;
     private static int [] _todaysTrainingIndex;
     private static boolean _trainingAlreadyDone;
     private static final String [][] _trainingData = new String [3][];
+    private static QuoteModel [] _quotes;
 
-    public static Map<Integer, TrainingModel> loadTraining(final Context context) {
+    private static Map<Integer, TrainingModel> loadTraining(final Context context) {
         if(_training == null) {
             _training = Parser.parseTraining(loadFileFromAsset(context, TRAINING));
         }
@@ -79,12 +81,19 @@ public class UplifterData {
         return _todaysTrainingIndex;
     }
 
-    public static String loadQuote(final Context context) {
-        final String quotes = loadFileFromAsset(context, QUOTES);
-        if(quotes.length() > 0) {
-            // TODO:  parse
+    private static final QuoteModel [] loadQuotes(final Context context) {
+        if(_quotes == null) {
+            _quotes = Parser.parseQuotes(loadFileFromAsset(context, QUOTES));
         }
-        return "";
+        return _quotes;
+    }
+
+    public static final QuoteModel getQuote(final Context context) {
+        final QuoteModel [] quotes = loadQuotes(context);
+        if(quotes.length > 0) {
+            return quotes[new Random().nextInt(quotes.length)];
+        }
+        return new QuoteModel(null);
     }
 
     private static final String loadFileFromAsset(final Context context, final String filename) {

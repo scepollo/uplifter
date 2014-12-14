@@ -3,8 +3,6 @@ package com.uplifter.ui;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.uplifter.LogMoodScreen;
-import com.uplifter.TrainingScreen;
 import com.uplifter.util.UplifterData;
 
 public class ScreenController {
@@ -32,12 +30,11 @@ public class ScreenController {
     }
 
     public void loadNextTrainingScreen(final Activity currentActivity) {
-        if(_currentTrainingIndex < 3) {
-            ++_currentTrainingIndex;
+        if(++_currentTrainingIndex < UplifterData.DAILY_QUESTION_COUNT) {
             switchScreen(currentActivity, TrainingScreen.class);
         } else {
             UplifterData.setTrainingAlreadyDone();
-            // TODO:  Switch to Positivity Superstar
+            switchScreen(currentActivity, PositivitySuperstarScreen.class);
         }
     }
 
@@ -61,5 +58,9 @@ public class ScreenController {
         final Intent mainIntent = new Intent(current, next);
         current.startActivity(mainIntent);
         current.finish();
+    }
+
+    public void loadQuoteScreen(final Activity current) {
+        switchScreen(current, QuoteScreen.class);
     }
 }

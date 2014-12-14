@@ -1,4 +1,4 @@
-package com.uplifter;
+package com.uplifter.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,9 +9,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.uplifter.R;
+import com.uplifter.R.id;
+import com.uplifter.R.layout;
+import com.uplifter.R.menu;
 import com.uplifter.model.MultipartModel;
 import com.uplifter.model.TrainingModel;
-import com.uplifter.ui.ScreenController;
 import com.uplifter.util.UplifterData;
 
 public class TrainingScreen extends Activity {

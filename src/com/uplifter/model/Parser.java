@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Parser {
+    private static final String QUOTES_KEY = "quotes";
     private static final String TRAINING_KEY = "training";
 
     public static Map<Integer, TrainingModel> parseTraining(final String json) {
@@ -29,5 +30,25 @@ public class Parser {
             }
         }
         return new HashMap<Integer, TrainingModel>(0);
+    }
+
+    public static QuoteModel [] parseQuotes(final String json) {
+        if(json.length() > 0) {
+            try {
+                final JSONObject jsonObject = new JSONObject(json);
+                final JSONArray array = (JSONArray) jsonObject.getJSONArray(QUOTES_KEY);
+                final int size = array.length();
+                final QuoteModel [] quotes = new QuoteModel [size];
+                for(int i = 0; i < size; ++i) {
+                    quotes[i] = new QuoteModel((JSONObject) array.get(i));
+                }
+                return quotes;
+            } catch (final JSONException e) {
+                e.printStackTrace();
+            } catch (final Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return new QuoteModel[0];
     }
 }
