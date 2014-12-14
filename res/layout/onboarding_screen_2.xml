@@ -10,7 +10,7 @@
     android:gravity="center"
     android:layout_gravity="center"
     android:layout_marginTop="115dp"
-    android:textSize="15sp"
+    android:textSize="18sp"
     android:textColor="@color/white"
     android:text="@string/onboarding_2_1"/>
   <TextView android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
     android:gravity="center"
     android:layout_gravity="center"
     android:layout_marginTop="25dp"
-    android:textSize="15sp"
+    android:textSize="18sp"
     android:textColor="@color/white"
     android:text="@string/onboarding_2_5"/>
 </LinearLayout>
