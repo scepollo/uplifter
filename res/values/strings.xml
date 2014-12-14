@@ -12,5 +12,9 @@
     <string name="todays_training_title">Today\'s Training</string>
     <string name="start">START</string>
     <string name="uplifter_title">Uplifter</string>
+    <string name="title_activity_log_mood_screen">LogMoodScreen</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_training_screen">TrainingScreen</string>
 
 </resources>

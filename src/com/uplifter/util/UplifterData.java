@@ -11,6 +11,7 @@ import android.content.Context;
 
 import com.uplifter.model.Parser;
 import com.uplifter.model.TrainingModel;
+import com.uplifter.ui.ScreenController;
 
 public class UplifterData {
     private static final String UTF_8 = "UTF-8";
@@ -21,6 +22,8 @@ public class UplifterData {
     private static Map<Integer, TrainingModel> _training;
     private static TrainingModel [] _todaysTraining;
     private static int [] _todaysTrainingIndex;
+    private static boolean _trainingAlreadyDone;
+    private static final String [][] _trainingData = new String [3][];
 
     public static Map<Integer, TrainingModel> loadTraining(final Context context) {
         if(_training == null) {
@@ -95,5 +98,18 @@ public class UplifterData {
         } catch (final IOException ex) {
             return "";
         }
+    }
+
+    public static final boolean trainingAlreadyDone() {
+        return _trainingAlreadyDone;
+    }
+
+    public static void setTrainingAlreadyDone() {
+        _trainingAlreadyDone = true;
+        PersistData.setTodaysTrainingData(_todaysTrainingIndex, _trainingData);
+    }
+
+    public static void setTrainingData(final String [] data) {
+        _trainingData[ScreenController.getInstance().getCurrentTrainingIndex()] = data;
     }
 }

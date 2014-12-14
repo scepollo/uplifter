@@ -28,8 +28,6 @@ public class TodaysTrainingScreen extends Activity {
     }
 
     public void sendMessage(final View view) {
-        final Intent mainIntent = new Intent(TodaysTrainingScreen.this, TodaysTrainingScreen.class);
-        TodaysTrainingScreen.this.startActivity(mainIntent);
-        TodaysTrainingScreen.this.finish();
+        ScreenController.getInstance().loadFirstTrainingScreen(this);
     }
 }

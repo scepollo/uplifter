@@ -109,4 +109,9 @@ public class PersistData {
         _editor.putString(key, data);
         _editor.commit();
     }
+
+    public static void setTodaysTrainingData(final int [] todaysTrainingIndex, final String [][] trainingData) {
+        setYesterdaysQuestions(todaysTrainingIndex);
+        // TODO:  Store training data -- use JSON and mySQL
+    }
 }

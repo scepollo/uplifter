@@ -1,6 +1,5 @@
 package com.uplifter.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,8 +14,6 @@ public class OnboardingScreen4 extends BaseOnboardingScreen {
     }
 
     public void sendMessage(final View view) {
-        final Intent mainIntent = new Intent(OnboardingScreen4.this, TodaysTrainingScreen.class);
-        OnboardingScreen4.this.startActivity(mainIntent);
-        OnboardingScreen4.this.finish();
+        ScreenController.getInstance().loadFirstScreen(this);
     }
 }
