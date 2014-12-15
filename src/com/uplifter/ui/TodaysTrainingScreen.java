@@ -12,7 +12,8 @@ import com.uplifter.util.PersistData;
 import com.uplifter.util.UplifterData;
 
 public class TodaysTrainingScreen extends Activity {
-    private static final int [] TEXT_ID = {R.id.q1, R.id.q2, R.id.q3};
+    private static final int [] TITLE_ID = {R.id.q1, R.id.q2, R.id.q3};
+    private static final int [] SUBTITLE_ID = {R.id.s1, R.id.s2, R.id.s3};
 
     @Override
     public void onCreate(final Bundle icicle) {
@@ -21,8 +22,8 @@ public class TodaysTrainingScreen extends Activity {
         setContentView(R.layout.todays_training_screen);
         final TrainingModel[] training = UplifterData.getTodaysTraining(this);
         for(int i = 0, ii = training.length; i < ii; ++i) {
-            final TextView text = (TextView) findViewById(TEXT_ID[i]);
-            text.setText(training[i].getTitle());
+            ((TextView) findViewById(TITLE_ID[i])).setText(training[i].getTitle().toUpperCase());
+            ((TextView) findViewById(SUBTITLE_ID[i])).setText(training[i].getSubtitle());
         }
         // TODO: set the three category icons in the UI
     }

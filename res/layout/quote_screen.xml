@@ -10,7 +10,7 @@
     android:background="@drawable/quotebg"
     tools:context="com.uplifter.ui.QuoteScreen" >
     <TextView android:id="@+id/quote_text"
-      android:layout_width="wrap_content"
+      android:layout_width="300dp"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:gravity="center"
@@ -24,8 +24,8 @@
       android:layout_gravity="center"
       android:gravity="center"
       android:textStyle="normal|italic"
-      android:paddingTop="20dp"
-      android:textSize="18sp"
+      android:paddingTop="40dp"
+      android:textSize="12sp"
       android:textColor="@color/white"
       android:text="" />
     <TextView
@@ -33,8 +33,8 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:gravity="center"
-      android:paddingTop="20dp"
-      android:textSize="30sp"
+      android:paddingTop="120dp"
+      android:textSize="12sp"
       android:textColor="@color/white"
       android:text="@string/come_back_tomorrow" />
 </LinearLayout>

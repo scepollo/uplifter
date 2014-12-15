@@ -8,8 +8,10 @@ public class TrainingModel extends BaseModel {
     private static final String MULTIPART_KEY = "multipart";
     private static final String QUESTIONS_KEY = "questions";
     private static final String TITLE_KEY = "title";
+    private static final String SUBTITLE_KEY = "subtitle";
 
     private String _title;
+    private String _subtitle;
     private String[] _questions;
     private MultipartModel _multipart;
     private int _index;
@@ -20,6 +22,13 @@ public class TrainingModel extends BaseModel {
                 _title = json.getString(TITLE_KEY);
             } catch (final JSONException e) {
                 _title = "";
+            }
+        }
+        if(json.has(SUBTITLE_KEY)) {
+            try {
+                _subtitle = json.getString(SUBTITLE_KEY);
+            } catch (final JSONException e) {
+                _subtitle = "";
             }
         }
         if(json.has(INDEX_KEY)) {
@@ -45,6 +54,10 @@ public class TrainingModel extends BaseModel {
 
     public final String getTitle() {
         return _title;
+    }
+
+    public final String getSubtitle() {
+        return _subtitle;
     }
 
     public final int getIndex() {
