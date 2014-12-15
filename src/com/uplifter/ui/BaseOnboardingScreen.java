@@ -4,12 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GestureDetectorCompat;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
-public class BaseOnboardingScreen extends Activity implements GestureDetector.OnGestureListener {
+public class BaseOnboardingScreen extends FragmentActivity implements GestureDetector.OnGestureListener {
     private Activity _this;
     private Class _prev;
     private Class _next;

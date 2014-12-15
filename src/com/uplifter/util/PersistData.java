@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 public class PersistData {
+    private static final String DEFAULT_ALARM_TIME = "8:00";
     private static final String COMMA = ",";
     private static final String UPLIFTER_PREFS = "UPLIFTER_PREFS";
     private static final String ALREADY_ONBOARDED = "ALREADY_ONBOARDED";
@@ -14,7 +15,7 @@ public class PersistData {
     private static final String NOTIFICATIONS_KEY = "NOTIFICATIONS_KEY";
     private static final String YESTERDAYS_QUESTIONS_KEY = "YESTERDAYS_QUESTIONS_KEY";
 
-    private static long _alarmDateTime;
+    private static String _alarmDateTime;
     private static boolean _notifications;
     private static boolean _alreadyOnboarded;
     private static int [] _yesterdaysQuestions;
@@ -32,7 +33,9 @@ public class PersistData {
                 _alreadyOnboarded = (Boolean) map.get(ALREADY_ONBOARDED);
             }
             if(map.containsKey(ALARM_DATE_TIME_KEY)) {
-                _alarmDateTime = (Long) map.get(ALARM_DATE_TIME_KEY);
+                _alarmDateTime = (String) map.get(ALARM_DATE_TIME_KEY);
+            } else {
+                _alarmDateTime = DEFAULT_ALARM_TIME;
             }
             if(map.containsKey(NOTIFICATIONS_KEY)) {
                 _notifications = (Boolean) map.get(NOTIFICATIONS_KEY);
@@ -67,12 +70,12 @@ public class PersistData {
         writePersistBoolean(NOTIFICATIONS_KEY, alreadyOnboarded);
     }
 
-    public static final void setAlarmDateTime(final long alarmDateTime) {
+    public static final void setAlarmDateTime(final String alarmDateTime) {
         _alarmDateTime = alarmDateTime;
-        writePersistLong(ALARM_DATE_TIME_KEY, alarmDateTime);
+        writePersistString(ALARM_DATE_TIME_KEY, alarmDateTime);
     }
 
-    public static final long getAlarmDateTime() {
+    public static final String getAlarmDateTime() {
         return _alarmDateTime;
     }
 
