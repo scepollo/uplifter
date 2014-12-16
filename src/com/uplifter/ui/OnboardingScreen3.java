@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TimePicker;
 
 import com.uplifter.R;
@@ -23,7 +24,12 @@ public class OnboardingScreen3 extends BaseOnboardingScreen {
         super.onCreate(icicle);
         setThisPrevNext(this, OnboardingScreen2.class, OnboardingScreen4.class);
         setContentView(R.layout.onboarding_screen_3);
+        ((Switch) findViewById(R.id.onboard_notification_switch)).setChecked(PersistData.getNotifications());
         setTimeUI();
+    }
+
+    public void switchClicked(final View switcher) {
+        PersistData.setNotifications(((Switch) switcher).isChecked());
     }
 
     public void showTimePickerDialog(final View v) {
