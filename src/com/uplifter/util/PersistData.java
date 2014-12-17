@@ -10,7 +10,7 @@ public class PersistData {
     private static final String DEFAULT_ALARM_TIME = "8:00";
     private static final String COMMA = ",";
     private static final String UPLIFTER_PREFS = "UPLIFTER_PREFS";
-    private static final String ALREADY_ONBOARDED = "ALREADY_ONBOARDED";
+    private static final String ALREADY_ONBOARDED_KEY = "ALREADY_ONBOARDED_KEY";
     private static final String ALARM_DATE_TIME_KEY = "ALARM_DATE_TIME_KEY";
     private static final String NOTIFICATIONS_KEY = "NOTIFICATIONS_KEY";
     private static final String YESTERDAYS_QUESTIONS_KEY = "YESTERDAYS_QUESTIONS_KEY";
@@ -29,8 +29,8 @@ public class PersistData {
             final SharedPreferences settings = activity.getSharedPreferences(UPLIFTER_PREFS, 0);
             _editor = settings.edit();
             final Map<String,?> map = settings.getAll();
-            if(map.containsKey(ALREADY_ONBOARDED)) {
-                _alreadyOnboarded = (Boolean) map.get(ALREADY_ONBOARDED);
+            if(map.containsKey(ALREADY_ONBOARDED_KEY)) {
+                _alreadyOnboarded = (Boolean) map.get(ALREADY_ONBOARDED_KEY);
             }
             if(map.containsKey(ALARM_DATE_TIME_KEY)) {
                 _alarmDateTime = (String) map.get(ALARM_DATE_TIME_KEY);
@@ -67,7 +67,7 @@ public class PersistData {
 
     public static final void setAlreadyOnboarded(final boolean alreadyOnboarded) {
         _alreadyOnboarded = alreadyOnboarded;
-        writePersistBoolean(NOTIFICATIONS_KEY, alreadyOnboarded);
+        writePersistBoolean(ALREADY_ONBOARDED_KEY, alreadyOnboarded);
     }
 
     public static final void setAlarmDateTime(final String alarmDateTime) {
@@ -100,11 +100,6 @@ public class PersistData {
 
     private static final void writePersistBoolean(final String key, final boolean data) {
         _editor.putBoolean(key, data);
-        _editor.commit();
-    }
-
-    private static final void writePersistLong(final String key, final long data) {
-        _editor.putLong(key, data);
         _editor.commit();
     }
 
