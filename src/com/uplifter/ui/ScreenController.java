@@ -12,24 +12,22 @@ public class ScreenController {
     private ScreenController() {
     }
 
-    public synchronized static ScreenController getInstance() {
+    public final synchronized static ScreenController getInstance() {
         if(_instance == null) {
             _instance = new ScreenController();
         }
         return _instance;
     }
 
-    public void loadFirstScreen(final Activity activity) {
-        final Class firstScreen;
-        if(UplifterData.trainingAlreadyDone()) {
-            firstScreen = LogMoodScreen.class;
-        } else {
-            firstScreen = TodaysTrainingScreen.class;
-        }
-        switchScreen(activity, firstScreen);
+    public final void loadOnboardingScreen(final Activity activity) {
+        switchScreen(activity, OnboardingScreen1.class);
     }
 
-    public void loadNextTrainingScreen(final Activity currentActivity) {
+    public final void loadFirstScreen(final Activity activity) {
+        switchScreen(activity, UplifterData.trainingAlreadyDone() ? LogMoodScreen.class : LogMoodScreen.class);//TodaysTrainingScreen.class);
+    }
+
+    public final void loadNextTrainingScreen(final Activity currentActivity) {
         if(++_currentTrainingIndex < UplifterData.DAILY_QUESTION_COUNT) {
             switchScreen(currentActivity, TrainingScreen.class);
         } else {
@@ -38,19 +36,19 @@ public class ScreenController {
         }
     }
 
-    public void loadPrevTrainingScreen(final Activity currentActivity) {
+    public final void loadPrevTrainingScreen(final Activity currentActivity) {
         if(_currentTrainingIndex > 0) {
             --_currentTrainingIndex;
             switchScreen(currentActivity, TrainingScreen.class);
         }
     }
 
-    public void loadFirstTrainingScreen(final Activity currentActivity) {
+    public final void loadFirstTrainingScreen(final Activity currentActivity) {
         _currentTrainingIndex = 0;
         switchScreen(currentActivity, TrainingScreen.class);
     }
 
-    public int getCurrentTrainingIndex() {
+    public final int getCurrentTrainingIndex() {
         return _currentTrainingIndex;
     }
 
@@ -60,7 +58,7 @@ public class ScreenController {
         current.finish();
     }
 
-    public void loadQuoteScreen(final Activity current) {
+    public final void loadQuoteScreen(final Activity current) {
         switchScreen(current, QuoteScreen.class);
     }
 }

@@ -23,10 +23,11 @@ public class SplashScreen extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                final Intent mainIntent = new Intent(SplashScreen.this,
-                    PersistData.isAlreadyOnboarded() ? TodaysTrainingScreen.class : OnboardingScreen1.class);
-                SplashScreen.this.startActivity(mainIntent);
-                SplashScreen.this.finish();
+                if(PersistData.isAlreadyOnboarded()) {
+                    ScreenController.getInstance().loadFirstScreen(SplashScreen.this);
+                } else {
+                    ScreenController.getInstance().loadOnboardingScreen(SplashScreen.this);
+                }
             }
         }, SPLASH_DISPLAY_LENGTH);
     }

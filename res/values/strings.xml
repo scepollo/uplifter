@@ -27,5 +27,6 @@
     <string name="title_activity_positivity_superstar_screen">PositivitySuperstarScreen</string>
     <string name="title_activity_quote_screen">QuoteScreen</string>
     <string name="come_back_tomorrow">Come back tomorrow\nfor more training</string>
+    <string name="log_your_mood">Log Your Mood</string>
 
 </resources>
