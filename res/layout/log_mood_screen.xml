@@ -40,7 +40,7 @@
   <ImageView android:id="@+id/mood1"
     android:background="@color/purple"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     android:onClick="logMood"
     android:src="@drawable/mood1"/>
 </LinearLayout>

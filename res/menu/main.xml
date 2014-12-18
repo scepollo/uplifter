@@ -9,15 +9,21 @@
     android:showAsAction="always"
     android:title="@string/training"/>
   <item
-    android:id="@+id/progress"
+    android:id="@+id/log_your_mood"
     android:icon="@drawable/progress"
     android:orderInCategory="2"
+    android:showAsAction="always"
+    android:title="@string/log_your_mood"/>
+  <item
+    android:id="@+id/progress"
+    android:icon="@drawable/progress"
+    android:orderInCategory="3"
     android:showAsAction="always"
     android:title="@string/progress"/>
   <item
     android:id="@+id/tips"
     android:icon="@drawable/tips"
-    android:orderInCategory="3"
+    android:orderInCategory="4"
     android:showAsAction="always"
     android:title="@string/tips"/>
   <item
