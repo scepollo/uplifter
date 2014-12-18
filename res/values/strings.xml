@@ -29,5 +29,6 @@
     <string name="come_back_tomorrow">Come back tomorrow\nfor more training</string>
     <string name="log_your_mood">Log Your Mood</string>
     <string name="happiness_tips">HAPPINESS TIPS</string>
+    <string name="settings">Settings</string>
 
 </resources>

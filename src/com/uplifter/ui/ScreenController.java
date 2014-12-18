@@ -24,7 +24,7 @@ public class ScreenController {
     }
 
     public final void loadFirstScreen(final Activity activity) {
-        switchScreen(activity, UplifterData.trainingAlreadyDone() ? LogMoodScreen.class : TipsScreen.class);//TodaysTrainingScreen.class);
+        switchScreen(activity, UplifterData.trainingAlreadyDone() ? LogMoodScreen.class : TodaysTrainingScreen.class);
     }
 
     public final void loadNextTrainingScreen(final Activity currentActivity) {
