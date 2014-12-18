@@ -1,6 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
-  tools:context="com.uplifter.UplifterActivity" >
+  tools:context="com.uplifter.UplifterActivity"
+  android:layout_height="40dp" >
   <item
     android:id="@+id/training"
     android:icon="@drawable/training"
