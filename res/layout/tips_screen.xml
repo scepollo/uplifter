@@ -1,0 +1,20 @@
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  >
+  <LinearLayout
+    android:id="@+id/tips_screen"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.uplifter.ui.LogMoodScreen" >
+    <TextView android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:textColor="@color/grey"
+      android:text="@string/happiness_tips"/>
+  </LinearLayout>
+</ScrollView>

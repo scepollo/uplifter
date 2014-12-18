@@ -34,21 +34,15 @@
         </activity>
         <activity android:name=".ui.TodaysTrainingScreen" >
         </activity>
-        <activity
-            android:name=".ui.LogMoodScreen"
-            android:label="@string/title_activity_log_mood_screen" >
+        <activity android:name=".ui.LogMoodScreen" >
         </activity>
-        <activity
-            android:name=".ui.TrainingScreen"
-            android:label="@string/title_activity_training_screen" >
+        <activity android:name=".ui.TipsScreen" >
         </activity>
-        <activity
-            android:name=".ui.PositivitySuperstarScreen"
-            android:label="@string/title_activity_positivity_superstar_screen" >
+        <activity android:name=".ui.TrainingScreen" >
         </activity>
-        <activity
-            android:name="com.uplifter.ui.QuoteScreen"
-            android:label="@string/title_activity_quote_screen" >
+        <activity android:name=".ui.PositivitySuperstarScreen" >
+        </activity>
+        <activity android:name=".ui.QuoteScreen" >
         </activity>
     </application>
 

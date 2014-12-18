@@ -11,12 +11,14 @@ import android.content.Context;
 
 import com.uplifter.model.Parser;
 import com.uplifter.model.QuoteModel;
+import com.uplifter.model.TipModel;
 import com.uplifter.model.TrainingModel;
 import com.uplifter.ui.ScreenController;
 
 public class UplifterData {
     private static final String UTF_8 = "UTF-8";
     private static final String QUOTES = "quotes.json";
+    private static final String TIPS = "tips.json";
     private static final String TRAINING = "training.json";
     public static final int DAILY_QUESTION_COUNT = 3;
 
@@ -26,6 +28,7 @@ public class UplifterData {
     private static boolean _trainingAlreadyDone;
     private static final String [][] _trainingData = new String [3][];
     private static QuoteModel [] _quotes;
+    private static TipModel [] _tips;
 
     private static Map<Integer, TrainingModel> loadTraining(final Context context) {
         if(_training == null) {
@@ -94,6 +97,17 @@ public class UplifterData {
             return quotes[new Random().nextInt(quotes.length)];
         }
         return new QuoteModel(null);
+    }
+
+    private static final TipModel [] loadTips(final Context context) {
+        if(_tips == null) {
+            _tips = Parser.parseTips(loadFileFromAsset(context, TIPS));
+        }
+        return _tips;
+    }
+
+    public static final TipModel [] getTips(final Context context) {
+        return loadTips(context);
     }
 
     private static final String loadFileFromAsset(final Context context, final String filename) {
