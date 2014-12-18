@@ -1,6 +1,5 @@
 package com.uplifter.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -8,7 +7,7 @@ import com.uplifter.R;
 import com.uplifter.model.QuoteModel;
 import com.uplifter.util.UplifterData;
 
-public class QuoteScreen extends Activity {
+public class QuoteScreen extends UplifterActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

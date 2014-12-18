@@ -1,10 +1,13 @@
 package com.uplifter.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
@@ -25,6 +28,21 @@ public class SettingsScreen extends BaseOnboardingScreen {
         setContentView(R.layout.settings_screen);
         ((Switch) findViewById(R.id.onboard_notification_switch)).setChecked(PersistData.getNotifications());
         setTimeUI();
+    }
+
+    @SuppressLint("NewApi")
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        if(!ScreenController.getInstance().switchActionBarScreen(this, item.getItemId())) {
+            return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 
     public void switchClicked(final View switcher) {
