@@ -1,6 +1,5 @@
 package com.uplifter.ui;
 
-import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -14,7 +13,7 @@ import com.uplifter.R;
 import com.uplifter.model.TipModel;
 import com.uplifter.util.UplifterData;
 
-public class TipsScreen extends Activity {
+public class TipsScreen extends UplifterActivity {
     private static final int [] COLOURS = {R.color.yellow, R.color.green, R.color.pink, R.color.blue, R.color.purple};
 
     @Override

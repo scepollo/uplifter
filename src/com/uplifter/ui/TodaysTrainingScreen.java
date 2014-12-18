@@ -1,6 +1,5 @@
 package com.uplifter.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,7 +9,7 @@ import com.uplifter.model.TrainingModel;
 import com.uplifter.util.PersistData;
 import com.uplifter.util.UplifterData;
 
-public class TodaysTrainingScreen extends Activity {
+public class TodaysTrainingScreen extends UplifterActivity {
     private static final int [] TITLE_ID = {R.id.q1, R.id.q2, R.id.q3};
     private static final int [] SUBTITLE_ID = {R.id.s1, R.id.s2, R.id.s3};
 
@@ -24,7 +23,6 @@ public class TodaysTrainingScreen extends Activity {
             ((TextView) findViewById(TITLE_ID[i])).setText(training[i].getTitle().toUpperCase());
             ((TextView) findViewById(SUBTITLE_ID[i])).setText(training[i].getSubtitle());
         }
-        // TODO: set the three category icons in the UI
     }
 
     public void sendMessage(final View view) {

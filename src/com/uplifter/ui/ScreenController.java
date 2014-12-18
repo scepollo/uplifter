@@ -1,11 +1,23 @@
 package com.uplifter.ui;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import android.app.Activity;
 import android.content.Intent;
 
+import com.uplifter.R;
 import com.uplifter.util.UplifterData;
 
 public class ScreenController {
+    private static final Map<Integer, Class> ACTIVITY_MAP = new HashMap<Integer, Class>();
+    static {
+        ACTIVITY_MAP.put(R.id.training, TodaysTrainingScreen.class);
+        ACTIVITY_MAP.put(R.id.progress, TodaysTrainingScreen.class);
+        ACTIVITY_MAP.put(R.id.tips, TipsScreen.class);
+        ACTIVITY_MAP.put(R.id.settings, SettingsScreen.class);
+    }
+
     private static ScreenController _instance;
     private int _currentTrainingIndex;
 
@@ -50,6 +62,14 @@ public class ScreenController {
 
     public final int getCurrentTrainingIndex() {
         return _currentTrainingIndex;
+    }
+
+    public final boolean switchActionBarScreen(final Activity current, final int id) {
+        if(ACTIVITY_MAP.containsKey(id)) {
+            switchScreen(current, ACTIVITY_MAP.get(id));
+            return true;
+        }
+        return false;
     }
 
     private static final void switchScreen(final Activity current, final Class next) {
