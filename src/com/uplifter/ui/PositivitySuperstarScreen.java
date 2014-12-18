@@ -1,15 +1,10 @@
 package com.uplifter.ui;
 
-import com.uplifter.R;
-import com.uplifter.R.id;
-import com.uplifter.R.layout;
-import com.uplifter.R.menu;
-
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+
+import com.uplifter.R;
 
 public class PositivitySuperstarScreen extends Activity {
     @Override

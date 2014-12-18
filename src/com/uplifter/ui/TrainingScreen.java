@@ -10,9 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.uplifter.R;
-import com.uplifter.R.id;
-import com.uplifter.R.layout;
-import com.uplifter.R.menu;
 import com.uplifter.model.MultipartModel;
 import com.uplifter.model.TrainingModel;
 import com.uplifter.util.UplifterData;

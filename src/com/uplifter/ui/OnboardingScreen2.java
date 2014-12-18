@@ -1,9 +1,8 @@
 package com.uplifter.ui;
 
-import com.uplifter.R;
-import com.uplifter.R.layout;
-
 import android.os.Bundle;
+
+import com.uplifter.R;
 
 public class OnboardingScreen2 extends BaseOnboardingScreen {
     @Override
