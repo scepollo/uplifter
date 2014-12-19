@@ -1,6 +1,7 @@
 package com.uplifter.ui;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -28,6 +29,7 @@ public class TrainingScreen extends Activity {
 
         final TextView tv = new TextView(this);
         tv.setText(trainingModel.getTitle());
+        tv.setTextColor(getResources().getColor(R.color.white));
         ll.addView(tv);
 
         if(trainingModel.getMultipart() != null) {
@@ -48,6 +50,7 @@ public class TrainingScreen extends Activity {
 
         final TextView tv = new TextView(this);
         tv.setText(model.getQuestion());
+        tv.setTextColor(getResources().getColor(R.color.white));
         ll.addView(tv);
 
         _editFields = new EditText [model.getNumber()];
@@ -59,13 +62,16 @@ public class TrainingScreen extends Activity {
 
     private final void populateQuestionsLayout(final TrainingModel trainingModel, final LinearLayout ll) {
         final String [] questions = trainingModel.getQuestions();
+        final Resources res = getResources();
 
         _editFields = new EditText [questions.length];
         for(int i = 0; i < _editFields.length; ++i) {
             final TextView tv = new TextView(this);
             tv.setText(questions[i]);
+            tv.setTextColor(res.getColor(R.color.white));
             ll.addView(tv);
             _editFields[i] = new EditText(this);
+            _editFields[i].setTextColor(res.getColor(R.color.white));
             ll.addView(_editFields[i]);
         }
     }
