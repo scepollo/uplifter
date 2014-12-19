@@ -61,11 +61,13 @@ public class DailyAnswerModel extends BaseModel {
             json.put(DATE_KEY, _date);
         } catch (final JSONException e) {
         }
+        final JSONArray array = new JSONArray();
         for(final AnswerModel answerModel: _answerModels) {
-            try {
-                json.accumulate(ANSWER_MODELS_KEY, answerModel.getJSONObject());
-            } catch (final JSONException e) {
-            }
+            array.put(answerModel.getJSONObject());
+        }
+        try {
+            json.put(ANSWER_MODELS_KEY, array);
+        } catch (final JSONException e) {
         }
         return json;
     }

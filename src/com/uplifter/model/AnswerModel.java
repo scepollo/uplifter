@@ -49,4 +49,18 @@ public class AnswerModel extends BaseModel {
         }
         return buff.toString();
     }
+
+    public final JSONObject getJSONObject() {
+        final JSONObject json = new JSONObject();
+        try {
+            json.put(INDEX_KEY, _index);
+        } catch (final JSONException e) {
+        }
+        putStringArray(json, ANSWERS_KEY, _answers);
+        return json;
+    }
+
+    public void setAnswers(final String[] answers) {
+        _answers = answers;
+    }
 }

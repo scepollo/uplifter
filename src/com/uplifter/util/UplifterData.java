@@ -143,6 +143,10 @@ public class UplifterData {
         return _trainingAlreadyDone;
     }
 
+    public void setTrainingAlreadyDone(final boolean done) {
+        _trainingAlreadyDone = done;
+    }
+
     public void setTrainingAlreadyDone() {
         _trainingAlreadyDone = true;
         _oldTrainingDataMap.put(UplifterUtil.getTodaysDateString(), new DailyAnswerModel(UplifterUtil.getTodaysDateString(), _trainingData));

@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 import com.uplifter.model.DailyAnswerModel;
+import com.uplifter.ui.UplifterUtil;
 
 public class PersistData {
     private static final String DEFAULT_ALARM_TIME = "8:00";
@@ -22,6 +23,7 @@ public class PersistData {
     private static final String NOTIFICATIONS_KEY = "NOTIFICATIONS_KEY";
     private static final String YESTERDAYS_QUESTIONS_KEY = "YESTERDAYS_QUESTIONS_KEY";
     private static final String DAILY_ANSWERS_KEY = "DAILY_ANSWERS_KEY";
+    private static final String DAILY_ANSWERS_JSON_KEY = "dailyAnswers";
 
     private static String _alarmDateTime;
     private static boolean _notifications;
@@ -57,13 +59,14 @@ public class PersistData {
             }
             if(map.containsKey(DAILY_ANSWERS_KEY)) {
                 try {
-                    final JSONArray array = new JSONArray((String) map.get(DAILY_ANSWERS_KEY));
+                    final JSONArray array = new JSONObject((String) map.get(DAILY_ANSWERS_KEY)).getJSONArray(DAILY_ANSWERS_JSON_KEY);
                     for(int i = 0, ii = array.length(); i < ii; ++i) {
                         final DailyAnswerModel model = new DailyAnswerModel(array.getJSONObject(i));
                         _trainingData.put(model.getDate(), model);
                     }
                 } catch (final JSONException e) {
                 }
+                UplifterData.getInstance().setTrainingAlreadyDone(_trainingData.containsKey(UplifterUtil.getTodaysDateString()));
             }
         }
     }
@@ -135,12 +138,16 @@ public class PersistData {
         _trainingData = trainingData;
         setYesterdaysQuestions(todaysTrainingIndex);
         final JSONObject json = new JSONObject();
+        final JSONArray array = new JSONArray();
+
         for(final DailyAnswerModel model: trainingData.values()) {
-            try {
-                json.accumulate(DAILY_ANSWERS_KEY, model.getJSONObject());
-            } catch (final JSONException e) {
-            }
+            array.put(model.getJSONObject());
         }
+        try {
+            json.put(DAILY_ANSWERS_JSON_KEY, array);
+        } catch (final JSONException e) {
+        }
+
         writePersistString(DAILY_ANSWERS_KEY, json.toString());
     }
 }
