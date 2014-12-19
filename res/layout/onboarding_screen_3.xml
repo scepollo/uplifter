@@ -9,14 +9,15 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:layout_gravity="center"
-    android:layout_marginTop="115dp"
+    android:layout_marginTop="100dp"
     android:textSize="18sp"
+    android:textStyle="normal|bold"
     android:textColor="@color/white"
     android:text="@string/onboarding_3_1"/>
   <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="115dp"
+    android:layout_marginTop="50dp"
     android:layout_marginLeft="45dp"
     android:layout_marginRight="45dp"
     android:gravity="left"
@@ -29,7 +30,7 @@
       android:layout_alignParentLeft="true"
       android:textSize="18sp"
       android:textColor="@color/white"
-      android:text="@string/notification"/>
+      android:text="@string/reminders"/>
     <TextView android:id="@+id/onboard_time_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -60,4 +61,12 @@
       android:layout_below="@id/onboard_notification_switch"
       android:layout_toRightOf="@id/onboard_time_label"/>
   </RelativeLayout>
+  <TextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_marginTop="30dp"
+    android:textSize="12sp"
+    android:textColor="@color/white"
+    android:text="@string/onboarding_3_2"/>
 </LinearLayout>

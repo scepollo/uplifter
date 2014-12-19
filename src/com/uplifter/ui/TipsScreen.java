@@ -14,7 +14,7 @@ import com.uplifter.model.TipModel;
 import com.uplifter.util.UplifterData;
 
 public class TipsScreen extends UplifterActivity {
-    private static final int [] COLOURS = {R.color.yellow, R.color.green, R.color.pink, R.color.blue, R.color.purple};
+    private static final int [] COLOURS = {R.color.green, R.color.purple, R.color.pink, R.color.yellow};
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {

@@ -3,10 +3,14 @@
   <color name="black_overlay">#66000000</color>
   <color name="white">#FFFFFF</color>
   <color name="grey">#777777</color>
+  <color name="grey1">#CCCCCC</color>
+  <color name="grey2">#888888</color>
+  <color name="grey3">#444444</color>
   <color name="pink">#FF7B7B</color>
-  <color name="green">#10D63A</color>
-  <color name="purple">#EA8CFF</color>
+  <color name="green">#54EAB7</color>
+  <color name="purple">#C86EDA</color>
   <color name="yellow">#FFC91F</color>
   <color name="blue">#1DFFFF</color>
   <color name="royalBlue">#4169e1</color>
+  <color name="orange">#FFA43D</color>
 </resources>
