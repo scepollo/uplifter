@@ -15,11 +15,4 @@ public abstract class BaseModel {
         }
         return stringArray;
     }
-//    protected <B>[] getArray<B>(final JSONArray array) {
-//        final int size = array.length();
-//        final <B> modelArray= new <B>[size];
-//        for(int i = 0; i < size; ++i) {
-//            modelArray = new <B>()
-//        }
-//    }
 }

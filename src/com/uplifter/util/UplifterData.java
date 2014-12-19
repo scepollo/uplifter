@@ -4,16 +4,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
 import android.content.Context;
 
+import com.uplifter.model.AnswerModel;
+import com.uplifter.model.DailyAnswerModel;
 import com.uplifter.model.Parser;
 import com.uplifter.model.QuoteModel;
 import com.uplifter.model.TipModel;
 import com.uplifter.model.TrainingModel;
 import com.uplifter.ui.ScreenController;
+import com.uplifter.ui.UplifterUtil;
 
 public class UplifterData {
     private static final String UTF_8 = "UTF-8";
@@ -21,23 +25,35 @@ public class UplifterData {
     private static final String TIPS = "tips.json";
     private static final String TRAINING = "training.json";
     public static final int DAILY_QUESTION_COUNT = 3;
+    private static UplifterData _instance;
 
-    private static Map<Integer, TrainingModel> _training;
-    private static TrainingModel [] _todaysTraining;
-    private static int [] _todaysTrainingIndex;
-    private static boolean _trainingAlreadyDone;
-    private static final String [][] _trainingData = new String [3][];
-    private static QuoteModel [] _quotes;
-    private static TipModel [] _tips;
+    private Map<Integer, TrainingModel> _training;
+    private TrainingModel [] _todaysTraining;
+    private int [] _todaysTrainingIndex;
+    private boolean _trainingAlreadyDone;
+    private final Map<String, DailyAnswerModel> _oldTrainingDataMap = new HashMap<String, DailyAnswerModel>();
+    private final AnswerModel [] _trainingData = new AnswerModel [3];
+    private QuoteModel [] _quotes;
+    private TipModel [] _tips;
 
-    private static Map<Integer, TrainingModel> loadTraining(final Context context) {
+    public static synchronized final UplifterData getInstance() {
+        if(_instance == null) {
+            _instance = new UplifterData();
+        }
+        return _instance;
+    }
+
+    private UplifterData() {
+    }
+
+    private Map<Integer, TrainingModel> loadTraining(final Context context) {
         if(_training == null) {
             _training = Parser.parseTraining(loadFileFromAsset(context, TRAINING));
         }
         return _training;
     }
 
-    public static TrainingModel [] getTodaysTraining(final Context context) {
+    public TrainingModel [] getTodaysTraining(final Context context) {
         if(_todaysTraining == null) {
             _todaysTraining = new TrainingModel [3];
             _todaysTrainingIndex = new int [3];
@@ -80,18 +96,18 @@ public class UplifterData {
         return val;
     }
 
-    public static final int [] getTodaysTrainingIndex() {
+    public final int [] getTodaysTrainingIndex() {
         return _todaysTrainingIndex;
     }
 
-    private static final QuoteModel [] loadQuotes(final Context context) {
+    private final QuoteModel [] loadQuotes(final Context context) {
         if(_quotes == null) {
             _quotes = Parser.parseQuotes(loadFileFromAsset(context, QUOTES));
         }
         return _quotes;
     }
 
-    public static final QuoteModel getQuote(final Context context) {
+    public final QuoteModel getQuote(final Context context) {
         final QuoteModel [] quotes = loadQuotes(context);
         if(quotes.length > 0) {
             return quotes[new Random().nextInt(quotes.length)];
@@ -99,14 +115,14 @@ public class UplifterData {
         return new QuoteModel(null);
     }
 
-    private static final TipModel [] loadTips(final Context context) {
+    private final TipModel [] loadTips(final Context context) {
         if(_tips == null) {
             _tips = Parser.parseTips(loadFileFromAsset(context, TIPS));
         }
         return _tips;
     }
 
-    public static final TipModel [] getTips(final Context context) {
+    public final TipModel [] getTips(final Context context) {
         return loadTips(context);
     }
 
@@ -123,16 +139,29 @@ public class UplifterData {
         }
     }
 
-    public static final boolean trainingAlreadyDone() {
+    public final boolean trainingAlreadyDone() {
         return _trainingAlreadyDone;
     }
 
-    public static void setTrainingAlreadyDone() {
+    public void setTrainingAlreadyDone() {
         _trainingAlreadyDone = true;
-        PersistData.setTodaysTrainingData(_todaysTrainingIndex, _trainingData);
+        _oldTrainingDataMap.put(UplifterUtil.getTodaysDateString(), new DailyAnswerModel(UplifterUtil.getTodaysDateString(), _trainingData));
+        PersistData.setTrainingData(_todaysTrainingIndex, _oldTrainingDataMap);
     }
 
-    public static void setTrainingData(final String [] data) {
-        _trainingData[ScreenController.getInstance().getCurrentTrainingIndex()] = data;
+    public String [] getTrainingData() {
+        final int index = ScreenController.getInstance().getCurrentTrainingIndex();
+        if(_trainingData[index] == null) {
+            return null;
+        }
+        return _trainingData[index].getAnswers();
+    }
+
+    public void setTrainingData(final int index, final String [] data) {
+        if(_trainingData[index] == null) {
+            _trainingData[index] = new AnswerModel(_todaysTrainingIndex[index], data);
+        } else {
+            _trainingData[index].setAnswers(data);
+        }
     }
 }

@@ -1,10 +1,17 @@
 package com.uplifter.util;
 
+import java.util.HashMap;
 import java.util.Map;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+
+import com.uplifter.model.DailyAnswerModel;
 
 public class PersistData {
     private static final String DEFAULT_ALARM_TIME = "8:00";
@@ -14,6 +21,7 @@ public class PersistData {
     private static final String ALARM_DATE_TIME_KEY = "ALARM_DATE_TIME_KEY";
     private static final String NOTIFICATIONS_KEY = "NOTIFICATIONS_KEY";
     private static final String YESTERDAYS_QUESTIONS_KEY = "YESTERDAYS_QUESTIONS_KEY";
+    private static final String DAILY_ANSWERS_KEY = "DAILY_ANSWERS_KEY";
 
     private static String _alarmDateTime;
     private static boolean _notifications;
@@ -22,6 +30,7 @@ public class PersistData {
 
     private static boolean _init;
     private static Editor _editor;
+    private static Map<String, DailyAnswerModel> _trainingData = new HashMap<String, DailyAnswerModel>();
 
     public static final void init(final Activity activity) {
         if(!_init) {
@@ -45,6 +54,16 @@ public class PersistData {
             } else {
                 // This assumes that the questions are indexed from 1.
                 _yesterdaysQuestions = new int [0];
+            }
+            if(map.containsKey(DAILY_ANSWERS_KEY)) {
+                try {
+                    final JSONArray array = new JSONArray((String) map.get(DAILY_ANSWERS_KEY));
+                    for(int i = 0, ii = array.length(); i < ii; ++i) {
+                        final DailyAnswerModel model = new DailyAnswerModel(array.getJSONObject(i));
+                        _trainingData.put(model.getDate(), model);
+                    }
+                } catch (final JSONException e) {
+                }
             }
         }
     }
@@ -108,8 +127,20 @@ public class PersistData {
         _editor.commit();
     }
 
-    public static void setTodaysTrainingData(final int [] todaysTrainingIndex, final String [][] trainingData) {
+    public static final Map<String, DailyAnswerModel> getTrainingData() {
+        return _trainingData;
+    }
+
+    public static void setTrainingData(final int [] todaysTrainingIndex, final Map<String, DailyAnswerModel> trainingData) {
+        _trainingData = trainingData;
         setYesterdaysQuestions(todaysTrainingIndex);
-        // TODO:  Store training data -- use JSON and mySQL
+        final JSONObject json = new JSONObject();
+        for(final DailyAnswerModel model: trainingData.values()) {
+            try {
+                json.accumulate(DAILY_ANSWERS_KEY, model.getJSONObject());
+            } catch (final JSONException e) {
+            }
+        }
+        writePersistString(DAILY_ANSWERS_KEY, json.toString());
     }
 }

@@ -12,7 +12,7 @@ public class QuoteScreen extends UplifterActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quote_screen);
-        final QuoteModel quote = UplifterData.getQuote(this);
+        final QuoteModel quote = UplifterData.getInstance().getQuote(this);
         ((TextView) findViewById(R.id.quote_text)).setText(quote.getQuote().toUpperCase());
         ((TextView) findViewById(R.id.quote_author)).setText("- " + quote.getName());
     }

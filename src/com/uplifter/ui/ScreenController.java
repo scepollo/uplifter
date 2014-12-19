@@ -37,20 +37,23 @@ public class ScreenController {
     }
 
     public final void loadFirstScreen(final Activity activity) {
-        switchScreen(activity, UplifterData.trainingAlreadyDone() ? QuoteScreen.class : TodaysTrainingScreen.class);
+        switchScreen(activity, UplifterData.getInstance().trainingAlreadyDone() ? QuoteScreen.class : TodaysTrainingScreen.class);
     }
 
-    public final void loadNextTrainingScreen(final Activity currentActivity) {
+    public final void loadNextTrainingScreen(final Activity currentActivity, final String [] answers) {
+        final UplifterData ulData = UplifterData.getInstance();
+        ulData.setTrainingData(_currentTrainingIndex, answers);
         if(++_currentTrainingIndex < UplifterData.DAILY_QUESTION_COUNT) {
             switchScreen(currentActivity, TrainingScreen.class);
         } else {
-            UplifterData.setTrainingAlreadyDone();
+            ulData.setTrainingAlreadyDone();
             switchScreen(currentActivity, PositivitySuperstarScreen.class);
         }
     }
 
-    public final void loadPrevTrainingScreen(final Activity currentActivity) {
+    public final void loadPrevTrainingScreen(final Activity currentActivity, final String [] answers) {
         if(_currentTrainingIndex > 0) {
+            UplifterData.getInstance().setTrainingData(_currentTrainingIndex, answers);
             --_currentTrainingIndex;
             switchScreen(currentActivity, TrainingScreen.class);
         }
@@ -69,7 +72,7 @@ public class ScreenController {
         if(ACTIVITY_MAP.containsKey(id)) {
             Class clazz = ACTIVITY_MAP.get(id);
             if(current.getClass() != clazz) {
-                if(clazz == TodaysTrainingScreen.class && UplifterData.trainingAlreadyDone()) {
+                if(clazz == TodaysTrainingScreen.class && UplifterData.getInstance().trainingAlreadyDone()) {
                     clazz = QuoteScreen.class;
                 }
                 switchScreen(current, clazz);

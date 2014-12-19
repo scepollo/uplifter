@@ -21,7 +21,7 @@ public class TipsScreen extends UplifterActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tips_screen);
         final LinearLayout view = (LinearLayout) findViewById(R.id.tips_screen);
-        final TipModel [] tips = UplifterData.getTips(this);
+        final TipModel [] tips = UplifterData.getInstance().getTips(this);
         final Resources res = getResources();
 
         for(int i = 0, ii = tips.length; i < ii; ++i) {

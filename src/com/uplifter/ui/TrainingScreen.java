@@ -19,7 +19,7 @@ public class TrainingScreen extends Activity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_screen);
-        enableLayouts(UplifterData.getTodaysTraining(this)[ScreenController.getInstance().getCurrentTrainingIndex()]);
+        enableLayouts(UplifterData.getInstance().getTodaysTraining(this)[ScreenController.getInstance().getCurrentTrainingIndex()]);
     }
 
     private void enableLayouts(final TrainingModel trainingModel) {
@@ -34,6 +34,12 @@ public class TrainingScreen extends Activity {
             populateMultipartLayout(trainingModel, ll);
         } else if(trainingModel.getQuestions() != null) {
             populateQuestionsLayout(trainingModel, ll);
+        }
+        final String [] data = UplifterData.getInstance().getTrainingData();
+        if(data != null) {
+            for(int i = 0; i < data.length; ++i) {
+                _editFields[i].setText(data[i]);
+            }
         }
     }
 
@@ -65,22 +71,21 @@ public class TrainingScreen extends Activity {
     }
 
     public void goBack(final View view) {
-        ScreenController.getInstance().loadPrevTrainingScreen(this);
+        ScreenController.getInstance().loadPrevTrainingScreen(this, getTrainingData());
     }
 
     public void goForward(final View view) {
         if(verifyEditFields()) {
-            saveTrainingData();
-            ScreenController.getInstance().loadNextTrainingScreen(this);
+            ScreenController.getInstance().loadNextTrainingScreen(this, getTrainingData());
         }
     }
 
-    private void saveTrainingData() {
+    private final String [] getTrainingData() {
         final String [] data = new String [_editFields.length];
         for(int i = 0, ii = data.length; i < ii; ++i) {
             data[i] = _editFields[i].getText().toString().trim();
         }
-        UplifterData.setTrainingData(data);
+        return data;
     }
 
     private boolean verifyEditFields() {

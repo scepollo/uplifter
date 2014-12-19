@@ -18,7 +18,7 @@ public class TodaysTrainingScreen extends UplifterActivity {
         super.onCreate(icicle);
         PersistData.setAlreadyOnboarded(true);
         setContentView(R.layout.todays_training_screen);
-        final TrainingModel[] training = UplifterData.getTodaysTraining(this);
+        final TrainingModel[] training = UplifterData.getInstance().getTodaysTraining(this);
         for(int i = 0, ii = training.length; i < ii; ++i) {
             ((TextView) findViewById(TITLE_ID[i])).setText(training[i].getTitle().toUpperCase());
             ((TextView) findViewById(SUBTITLE_ID[i])).setText(training[i].getSubtitle());
