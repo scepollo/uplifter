@@ -37,7 +37,7 @@ public class ScreenController {
     }
 
     public final void loadFirstScreen(final Activity activity) {
-        switchScreen(activity, UplifterData.trainingAlreadyDone() ? LogMoodScreen.class : TodaysTrainingScreen.class);
+        switchScreen(activity, UplifterData.trainingAlreadyDone() ? QuoteScreen.class : TodaysTrainingScreen.class);
     }
 
     public final void loadNextTrainingScreen(final Activity currentActivity) {
@@ -67,8 +67,11 @@ public class ScreenController {
 
     public final boolean switchActionBarScreen(final Activity current, final int id) {
         if(ACTIVITY_MAP.containsKey(id)) {
-            final Class clazz = ACTIVITY_MAP.get(id);
-            if(current.getClass() != clazz && (clazz != TodaysTrainingScreen.class || !UplifterData.trainingAlreadyDone())) {
+            Class clazz = ACTIVITY_MAP.get(id);
+            if(current.getClass() != clazz) {
+                if(clazz == TodaysTrainingScreen.class && UplifterData.trainingAlreadyDone()) {
+                    clazz = QuoteScreen.class;
+                }
                 switchScreen(current, clazz);
                 return true;
             }
