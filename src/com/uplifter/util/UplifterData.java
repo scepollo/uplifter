@@ -35,6 +35,7 @@ public class UplifterData {
     private final AnswerModel [] _trainingData = new AnswerModel [3];
     private QuoteModel [] _quotes;
     private TipModel [] _tips;
+    private QuoteModel _quoteOfTheDay;
 
     public static synchronized final UplifterData getInstance() {
         if(_instance == null) {
@@ -108,11 +109,15 @@ public class UplifterData {
     }
 
     public final QuoteModel getQuote(final Context context) {
-        final QuoteModel [] quotes = loadQuotes(context);
-        if(quotes.length > 0) {
-            return quotes[new Random().nextInt(quotes.length)];
+        if(_quoteOfTheDay == null) {
+            final QuoteModel [] quotes = loadQuotes(context);
+            if(quotes.length > 0) {
+                _quoteOfTheDay =  quotes[new Random().nextInt(quotes.length)];
+            } else {
+                _quoteOfTheDay = new QuoteModel(null);
+            }
         }
-        return new QuoteModel(null);
+        return _quoteOfTheDay;
     }
 
     private final TipModel [] loadTips(final Context context) {
