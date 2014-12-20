@@ -9,33 +9,32 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/quotebg"
     tools:context="com.uplifter.ui.PositivitySuperstarScreen" >
-    <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:gravity="center"
-      android:paddingTop="80dp"
-      android:textSize="18sp"
-      android:textColor="@color/white"
-      android:text="@string/you_are_a" />
-    <TextView
+    <com.uplifter.ui.UplifterTextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:gravity="center"
       android:paddingTop="20dp"
-      android:textSize="30sp"
+      android:textSize="25sp"
       android:textColor="@color/white"
       android:text="@string/positivity_superstar" />
+    <ImageView
+      android:layout_width="180dp"
+      android:layout_height="240dp"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:paddingTop="20dp"
+      android:background="@drawable/little_dude"
+    />
     <Button
       android:layout_width="200dp"
       android:layout_height="wrap_content"
       android:background="@drawable/uplifter_button"
       android:textColor="@color/white"
-      android:layout_marginTop="200dp"
+      android:layout_marginTop="20dp"
       android:gravity="center"
       android:layout_gravity="center"
       android:onClick="sendMessage"
-      android:text="@string/yeah_baby"
+      android:text="@string/awesome"
     />
 </LinearLayout>

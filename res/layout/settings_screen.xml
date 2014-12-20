@@ -5,7 +5,7 @@
   android:background="@color/purple"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
-  <TextView android:id="@+id/title"
+  <com.uplifter.ui.UplifterTextView android:id="@+id/title"
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:layout_gravity="center"
@@ -22,7 +22,7 @@
     android:layout_marginRight="45dp"
     android:gravity="left"
     android:layout_gravity="left">
-    <TextView android:id="@+id/onboard_notification_label"
+    <com.uplifter.ui.UplifterTextView android:id="@+id/onboard_notification_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:gravity="left"
@@ -31,7 +31,7 @@
       android:textSize="18sp"
       android:textColor="@color/white"
       android:text="@string/reminders"/>
-    <TextView android:id="@+id/onboard_time_label"
+    <com.uplifter.ui.UplifterTextView android:id="@+id/onboard_time_label"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:gravity="left"

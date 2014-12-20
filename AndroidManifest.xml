@@ -19,20 +19,23 @@
             android:name=".ui.SplashScreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
-            android:theme="@style/FullscreenTheme" >
+            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.OnboardingScreen1" >
+        <activity android:name=".ui.OnboardingScreen1"
+          android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
-        <activity android:name=".ui.OnboardingScreen2" >
+        <activity android:name=".ui.OnboardingScreen2"
+          android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
-        <activity android:name=".ui.OnboardingScreen3" >
+        <activity android:name=".ui.OnboardingScreen3"
+          android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
-        <activity android:name=".ui.OnboardingScreen4" >
+        <activity android:name=".ui.OnboardingScreen4"
+          android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity android:name=".ui.TodaysTrainingScreen" >
         </activity>

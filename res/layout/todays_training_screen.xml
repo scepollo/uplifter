@@ -4,7 +4,7 @@
   android:id="@+id/todays_training_screen"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
-  <TextView android:layout_width="fill_parent"
+  <com.uplifter.ui.UplifterTextView android:layout_width="fill_parent"
     android:layout_height="150dp"
     android:paddingLeft="25dp"
     android:paddingBottom="25dp"
@@ -19,7 +19,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView android:id="@+id/q1"
+    <com.uplifter.ui.UplifterTextView android:id="@+id/q1"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="left"
@@ -29,7 +29,7 @@
       android:textColor="@color/white"
       android:textSize="20sp"
       android:text=""/>
-    <TextView android:id="@+id/s1"
+    <com.uplifter.ui.UplifterTextView android:id="@+id/s1"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="left"
@@ -39,7 +39,7 @@
       android:textColor="@color/white"
       android:textSize="12sp"
       android:text=""/>
-    <TextView android:id="@+id/q2"
+    <com.uplifter.ui.UplifterTextView android:id="@+id/q2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="left"
@@ -49,7 +49,7 @@
       android:textColor="@color/white"
       android:textSize="20sp"
       android:text=""/>
-    <TextView android:id="@+id/s2"
+    <com.uplifter.ui.UplifterTextView android:id="@+id/s2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="left"
@@ -59,7 +59,7 @@
       android:textColor="@color/white"
       android:textSize="12sp"
       android:text=""/>
-    <TextView android:id="@+id/q3"
+    <com.uplifter.ui.UplifterTextView android:id="@+id/q3"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="left"
@@ -69,7 +69,7 @@
       android:textColor="@color/white"
       android:textSize="20sp"
       android:text=""/>
-    <TextView android:id="@+id/s3"
+    <com.uplifter.ui.UplifterTextView android:id="@+id/s3"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="left"

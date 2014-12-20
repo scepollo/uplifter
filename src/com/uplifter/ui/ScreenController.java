@@ -73,7 +73,8 @@ public class ScreenController {
             Class clazz = ACTIVITY_MAP.get(id);
             if(current.getClass() != clazz) {
                 if(clazz == TodaysTrainingScreen.class && UplifterData.getInstance().trainingAlreadyDone()) {
-                    clazz = QuoteScreen.class;
+                    clazz = PositivitySuperstarScreen.class;
+//                    clazz = QuoteScreen.class;
                 }
                 switchScreen(current, clazz);
                 return true;
