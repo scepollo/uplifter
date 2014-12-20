@@ -4,11 +4,26 @@ import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.Date;
 
+import android.content.Context;
+
 import com.uplifter.model.DateComparableModel;
 
 public class UplifterUtil {
     public static final String getTodaysDateString() {
         return DateFormat.getDateInstance(DateFormat.LONG).format(new Date());
+    }
+
+    public static final void setNotification(final Context context) {
+        return;
+//
+//        final Calendar calendar = Calendar.getInstance();
+//        calendar.setTime(new Date(UplifterData.getInstance().getAlarmDateTime()));
+//
+//        final Intent myIntent = new Intent(context, UplifterReceiver.class);
+//        final PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, myIntent,0);
+//
+//        final AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+//        alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
     }
 
     public static final int numberOfConsecutiveDays(final DateComparableModel [] items) {

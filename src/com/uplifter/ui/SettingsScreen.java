@@ -15,6 +15,7 @@ import android.widget.TimePicker;
 
 import com.uplifter.R;
 import com.uplifter.util.PersistData;
+import com.uplifter.util.UplifterData;
 
 public class SettingsScreen extends BaseOnboardingScreen {
     private static final String AM = "AM";
@@ -26,7 +27,7 @@ public class SettingsScreen extends BaseOnboardingScreen {
     public void onCreate(final Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.settings_screen);
-        ((Switch) findViewById(R.id.onboard_notification_switch)).setChecked(PersistData.getNotifications());
+        ((Switch) findViewById(R.id.onboard_notification_switch)).setChecked(UplifterData.getInstance().getNotifications());
         setTimeUI();
     }
 
@@ -46,7 +47,7 @@ public class SettingsScreen extends BaseOnboardingScreen {
     }
 
     public void switchClicked(final View switcher) {
-        PersistData.setNotifications(((Switch) switcher).isChecked());
+        UplifterData.getInstance().setNotifications(this, ((Switch) switcher).isChecked());
     }
 
     public void showTimePickerDialog(final View v) {
@@ -54,7 +55,7 @@ public class SettingsScreen extends BaseOnboardingScreen {
     }
 
     private final void setTimeUI() {
-        final String time = PersistData.getAlarmDateTime();
+        final String time = UplifterData.getInstance().getAlarmDateTime();
         final int indexOfColon = time.indexOf(':');
         final int hour = Integer.parseInt(time.substring(0, indexOfColon));
         final String timeString = (hour == 0 ? 12 : (hour > 12 ? hour -12 : hour)) + time.substring(indexOfColon) +
@@ -62,11 +63,10 @@ public class SettingsScreen extends BaseOnboardingScreen {
         ((Button) findViewById(R.id.onboard_notification_times)).setText(timeString);
     }
 
-    public static class TimePickerFragment extends DialogFragment implements
-            TimePickerDialog.OnTimeSetListener {
+    public static class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
         @Override
         public Dialog onCreateDialog(final Bundle savedInstanceState) {
-            final String time = PersistData.getAlarmDateTime();
+            final String time = UplifterData.getInstance().getAlarmDateTime();
             final int indexOfColon = time.indexOf(':');
             final int hour = Integer.parseInt(time.substring(0, indexOfColon));
             final int minute = Integer.parseInt(time.substring(indexOfColon + 1));
@@ -76,8 +76,9 @@ public class SettingsScreen extends BaseOnboardingScreen {
         }
 
         public void onTimeSet(final TimePicker view, final int hourOfDay, final int minute) {
-            PersistData.setAlarmDateTime(hourOfDay + COLON + minute);
-            ((SettingsScreen) getActivity()).setTimeUI();
+            final SettingsScreen s = (SettingsScreen) getActivity();
+            UplifterData.getInstance().setAlarmDateTime(s, hourOfDay + COLON + minute);
+            s.setTimeUI();
         }
     }
 }

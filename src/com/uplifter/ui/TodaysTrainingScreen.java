@@ -16,7 +16,7 @@ public class TodaysTrainingScreen extends UplifterActivity {
     @Override
     public void onCreate(final Bundle icicle) {
         super.onCreate(icicle);
-        PersistData.setAlreadyOnboarded(true);
+        UplifterData.getInstance().setAlreadyOnboarded(true);
         setContentView(R.layout.todays_training_screen);
         final TrainingModel[] training = UplifterData.getInstance().getTrainingForToday(this);
         for(int i = 0, ii = training.length; i < ii; ++i) {

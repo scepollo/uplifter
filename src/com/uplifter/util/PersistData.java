@@ -37,7 +37,7 @@ public class PersistData {
     private static final Map<String, DailyAnswerModel> _trainingData = new HashMap<String, DailyAnswerModel>();
     private static final Map<String, DailyMoodModel> _moodData = new HashMap<String, DailyMoodModel>();
 
-    public static final void init(final Activity activity) {
+    /*package*/ static final void init(final Activity activity) {
         if(!_init) {
             _init = true;
             final SharedPreferences settings = activity.getSharedPreferences(UPLIFTER_PREFS, 0);
@@ -96,40 +96,40 @@ public class PersistData {
         return intArray;
     }
 
-    public static final boolean isAlreadyOnboarded() {
+    /*package*/ static final boolean isAlreadyOnboarded() {
         return _alreadyOnboarded;
     }
 
-    public static final void setAlreadyOnboarded(final boolean alreadyOnboarded) {
+    /*package*/ static final void setAlreadyOnboarded(final boolean alreadyOnboarded) {
         _alreadyOnboarded = alreadyOnboarded;
         writePersistBoolean(ALREADY_ONBOARDED_KEY, alreadyOnboarded);
     }
 
-    public static final void setAlarmDateTime(final String alarmDateTime) {
+    /*package*/ static final void setAlarmDateTime(final String alarmDateTime) {
         _alarmDateTime = alarmDateTime;
         writePersistString(ALARM_DATE_TIME_KEY, alarmDateTime);
     }
 
-    public static final String getAlarmDateTime() {
+    /*package*/ static final String getAlarmDateTime() {
         return _alarmDateTime;
     }
 
-    public static final void setNotifications(final boolean notifications) {
+    /*package*/ static final void setNotifications(final boolean notifications) {
         _notifications = notifications;
         writePersistBoolean(NOTIFICATIONS_KEY, notifications);
     }
 
-    public static final boolean getNotifications() {
+    /*package*/ static final boolean getNotifications() {
         return _notifications;
     }
 
-    public static final void setYesterdaysQuestions(final int [] yesterdaysQuestions) {
+    /*package*/ static final void setYesterdaysQuestions(final int [] yesterdaysQuestions) {
         _yesterdaysQuestions = yesterdaysQuestions;
         writePersistString(YESTERDAYS_QUESTIONS_KEY,
             "" + yesterdaysQuestions[0] + ',' + yesterdaysQuestions[1] + ',' + yesterdaysQuestions[2]);
     }
 
-    public static final int [] getYesterdaysTrainingIndex() {
+    /*package*/ static final int [] getYesterdaysTrainingIndex() {
         return _yesterdaysQuestions;
     }
 
@@ -143,11 +143,11 @@ public class PersistData {
         _editor.commit();
     }
 
-    public static final Map<String, DailyAnswerModel> getTrainingData() {
+    /*package*/ static final Map<String, DailyAnswerModel> getTrainingData() {
         return _trainingData;
     }
 
-    public static void setTrainingData(final int [] todaysTrainingIndex, final DailyAnswerModel training) {
+    /*package*/ static void setTrainingData(final int [] todaysTrainingIndex, final DailyAnswerModel training) {
         _trainingData.put(training.getDate(), training);
         setYesterdaysQuestions(todaysTrainingIndex);
         final JSONObject json = new JSONObject();
@@ -164,7 +164,7 @@ public class PersistData {
         writePersistString(DAILY_ANSWERS_KEY, json.toString());
     }
 
-    public static void setMoodData(final DailyMoodModel mood) {
+    /*package*/ static void setMoodData(final DailyMoodModel mood) {
         _moodData.put(mood.getDate(), mood);
         final JSONObject json = new JSONObject();
         final JSONArray array = new JSONArray();

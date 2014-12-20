@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Random;
 
+import android.app.Activity;
 import android.content.Context;
 
 import com.uplifter.model.AnswerModel;
@@ -181,5 +182,39 @@ public class UplifterData {
 
     public void logMood(int mood) {
         PersistData.setMoodData(new DailyMoodModel(mood));
+    }
+
+    public void setAlarmDateTime(final Context context, final String dateTime) {
+        PersistData.setAlarmDateTime(dateTime);
+        if(PersistData.getNotifications()) {
+            UplifterUtil.setNotification(context);
+        }
+    }
+
+    public void setNotifications(final Context context, final boolean checked) {
+        PersistData.setNotifications(checked);
+        if(checked) {
+            UplifterUtil.setNotification(context);
+        }
+    }
+
+    public String getAlarmDateTime() {
+        return PersistData.getAlarmDateTime();
+    }
+
+    public boolean getNotifications() {
+        return PersistData.getNotifications();
+    }
+
+    public void init(final Activity activity) {
+        PersistData.init(activity);
+    }
+
+    public boolean isAlreadyOnboarded() {
+        return PersistData.isAlreadyOnboarded();
+    }
+
+    public void setAlreadyOnboarded(final boolean b) {
+        PersistData.setAlreadyOnboarded(b);
     }
 }

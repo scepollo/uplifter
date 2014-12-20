@@ -8,6 +8,8 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="21" />
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application android:uiOptions="splitActionBarWhenNarrow"
         android:allowBackup="true"
         android:icon="@drawable/appicon"
@@ -53,6 +55,11 @@
         </activity>
         <activity android:name=".ui.QuoteScreen" >
         </activity>
+
+        <service android:name=".UplifterAlarmService"
+           android:enabled="true" />
+
+        <receiver android:name=".UplifterReceiver"/>
     </application>
 
 </manifest>
