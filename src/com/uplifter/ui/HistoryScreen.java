@@ -26,7 +26,7 @@ public class HistoryScreen extends UplifterActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_screen);
-        final LinearLayout view = (LinearLayout) findViewById(R.id.list_screen);
+        final LinearLayout view = (LinearLayout) findViewById(R.id.list);
         final Resources res = getResources();
         ((TextView) findViewById(R.id.title)).setText(res.getString(R.string.history));
         final DailyAnswerModel [] dailyAnswers = UplifterData.getInstance().getTrainingHistory();
