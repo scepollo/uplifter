@@ -5,6 +5,6 @@ import java.util.Date;
 
 public class UplifterUtil {
     public static final String getTodaysDateString() {
-        return DateFormat.getDateInstance(DateFormat.SHORT).format(new Date());
+        return DateFormat.getDateInstance(DateFormat.LONG).format(new Date());
     }
 }

@@ -20,10 +20,11 @@ public class TipsScreen extends UplifterActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tips_screen);
-        final LinearLayout view = (LinearLayout) findViewById(R.id.tips_screen);
-        final TipModel [] tips = UplifterData.getInstance().getTips(this);
+        setContentView(R.layout.list_screen);
+        final LinearLayout view = (LinearLayout) findViewById(R.id.list_screen);
         final Resources res = getResources();
+        ((TextView) findViewById(R.id.title)).setText(res.getString(R.string.happiness_tips));
+        final TipModel [] tips = UplifterData.getInstance().getTips(this);
 
         for(int i = 0, ii = tips.length; i < ii; ++i) {
             final LinearLayout l = new LinearLayout(this);

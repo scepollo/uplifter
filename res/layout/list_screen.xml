@@ -4,7 +4,7 @@
   android:layout_height="fill_parent"
   >
   <LinearLayout
-    android:id="@+id/tips_screen"
+    android:id="@+id/list_screen"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -16,6 +16,6 @@
       android:gravity="center"
       android:textSize="18sp"
       android:textColor="@color/grey"
-      android:text="@string/happiness_tips"/>
+      android:text=""/>
   </LinearLayout>
 </ScrollView>

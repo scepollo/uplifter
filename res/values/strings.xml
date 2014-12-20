@@ -40,5 +40,6 @@
     <string name="mood3">So-So</string>
     <string name="mood4">Happy</string>
     <string name="mood5">Very Happy</string>
+    <string name="history">HISTORY</string>
 
 </resources>

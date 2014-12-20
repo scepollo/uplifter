@@ -7,14 +7,22 @@ import org.json.JSONObject;
 public class DailyAnswerModel extends BaseModel {
     private static final String ANSWER_MODELS_KEY = "answerModels";
     private static final String DATE_KEY = "date";
+    private static final String DATE_MILLIS_KEY = "dateMillis";
 
     private String _date;
+    private long _dateInMillis;
     private AnswerModel [] _answerModels;
 
     public DailyAnswerModel(final JSONObject json) {
         if(json.has(DATE_KEY)) {
             try {
                 _date = json.getString(DATE_KEY);
+            } catch (final JSONException e) {
+            }
+        }
+        if(json.has(DATE_MILLIS_KEY)) {
+            try {
+                _dateInMillis = json.getLong(DATE_MILLIS_KEY);
             } catch (final JSONException e) {
             }
         }
@@ -31,13 +39,18 @@ public class DailyAnswerModel extends BaseModel {
         }
     }
 
-    public DailyAnswerModel(final String date, final AnswerModel [] answerModels) {
+    public DailyAnswerModel(final String date, final long dateInMillis, final AnswerModel [] answerModels) {
         _date = date;
+        _dateInMillis = dateInMillis;
         _answerModels = answerModels;
     }
 
     public final String getDate() {
         return _date;
+    }
+
+    public final long getDateInMillis() {
+        return _dateInMillis;
     }
 
     public final AnswerModel [] getAnswers() {
@@ -46,7 +59,8 @@ public class DailyAnswerModel extends BaseModel {
 
     public final String toString() {
         final StringBuffer buff = new StringBuffer();
-        buff.append("DailyAnswerModel\nDate: " + _date);
+        buff.append("DailyAnswerModel\nDate: ").append(_date);
+        buff.append("\nDateInMillis: ").append(_dateInMillis);
         if (_answerModels != null) {
             for (final AnswerModel answer : _answerModels) {
                 buff.append('\n').append('\t').append(answer);
@@ -59,6 +73,10 @@ public class DailyAnswerModel extends BaseModel {
         final JSONObject json = new JSONObject();
         try {
             json.put(DATE_KEY, _date);
+        } catch (final JSONException e) {
+        }
+        try {
+            json.put(DATE_MILLIS_KEY, _dateInMillis);
         } catch (final JSONException e) {
         }
         final JSONArray array = new JSONArray();

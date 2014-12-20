@@ -32,7 +32,7 @@ public class PersistData {
 
     private static boolean _init;
     private static Editor _editor;
-    private static Map<String, DailyAnswerModel> _trainingData = new HashMap<String, DailyAnswerModel>();
+    private static final Map<String, DailyAnswerModel> _trainingData = new HashMap<String, DailyAnswerModel>();
 
     public static final void init(final Activity activity) {
         if(!_init) {
@@ -134,13 +134,13 @@ public class PersistData {
         return _trainingData;
     }
 
-    public static void setTrainingData(final int [] todaysTrainingIndex, final Map<String, DailyAnswerModel> trainingData) {
-        _trainingData = trainingData;
+    public static void setTrainingData(final int [] todaysTrainingIndex, final DailyAnswerModel training) {
+        _trainingData.put(training.getDate(), training);
         setYesterdaysQuestions(todaysTrainingIndex);
         final JSONObject json = new JSONObject();
         final JSONArray array = new JSONArray();
 
-        for(final DailyAnswerModel model: trainingData.values()) {
+        for(final DailyAnswerModel model: _trainingData.values()) {
             array.put(model.getJSONObject());
         }
         try {

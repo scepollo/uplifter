@@ -20,7 +20,7 @@ public class TrainingScreen extends Activity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_screen);
-        enableLayouts(UplifterData.getInstance().getTodaysTraining(this)[ScreenController.getInstance().getCurrentTrainingIndex()]);
+        enableLayouts(UplifterData.getInstance().getTrainingForToday(this)[ScreenController.getInstance().getCurrentTrainingIndex()]);
     }
 
     private void enableLayouts(final TrainingModel trainingModel) {
@@ -37,7 +37,7 @@ public class TrainingScreen extends Activity {
         } else if(trainingModel.getQuestions() != null) {
             populateQuestionsLayout(trainingModel, ll);
         }
-        final String [] data = UplifterData.getInstance().getTrainingData();
+        final String [] data = UplifterData.getInstance().getCurrentScreenTrainingData();
         if(data != null) {
             for(int i = 0; i < data.length; ++i) {
                 _editFields[i].setText(data[i]);

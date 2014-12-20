@@ -31,7 +31,6 @@ public class UplifterData {
     private TrainingModel [] _todaysTraining;
     private int [] _todaysTrainingIndex;
     private boolean _trainingAlreadyDone;
-    private final Map<String, DailyAnswerModel> _oldTrainingDataMap = new HashMap<String, DailyAnswerModel>();
     private final AnswerModel [] _trainingData = new AnswerModel [3];
     private QuoteModel [] _quotes;
     private TipModel [] _tips;
@@ -54,7 +53,11 @@ public class UplifterData {
         return _training;
     }
 
-    public TrainingModel [] getTodaysTraining(final Context context) {
+    public Map<Integer, TrainingModel> getTraining(final Context context) {
+        return loadTraining(context);
+    }
+
+    public TrainingModel [] getTrainingForToday(final Context context) {
         if(_todaysTraining == null) {
             _todaysTraining = new TrainingModel [3];
             _todaysTrainingIndex = new int [3];
@@ -154,16 +157,20 @@ public class UplifterData {
 
     public void setTrainingAlreadyDone() {
         _trainingAlreadyDone = true;
-        _oldTrainingDataMap.put(UplifterUtil.getTodaysDateString(), new DailyAnswerModel(UplifterUtil.getTodaysDateString(), _trainingData));
-        PersistData.setTrainingData(_todaysTrainingIndex, _oldTrainingDataMap);
+        PersistData.setTrainingData(_todaysTrainingIndex, new DailyAnswerModel(UplifterUtil.getTodaysDateString(),
+            System.currentTimeMillis(), _trainingData));
     }
 
-    public String [] getTrainingData() {
+    public String [] getCurrentScreenTrainingData() {
         final int index = ScreenController.getInstance().getCurrentTrainingIndex();
         if(_trainingData[index] == null) {
             return null;
         }
         return _trainingData[index].getAnswers();
+    }
+
+    public DailyAnswerModel[] getTrainingHistory() {
+        return PersistData.getTrainingData().values().toArray(new DailyAnswerModel [0]);
     }
 
     public void setTrainingData(final int index, final String [] data) {
