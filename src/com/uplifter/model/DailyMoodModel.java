@@ -3,7 +3,7 @@ package com.uplifter.model;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.uplifter.ui.UplifterUtil;
+import com.uplifter.util.UplifterUtil;
 
 public class DailyMoodModel extends BaseModel {
     private static final String MOOD_KEY = "mood";

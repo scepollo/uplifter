@@ -4,7 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.uplifter.ui.UplifterUtil;
+import com.uplifter.util.UplifterUtil;
 
 public class DailyAnswerModel extends BaseModel implements Comparable {
     private static final String ANSWER_MODELS_KEY = "answerModels";
