@@ -67,7 +67,7 @@ public class HistoryScreen extends UplifterActivity {
         date.setText(dateString);
         date.setTextSize(12);
         date.setTextColor(getResources().getColor(R.color.white));
-        date.setPadding(0, 30, 0, 0);
+        date.setPadding(0, 20, 0, 0);
         date.setTypeface(Typeface.DEFAULT);
         date.setGravity(Gravity.CENTER);
         l.addView(date);

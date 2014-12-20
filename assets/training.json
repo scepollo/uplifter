@@ -15,7 +15,7 @@
          "index" : 2,
          "multipart":{
             "question":"What are three things that you are grateful for?",
-            "number":"3"
+            "number":3
          }
       },
       {
@@ -33,7 +33,7 @@
          "subtitle":"Remembering and basking in your accomplishments help build self-esteem",
          "index" : 4,
          "questions":[
-            "What is an accomplishment that you’ve made recently that you are proud of",
+            "What is an accomplishment that you’ve made recently that you are proud of?",
             "What makes you proud about it?"
          ]
       },
@@ -61,7 +61,7 @@
          "index" : 7,
          "multipart":{
             "question":"What are 3 Good things that have happened to you recently?",
-            "number":"3"
+            "number":3
          }
       },
       {
@@ -69,7 +69,7 @@
          "subtitle":"Thinking compassionately about others has been shown to help people feel happier",
          "index" : 8,
          "questions":[
-            "Think of your loved ones. Now write 3 blessings to them (e.g. I wish you happiness, I wish you love, I wish you joy)",
+            "Think of your loved ones. Now write 3 blessings to them. (e.g. I wish you happiness, I wish you love, I wish you joy)",
             "Now think of some people who are your acquaintances. Now write 3 blessings to them.",
             "Finally, think of some people who you currently hold a grudge against. Now write 3 blessings to them."
          ]
