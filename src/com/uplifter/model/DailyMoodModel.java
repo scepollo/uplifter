@@ -55,7 +55,7 @@ public class DailyMoodModel extends BaseModel {
 
     public final String toString() {
         final StringBuffer buff = new StringBuffer();
-        buff.append("DailyAnswerModel\nDate: ").append(_date);
+        buff.append("DailyMoodModel\nDate: ").append(_date);
         buff.append("\nDateInMillis: ").append(_dateInMillis);
         buff.append("\nMood: ").append(_mood);
         return buff.toString();
