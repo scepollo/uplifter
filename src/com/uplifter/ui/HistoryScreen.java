@@ -1,5 +1,6 @@
 package com.uplifter.ui;
 
+import java.util.Arrays;
 import java.util.Map;
 
 import android.content.res.Resources;
@@ -29,8 +30,8 @@ public class HistoryScreen extends UplifterActivity {
         final LinearLayout view = (LinearLayout) findViewById(R.id.list);
         final Resources res = getResources();
         ((TextView) findViewById(R.id.title)).setText(res.getString(R.string.history));
-        // TODO:  Sort the daily answers
         final DailyAnswerModel [] dailyAnswers = UplifterData.getInstance().getTrainingHistory();
+        Arrays.sort(dailyAnswers);
         final Map<Integer, TrainingModel> training = UplifterData.getInstance().getTraining(this);
 
         for(int i = 0, ii = dailyAnswers.length; i < ii; ++i) {
