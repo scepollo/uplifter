@@ -15,6 +15,7 @@ import com.uplifter.util.UplifterData;
 
 public class TipsScreen extends UplifterActivity {
     private static final int [] COLOURS = {R.color.green, R.color.purple, R.color.pink, R.color.yellow};
+    private static final int SIDE_PADDING = 125;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -36,9 +37,9 @@ public class TipsScreen extends UplifterActivity {
                     LayoutParams.WRAP_CONTENT,
                     LayoutParams.WRAP_CONTENT, 1f));
             title.setText(tips[i].getTitle());
-            title.setTextSize(16);
+            title.setTextSize(20);
             title.setTextColor(res.getColor(R.color.white));
-            title.setPadding(50, 50, 50, 10);
+            title.setPadding(SIDE_PADDING, 50, SIDE_PADDING, 10);
             title.setTypeface(Typeface.DEFAULT_BOLD);
             title.setGravity(Gravity.LEFT | Gravity.CENTER);
             l.addView(title);
@@ -48,9 +49,9 @@ public class TipsScreen extends UplifterActivity {
                     LayoutParams.WRAP_CONTENT,
                     LayoutParams.WRAP_CONTENT, 1f));
             body.setText(tips[i].getTip());
-            body.setTextSize(12);
+            body.setTextSize(16);
             body.setTextColor(res.getColor(R.color.white));
-            body.setPadding(50, 10, 50, 50);
+            body.setPadding(SIDE_PADDING, 10, SIDE_PADDING, 65);
             body.setTypeface(Typeface.DEFAULT);
             body.setGravity(Gravity.LEFT | Gravity.CENTER);
             l.addView(body);
