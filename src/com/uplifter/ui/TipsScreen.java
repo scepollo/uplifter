@@ -33,7 +33,7 @@ public class TipsScreen extends UplifterActivity {
             l.setLayoutParams(linearParams);
             l.setBackgroundColor(res.getColor(COLOURS[i % COLOURS.length]));
 
-            final TextView title = new TextView(this);
+            final TextView title = new UplifterTextView(this);
             title.setLayoutParams(new TableLayout.LayoutParams(
                     LayoutParams.WRAP_CONTENT,
                     LayoutParams.WRAP_CONTENT, 1f));
@@ -45,7 +45,7 @@ public class TipsScreen extends UplifterActivity {
             title.setGravity(Gravity.LEFT | Gravity.CENTER);
             l.addView(title);
 
-            final TextView body = new TextView(this);
+            final TextView body = new UplifterTextView(this);
             body.setLayoutParams(new TableLayout.LayoutParams(
                     LayoutParams.WRAP_CONTENT,
                     LayoutParams.WRAP_CONTENT, 1f));

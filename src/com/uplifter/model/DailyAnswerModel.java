@@ -6,7 +6,7 @@ import org.json.JSONObject;
 
 import com.uplifter.util.UplifterUtil;
 
-public class DailyAnswerModel extends BaseModel implements Comparable {
+public class DailyAnswerModel extends DateComparableModel {
     private static final String ANSWER_MODELS_KEY = "answerModels";
     private static final String DATE_KEY = "date";
     private static final String DATE_MILLIS_KEY = "dateMillis";
@@ -90,18 +90,5 @@ public class DailyAnswerModel extends BaseModel implements Comparable {
         } catch (final JSONException e) {
         }
         return json;
-    }
-
-    @Override
-    public int compareTo(final Object o) {
-        if(o instanceof DailyAnswerModel) {
-            final long otherDateInMillis = ((DailyAnswerModel) o).getDateInMillis();
-            if(_dateInMillis > otherDateInMillis) {
-                return -1;
-            } else if(_dateInMillis < otherDateInMillis) {
-                return 1;
-            }
-        }
-        return 0;
     }
 }

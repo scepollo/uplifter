@@ -62,7 +62,7 @@ public class HistoryScreen extends UplifterActivity {
     }
 
     private void populateDate(final String dateString, final LinearLayout l) {
-        final TextView date = new TextView(this);
+        final TextView date = new UplifterTextView(this);
         date.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         date.setText(dateString);
         date.setTextSize(12);
@@ -102,7 +102,7 @@ public class HistoryScreen extends UplifterActivity {
     }
 
     private TextView getTextView(final String s, final LinearLayout l) {
-        final TextView text = new TextView(this);
+        final TextView text = new UplifterTextView(this);
         text.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         text.setText(s);
         text.setTextSize(12);

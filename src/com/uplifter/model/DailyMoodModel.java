@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 import com.uplifter.util.UplifterUtil;
 
-public class DailyMoodModel extends BaseModel {
+public class DailyMoodModel extends DateComparableModel {
     private static final String MOOD_KEY = "mood";
     private static final String DATE_KEY = "date";
     private static final String DATE_MILLIS_KEY = "dateMillis";
