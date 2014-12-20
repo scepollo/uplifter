@@ -1,21 +1,20 @@
 package com.uplifter.model;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.uplifter.ui.UplifterUtil;
 
-public class DailyAnswerModel extends BaseModel {
-    private static final String ANSWER_MODELS_KEY = "answerModels";
+public class DailyMoodModel extends BaseModel {
+    private static final String MOOD_KEY = "mood";
     private static final String DATE_KEY = "date";
     private static final String DATE_MILLIS_KEY = "dateMillis";
 
     private String _date;
     private long _dateInMillis;
-    private AnswerModel [] _answerModels;
+    private int _mood;
 
-    public DailyAnswerModel(final JSONObject json) {
+    public DailyMoodModel(final JSONObject json) {
         if(json.has(DATE_KEY)) {
             try {
                 _date = json.getString(DATE_KEY);
@@ -28,23 +27,18 @@ public class DailyAnswerModel extends BaseModel {
             } catch (final JSONException e) {
             }
         }
-        if(json.has(ANSWER_MODELS_KEY)) {
+        if(json.has(MOOD_KEY)) {
             try {
-                final JSONArray answerJSON = json.getJSONArray(ANSWER_MODELS_KEY);
-                _answerModels = new AnswerModel [answerJSON.length()];
-                for(int i = 0; i < _answerModels.length; ++i) {
-                    _answerModels[i] = new AnswerModel(answerJSON.getJSONObject(i));
-                }
+                _mood = json.getInt(MOOD_KEY);
             } catch (final JSONException e) {
-                _answerModels = new AnswerModel [0];
             }
         }
     }
 
-    public DailyAnswerModel(final AnswerModel [] answerModels) {
+    public DailyMoodModel(final int mood) {
         _date = UplifterUtil.getTodaysDateString();
         _dateInMillis = System.currentTimeMillis();
-        _answerModels = answerModels;
+        _mood = mood;
     }
 
     public final String getDate() {
@@ -55,19 +49,15 @@ public class DailyAnswerModel extends BaseModel {
         return _dateInMillis;
     }
 
-    public final AnswerModel [] getAnswers() {
-        return _answerModels;
+    public final int getMood() {
+        return _mood;
     }
 
     public final String toString() {
         final StringBuffer buff = new StringBuffer();
         buff.append("DailyAnswerModel\nDate: ").append(_date);
         buff.append("\nDateInMillis: ").append(_dateInMillis);
-        if (_answerModels != null) {
-            for (final AnswerModel answer : _answerModels) {
-                buff.append('\n').append('\t').append(answer);
-            }
-        }
+        buff.append("\nMood: ").append(_mood);
         return buff.toString();
     }
 
@@ -81,12 +71,8 @@ public class DailyAnswerModel extends BaseModel {
             json.put(DATE_MILLIS_KEY, _dateInMillis);
         } catch (final JSONException e) {
         }
-        final JSONArray array = new JSONArray();
-        for(final AnswerModel answerModel: _answerModels) {
-            array.put(answerModel.getJSONObject());
-        }
         try {
-            json.put(ANSWER_MODELS_KEY, array);
+            json.put(MOOD_KEY, _mood);
         } catch (final JSONException e) {
         }
         return json;

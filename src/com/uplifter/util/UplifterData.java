@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
@@ -12,12 +11,12 @@ import android.content.Context;
 
 import com.uplifter.model.AnswerModel;
 import com.uplifter.model.DailyAnswerModel;
+import com.uplifter.model.DailyMoodModel;
 import com.uplifter.model.Parser;
 import com.uplifter.model.QuoteModel;
 import com.uplifter.model.TipModel;
 import com.uplifter.model.TrainingModel;
 import com.uplifter.ui.ScreenController;
-import com.uplifter.ui.UplifterUtil;
 
 public class UplifterData {
     private static final String UTF_8 = "UTF-8";
@@ -157,8 +156,7 @@ public class UplifterData {
 
     public void setTrainingAlreadyDone() {
         _trainingAlreadyDone = true;
-        PersistData.setTrainingData(_todaysTrainingIndex, new DailyAnswerModel(UplifterUtil.getTodaysDateString(),
-            System.currentTimeMillis(), _trainingData));
+        PersistData.setTrainingData(_todaysTrainingIndex, new DailyAnswerModel(_trainingData));
     }
 
     public String [] getCurrentScreenTrainingData() {
@@ -179,5 +177,9 @@ public class UplifterData {
         } else {
             _trainingData[index].setAnswers(data);
         }
+    }
+
+    public void logMood(int mood) {
+        PersistData.setMoodData(new DailyMoodModel(mood));
     }
 }

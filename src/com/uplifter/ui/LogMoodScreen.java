@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.uplifter.R;
+import com.uplifter.util.UplifterData;
 
 public class LogMoodScreen extends UplifterActivity {
     @Override
@@ -13,7 +14,8 @@ public class LogMoodScreen extends UplifterActivity {
     }
 
     private final void logMood(final int mood) {
-        // TODO:  log the mood
+        UplifterData.getInstance().logMood(mood);
+        // TODO:  Figure out to where to transition
     }
 
     public final void logMood(final View view) {

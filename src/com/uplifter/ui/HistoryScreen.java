@@ -29,6 +29,7 @@ public class HistoryScreen extends UplifterActivity {
         final LinearLayout view = (LinearLayout) findViewById(R.id.list);
         final Resources res = getResources();
         ((TextView) findViewById(R.id.title)).setText(res.getString(R.string.history));
+        // TODO:  Sort the daily answers
         final DailyAnswerModel [] dailyAnswers = UplifterData.getInstance().getTrainingHistory();
         final Map<Integer, TrainingModel> training = UplifterData.getInstance().getTraining(this);
 

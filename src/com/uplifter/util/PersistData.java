@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 import com.uplifter.model.DailyAnswerModel;
+import com.uplifter.model.DailyMoodModel;
 import com.uplifter.ui.UplifterUtil;
 
 public class PersistData {
@@ -24,6 +25,8 @@ public class PersistData {
     private static final String YESTERDAYS_QUESTIONS_KEY = "YESTERDAYS_QUESTIONS_KEY";
     private static final String DAILY_ANSWERS_KEY = "DAILY_ANSWERS_KEY";
     private static final String DAILY_ANSWERS_JSON_KEY = "dailyAnswers";
+    private static final String DAILY_MOOD_KEY = "DAILY_MOOD_KEY";
+    private static final String DAILY_MOOD_JSON_KEY = "dailyMood";
 
     private static String _alarmDateTime;
     private static boolean _notifications;
@@ -33,6 +36,7 @@ public class PersistData {
     private static boolean _init;
     private static Editor _editor;
     private static final Map<String, DailyAnswerModel> _trainingData = new HashMap<String, DailyAnswerModel>();
+    private static final Map<String, DailyMoodModel> _moodData = new HashMap<String, DailyMoodModel>();
 
     public static final void init(final Activity activity) {
         if(!_init) {
@@ -67,6 +71,16 @@ public class PersistData {
                 } catch (final JSONException e) {
                 }
                 UplifterData.getInstance().setTrainingAlreadyDone(_trainingData.containsKey(UplifterUtil.getTodaysDateString()));
+            }
+            if(map.containsKey(DAILY_MOOD_KEY)) {
+                try {
+                    final JSONArray array = new JSONObject((String) map.get(DAILY_MOOD_KEY)).getJSONArray(DAILY_MOOD_JSON_KEY);
+                    for(int i = 0, ii = array.length(); i < ii; ++i) {
+                        final DailyMoodModel model = new DailyMoodModel(array.getJSONObject(i));
+                        _moodData.put(model.getDate(), model);
+                    }
+                } catch (final JSONException e) {
+                }
             }
         }
     }
@@ -149,5 +163,21 @@ public class PersistData {
         }
 
         writePersistString(DAILY_ANSWERS_KEY, json.toString());
+    }
+
+    public static void setMoodData(final DailyMoodModel mood) {
+        _moodData.put(mood.getDate(), mood);
+        final JSONObject json = new JSONObject();
+        final JSONArray array = new JSONArray();
+
+        for(final DailyMoodModel model: _moodData.values()) {
+            array.put(model.getJSONObject());
+        }
+        try {
+            json.put(DAILY_MOOD_JSON_KEY, array);
+        } catch (final JSONException e) {
+        }
+
+        writePersistString(DAILY_MOOD_KEY, json.toString());
     }
 }
