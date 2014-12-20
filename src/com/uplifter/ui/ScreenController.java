@@ -71,10 +71,13 @@ public class ScreenController {
     public final boolean switchActionBarScreen(final Activity current, final int id) {
         if(ACTIVITY_MAP.containsKey(id)) {
             Class clazz = ACTIVITY_MAP.get(id);
+            final Class currentClazz = current.getClass();
             if(current.getClass() != clazz) {
                 if(clazz == TodaysTrainingScreen.class && UplifterData.getInstance().trainingAlreadyDone()) {
-                    clazz = PositivitySuperstarScreen.class;
-//                    clazz = QuoteScreen.class;
+                    if(currentClazz == QuoteScreen.class) {
+                        return false;
+                    }
+                    clazz = QuoteScreen.class;
                 }
                 switchScreen(current, clazz);
                 return true;
