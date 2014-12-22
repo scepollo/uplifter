@@ -1,10 +1,12 @@
 package com.uplifter.ui;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,13 +16,23 @@ import com.uplifter.model.TrainingModel;
 import com.uplifter.util.UplifterData;
 
 public class TrainingScreen extends Activity {
+    private static final int [] ID = { R.id.dot1, R.id.dot2, R.id.dot3 };
+
     private EditText[] _editFields;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final ActionBar a = getActionBar();
+        a.setDisplayShowHomeEnabled(false);
+        a.setDisplayShowTitleEnabled(false);
+        a.setDisplayUseLogoEnabled(false);
+
         setContentView(R.layout.training_screen);
-        enableLayouts(UplifterData.getInstance().getTrainingForToday(this)[ScreenController.getInstance().getCurrentTrainingIndex()]);
+        final int index = ScreenController.getInstance().getCurrentTrainingIndex();
+        ((ImageView) findViewById(ID[index])).setBackgroundResource(R.drawable.darkgrey_dot);
+        enableLayouts(UplifterData.getInstance().getTrainingForToday(this)[index]);
     }
 
     private void enableLayouts(final TrainingModel trainingModel) {

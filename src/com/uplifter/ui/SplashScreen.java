@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import com.uplifter.R;
 import com.uplifter.util.FontManager;
-import com.uplifter.util.PersistData;
 import com.uplifter.util.UplifterData;
 
 public class SplashScreen extends Activity {
@@ -18,7 +17,7 @@ public class SplashScreen extends Activity {
         super.onCreate(icicle);
         UplifterData.getInstance().init(this);
         setContentView(R.layout.splash_screen);
-        ((TextView) findViewById(R.id.splash_title)).setTypeface(FontManager.getTypeface(this, FontManager.NAUTILUS_FONT));
+        ((TextView) findViewById(R.id.splash_textview)).setTypeface(FontManager.getTypeface(this, FontManager.NAUTILUS_FONT));
 
         new Handler().postDelayed(new Runnable() {
             @Override
