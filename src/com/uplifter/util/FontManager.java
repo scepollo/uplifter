@@ -5,11 +5,11 @@ import android.graphics.Typeface;
 
 public class FontManager {
     public static final int NAUTILUS_FONT = 0;
-    public static final int NUNITO_LIGHT_FONT = 1;
+    public static final int DEFAULT_FONT = 1;
 
     private static final String [] FONT_PATH = {
         "fonts/Nautilus.otf",
-        "fonts/Nunito-Light.ttf"
+        "fonts/AvenirLTStd-Book.otf"
     };
     private static final Typeface [] FONTS = new Typeface[FONT_PATH.length];
 

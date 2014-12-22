@@ -95,4 +95,8 @@ public class ScreenController {
     public final void loadQuoteScreen(final Activity current) {
         switchScreen(current, QuoteScreen.class);
     }
+
+    public void loadMoodHistoryScreen(final Activity current) {
+        switchScreen(current, MoodHistoryScreen.class);
+    }
 }
