@@ -10,7 +10,7 @@
     android:layout_height="40dp"
     android:layout_gravity="center"
     android:gravity="center"
-    android:textColor="@color/grey"
+    android:textColor="@color/grey_title"
     android:textSize="18sp"
     android:text="@string/log_your_mood"/>
   <com.uplifter.ui.UplifterTextView android:id="@+id/mood5"

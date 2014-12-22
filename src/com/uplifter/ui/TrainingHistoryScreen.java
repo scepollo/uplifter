@@ -19,7 +19,7 @@ import com.uplifter.model.MultipartModel;
 import com.uplifter.model.TrainingModel;
 import com.uplifter.util.UplifterData;
 
-public class HistoryScreen extends UplifterActivity {
+public class TrainingHistoryScreen extends UplifterActivity {
     private static final int [] COLOURS = {R.color.green, R.color.purple, R.color.pink, R.color.yellow};
     private static final int SIDE_PADDING = 75;
 
@@ -65,10 +65,10 @@ public class HistoryScreen extends UplifterActivity {
         final TextView date = new UplifterTextView(this);
         date.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         date.setText(dateString);
-        date.setTextSize(12);
+        date.setTextSize(16);
         date.setTextColor(getResources().getColor(R.color.white));
         date.setPadding(0, 20, 0, 0);
-        date.setTypeface(Typeface.DEFAULT);
+        date.setTypeface(Typeface.DEFAULT_BOLD);
         date.setGravity(Gravity.CENTER);
         l.addView(date);
     }
@@ -105,7 +105,7 @@ public class HistoryScreen extends UplifterActivity {
         final TextView text = new UplifterTextView(this);
         text.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         text.setText(s);
-        text.setTextSize(12);
+        text.setTextSize(16);
         text.setTextColor(getResources().getColor(R.color.white));
         text.setPadding(0, 3, 0, 0);
         text.setTypeface(Typeface.DEFAULT);

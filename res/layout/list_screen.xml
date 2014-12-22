@@ -11,7 +11,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:textSize="18sp"
-    android:textColor="@color/grey"
+    android:textColor="@color/grey_title"
     android:text=""/>
   <ScrollView
     android:layout_width="fill_parent"

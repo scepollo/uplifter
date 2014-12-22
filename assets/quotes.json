@@ -28,10 +28,6 @@
      "name":"Guillaume Apollinaire"
   },
   {
-     "quote":"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time",
-     "name":"Thomas Edison"
-  },
-  {
      "quote":"Happiness is when what you think, what you say, and what you do are in harmony",
      "name":"Mohandas Gandhi"
   },
@@ -52,16 +48,8 @@
      "name":"Eckhart Tolle"
   },
   {
-     "quote":"A truly compassionate attitude toward others does not change even if they behave negatively or hurt you",
-     "name":"Dalai Lama"
-  },
-  {
      "quote":"Happiness is an attitude. We either make ourselves miserable, or happy and strong",
      "name":"Francesca Reigler"
-  },
-  {
-     "quote":"Life is a gift, and it offers us the privilege, opportunity, and responsibility to give something back by becoming more",
-     "name":"Tony Robbins"
   },
   {
      "quote":"The temptation to quit will be greatest just before you are about to succeed",
@@ -76,10 +64,6 @@
      "name":"Leo Tolstoy"
   },
   {
-     "quote":"We are all here for some special reason. Stop being a prisoner of your past.  Become the architect of your future",
-     "name":"Robin Sharma"
-  },
-  {
      "quote":"No matter what the situation, remind yourself \"I have a choice.\"",
      "name":"Deepak Chopra"
   },
@@ -92,16 +76,8 @@
      "name":"John Maxwell"
   },
   {
-     "quote":"We are responsible for what we are, and whatever we wish ourselves to be, we have the power to make ourselves",
-     "name":"Swami Vivekananda"
-  },
-  {
      "quote":"The difference between stumbling blocks and stepping stones is how you use them",
      "name":"Unknown"
-  },
-  {
-     "quote":"The whole point of being alive is to evolve into the complete person you were intended to be",
-     "name":"Oprah Winfrey"
   },
   {
      "quote":"Life does not have to be perfect to be wonderful",
@@ -122,10 +98,6 @@
   {
      "quote":"Happiness, like unhappiness, is a proactive choice",
      "name":"Stephen Covey"
-  },
-  {
-     "quote":"Take pride that even though the rest of the world may disagree, you still believe it to be a beautiful place",
-     "name":"Kurt Vonnegut"
   },
   {
      "quote":"If you can change your mind, you can change your life",
@@ -164,14 +136,6 @@
      "name":"Joseph Campbell"
   },
   {
-     "quote":"The true secret of happiness lies in taking a genuine interest in all the details of daily life",
-     "name":"William Morris"
-  },
-  {
-     "quote":"A life spent making mistakes is not only more honourable, but more useful than a life spent doing nothing",
-     "name":"George Bernard Shaw"
-  },
-  {
      "quote":"Our life always expresses the result of our dominant thoughts",
      "name":"Soren Kierkegaard"
   },
@@ -192,16 +156,8 @@
      "name":"Stephen Covey"
   },
   {
-     "quote":"The best and most beautiful things in the world cannot be seen or even touched -- they must be felt with the heart.",
-     "name":"Helen Keller"
-  },
-  {
      "quote":"Character develops itself in the stream of life",
      "name":"Johann Wolfgang von Goethe"
-  },
-  {
-     "quote":"I can't change the direction of the wind, but I can adjust my sails to always reach  my destination",
-     "name":"Jimmy Dean"
   },
   {
      "quote":"Try to be a rainbow in someone's cloud",
@@ -212,20 +168,12 @@
      "name":"Theodore Roosevelt"
   },
   {
-     "quote":"Put your heart, mind, and soul into even your smallest acts. This is the secret of success.",
-     "name":"Swami Sivananda"
-  },
-  {
      "quote":"Change your thoughts and you can change the world",
      "name":"Norman Vincent Peale"
   },
   {
      "quote":"Don't judge each day by the harvest you reap, but by the seeds that you plant",
      "name":"Robert Louis Stevenson"
-  },
-  {
-     "quote":"Everyone here has the sense that right now is one of those moments when we are influencing the future",
-     "name":"Steve Jobs"
   },
   {
      "quote":"If opportunity doesn't knock, build a door",
@@ -258,10 +206,6 @@
   {
      "quote":"The secret of getting ahead is getting started",
      "name":"Mark Twain"
-  },
-  {
-     "quote":"The key is to keep company with people who uplift you, whose presence calls forth your best",
-     "name":"Epictetus"
   },
   {
      "quote":"If you can dream it, you can do it",

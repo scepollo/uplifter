@@ -1,5 +1,6 @@
 package com.uplifter.ui;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -20,7 +21,9 @@ public class TodaysTrainingScreen extends UplifterActivity {
         setContentView(R.layout.todays_training_screen);
         final TrainingModel[] training = UplifterData.getInstance().getTrainingForToday(this);
         for(int i = 0, ii = training.length; i < ii; ++i) {
-            ((TextView) findViewById(TITLE_ID[i])).setText(training[i].getTitle().toUpperCase());
+            final TextView textView = (TextView) findViewById(TITLE_ID[i]);
+            textView.setText(training[i].getTitle().toUpperCase());
+            textView.setTypeface(Typeface.DEFAULT_BOLD);
             ((TextView) findViewById(SUBTITLE_ID[i])).setText(training[i].getSubtitle());
         }
     }

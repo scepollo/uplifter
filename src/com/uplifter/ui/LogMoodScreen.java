@@ -15,7 +15,7 @@ public class LogMoodScreen extends UplifterActivity {
 
     private final void logMood(final int mood) {
         UplifterData.getInstance().logMood(mood);
-        // TODO:  Figure out to where to transition
+        ScreenController.getInstance().loadMoodHistoryScreen(this);
     }
 
     public final void logMood(final View view) {

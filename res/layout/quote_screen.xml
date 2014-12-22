@@ -10,12 +10,12 @@
   android:background="@drawable/quotebg"
   tools:context="com.uplifter.ui.QuoteScreen" >
   <com.uplifter.ui.UplifterTextView android:id="@+id/quote_text"
-    android:layout_width="250dp"
+    android:layout_width="225dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:gravity="center"
     android:paddingTop="60dp"
-    android:textSize="20sp"
+    android:textSize="23sp"
     android:textColor="@color/white"
     android:text="" />
   <com.uplifter.ui.UplifterTextView android:id="@+id/quote_author"
@@ -33,7 +33,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:gravity="center"
-    android:paddingTop="150dp"
+    android:paddingTop="140dp"
     android:textSize="12sp"
     android:textColor="@color/white"
     android:text="@string/come_back_tomorrow" />

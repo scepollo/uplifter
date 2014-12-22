@@ -9,7 +9,7 @@ import com.uplifter.util.UplifterData;
 
 public class QuoteScreen extends UplifterActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quote_screen);
         final QuoteModel quote = UplifterData.getInstance().getQuote(this);

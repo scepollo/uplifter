@@ -2,6 +2,7 @@ package com.uplifter.util;
 
 import java.text.DateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 
 import android.content.Context;
@@ -14,10 +15,11 @@ public class UplifterUtil {
     }
 
     public static final void setNotification(final Context context) {
-        return;
-//
-//        final Calendar calendar = Calendar.getInstance();
+
+        final Calendar calendar = Calendar.getInstance();
+        System.out.println("ALARM DATE-TIME: " + UplifterData.getInstance().getAlarmDateTime());
 //        calendar.setTime(new Date(UplifterData.getInstance().getAlarmDateTime()));
+        return;
 //
 //        final Intent myIntent = new Intent(context, UplifterReceiver.class);
 //        final PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, myIntent,0);

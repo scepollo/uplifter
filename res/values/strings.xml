@@ -11,12 +11,15 @@
     <string name="lets_go">Let\'s Go!</string>
     <string name="log_your_mood">LOG YOUR MOOD</string>
     <string name="log_your_mood_button">Log Your Mood</string>
+    <string name="mood_history">MOOD HISTORY</string>
     <string name="mood_tooltip">Mood</string>
     <string name="mood1">Very Unhappy</string>
     <string name="mood2">Not So Great</string>
     <string name="mood3">So-So</string>
     <string name="mood4">Happy</string>
     <string name="mood5">Very Happy</string>
+    <string name="negative">negative</string>
+    <string name="neutral">neutral</string>
     <string name="onboarding_1_1">Clinically Proven\nto Increase Happiness</string>
     <string name="onboarding_1_2">Get 3 Questions Daily\nthat Will Remind You of\nAll the Good Things\nIn Your Life</string>
     <string name="onboarding_2_1">Train Your Brain to\nSee the Positive</string>
@@ -28,6 +31,8 @@
     <string name="onboarding_3_2">(psssst, we recommend mornings so\nthat you start the day right and spread\nthe positivity around!)</string>
     <string name="onboarding_4_1">Get the Happiness\nBoost You Need</string>
     <string name="onboarding_4_2">Keep Track of Your\nMood and Get Daily\nMotivation!</string>
+    <string name="overall_mood_score">Overall Mood Score</string>
+    <string name="positive">positive</string>
     <string name="positivity_superstar">You are a\nPositivity Superstar!</string>
     <string name="reminders">Reminders</string>
     <string name="settings">Settings</string>

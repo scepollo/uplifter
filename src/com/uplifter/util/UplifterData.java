@@ -14,6 +14,7 @@ import com.uplifter.model.AnswerModel;
 import com.uplifter.model.DailyAnswerModel;
 import com.uplifter.model.DailyMoodModel;
 import com.uplifter.model.Parser;
+import com.uplifter.model.PositivityModel;
 import com.uplifter.model.QuoteModel;
 import com.uplifter.model.TipModel;
 import com.uplifter.model.TrainingModel;
@@ -216,5 +217,13 @@ public class UplifterData {
 
     public void setAlreadyOnboarded(final boolean b) {
         PersistData.setAlreadyOnboarded(b);
+    }
+
+    public PositivityModel getMoodScore(final Context context) {
+        return new PositivityModel(context);
+    }
+
+    public Map<String, DailyMoodModel> getMoodData() {
+        return PersistData.getMoodData();
     }
 }

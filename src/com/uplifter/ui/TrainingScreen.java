@@ -47,15 +47,17 @@ public class TrainingScreen extends Activity {
 
     private final void populateMultipartLayout(final TrainingModel trainingModel, final LinearLayout ll) {
         final MultipartModel model = trainingModel.getMultipart();
+        final Resources res = getResources();
 
         final TextView tv = new TextView(this);
         tv.setText(model.getQuestion());
-        tv.setTextColor(getResources().getColor(R.color.white));
+        tv.setTextColor(res.getColor(R.color.white));
         ll.addView(tv);
 
         _editFields = new EditText [model.getNumber()];
         for(int i = 0; i < _editFields.length; ++i) {
             _editFields[i] = new EditText(this);
+            _editFields[i].setTextColor(res.getColor(R.color.white));
             ll.addView(_editFields[i]);
         }
     }

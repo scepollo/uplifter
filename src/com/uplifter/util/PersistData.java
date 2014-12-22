@@ -179,4 +179,8 @@ public class PersistData {
 
         writePersistString(DAILY_MOOD_KEY, json.toString());
     }
+
+    /*package*/ static final Map<String, DailyMoodModel> getMoodData() {
+        return _moodData;
+    }
 }

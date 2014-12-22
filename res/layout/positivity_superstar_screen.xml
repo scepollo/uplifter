@@ -14,7 +14,7 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:gravity="center"
-      android:paddingTop="20dp"
+      android:paddingTop="30dp"
       android:textSize="25sp"
       android:textColor="@color/white"
       android:text="@string/positivity_superstar" />
@@ -35,8 +35,8 @@
       android:textSize="25sp"
       android:textColor="@color/dark_pink" />
     <ImageView
-      android:layout_width="180dp"
-      android:layout_height="240dp"
+      android:layout_width="150dp"
+      android:layout_height="200dp"
       android:layout_gravity="center"
       android:gravity="center"
       android:paddingTop="20dp"

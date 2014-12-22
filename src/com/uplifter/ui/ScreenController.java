@@ -14,7 +14,8 @@ public class ScreenController {
     static {
         ACTIVITY_MAP.put(R.id.training, TodaysTrainingScreen.class);
         ACTIVITY_MAP.put(R.id.log_your_mood, LogMoodScreen.class);
-        ACTIVITY_MAP.put(R.id.progress, HistoryScreen.class);
+        ACTIVITY_MAP.put(R.id.tracking, MoodHistoryScreen.class);
+        ACTIVITY_MAP.put(R.id.progress, TrainingHistoryScreen.class);
         ACTIVITY_MAP.put(R.id.tips, TipsScreen.class);
         ACTIVITY_MAP.put(R.id.settings, SettingsScreen.class);
     }

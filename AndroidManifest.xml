@@ -45,9 +45,11 @@
         </activity>
         <activity android:name=".ui.LogMoodScreen" >
         </activity>
+        <activity android:name=".ui.MoodHistoryScreen" >
+        </activity>
         <activity android:name=".ui.TipsScreen" >
         </activity>
-        <activity android:name=".ui.HistoryScreen" >
+        <activity android:name=".ui.TrainingHistoryScreen" >
         </activity>
         <activity android:name=".ui.TrainingScreen" >
         </activity>
