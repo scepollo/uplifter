@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import com.uplifter.R;
 import com.uplifter.model.TrainingModel;
-import com.uplifter.util.PersistData;
 import com.uplifter.util.UplifterData;
 
 public class TodaysTrainingScreen extends UplifterActivity {

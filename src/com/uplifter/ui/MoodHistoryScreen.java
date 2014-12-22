@@ -1,6 +1,5 @@
 package com.uplifter.ui;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -18,11 +17,6 @@ public class MoodHistoryScreen extends UplifterActivity {
         setPercentage(R.id.positive, R.string.positive, moodScore.getPositivePercentage());
         setPercentage(R.id.neutral, R.string.neutral, moodScore.getNeutralPercentage());
         setPercentage(R.id.negative, R.string.negative, moodScore.getNegativePercentage());
-
-        final ActionBar a = getActionBar();
-        a.setDisplayShowHomeEnabled(false);
-        a.setDisplayShowTitleEnabled(false);
-        a.setDisplayUseLogoEnabled(false);
     }
 
     private final void setPercentage(final int viewId, final int stringId, final int percentage) {

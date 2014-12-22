@@ -1,5 +1,6 @@
 package com.uplifter.ui;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,12 @@ public class PositivitySuperstarScreen extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final ActionBar a = getActionBar();
+        a.setDisplayShowHomeEnabled(false);
+        a.setDisplayShowTitleEnabled(false);
+        a.setDisplayUseLogoEnabled(false);
+
         setContentView(R.layout.positivity_superstar_screen);
         final DailyAnswerModel[] h = UplifterData.getInstance().getTrainingHistory();
         ((TextView) findViewById(R.id.streak)).setText(UplifterUtil.numberOfConsecutiveDays(h) + "-day streak");
