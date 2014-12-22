@@ -30,6 +30,12 @@
     android:textSize="35sp"
     android:textColor="@color/orange"
     android:text="" />
+  <com.uplifter.util.PercentGraph
+    android:id="@+id/percentgraph"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_width="100dp"
+    android:layout_height="100dp" />
   <com.uplifter.ui.UplifterTextView android:id="@+id/positive"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

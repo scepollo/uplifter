@@ -35,7 +35,7 @@ public class PersistData {
     private static boolean _init;
     private static Editor _editor;
     private static final Map<String, DailyAnswerModel> _trainingData = new HashMap<String, DailyAnswerModel>();
-    private static final Map<String, DailyMoodModel> _moodData = new HashMap<String, DailyMoodModel>();
+    private static final Map<Long, DailyMoodModel> _moodData = new HashMap<Long, DailyMoodModel>();
 
     /*package*/ static final void init(final Activity activity) {
         if(!_init) {
@@ -76,7 +76,7 @@ public class PersistData {
                     final JSONArray array = new JSONObject((String) map.get(DAILY_MOOD_KEY)).getJSONArray(DAILY_MOOD_JSON_KEY);
                     for(int i = 0, ii = array.length(); i < ii; ++i) {
                         final DailyMoodModel model = new DailyMoodModel(array.getJSONObject(i));
-                        _moodData.put(model.getDate(), model);
+                        _moodData.put(model.getDateInMillis(), model);
                     }
                 } catch (final JSONException e) {
                 }
@@ -165,7 +165,7 @@ public class PersistData {
     }
 
     /*package*/ static void setMoodData(final DailyMoodModel mood) {
-        _moodData.put(mood.getDate(), mood);
+        _moodData.put(mood.getDateInMillis(), mood);
         final JSONObject json = new JSONObject();
         final JSONArray array = new JSONArray();
 
@@ -180,7 +180,7 @@ public class PersistData {
         writePersistString(DAILY_MOOD_KEY, json.toString());
     }
 
-    /*package*/ static final Map<String, DailyMoodModel> getMoodData() {
+    /*package*/ static final Map<Long, DailyMoodModel> getMoodData() {
         return _moodData;
     }
 }

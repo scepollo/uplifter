@@ -9,6 +9,12 @@ import com.uplifter.util.UplifterData;
 
 public class PositivityModel extends BaseModel {
     private int _overallMood;
+    private int _size;
+    private int _veryHappy;
+    private int _happy;
+    private int _soso;
+    private int _notSoGreat;
+    private int _veryUnhappy;
     private int _positivePercentage;
     private int _neutralPercentage;
     private int _negativePercentage;
@@ -17,33 +23,65 @@ public class PositivityModel extends BaseModel {
         int sum = 0;
         final Collection<DailyMoodModel> moodValues = UplifterData.getInstance().getMoodData().values();
         final Iterator<DailyMoodModel> moodIterator = moodValues.iterator();
-        int p = 0, n = 0;
         while(moodIterator.hasNext()) {
             final DailyMoodModel mood = moodIterator.next();
             final int moodVal = mood.getMood();
             sum += moodVal;
             switch(moodVal) {
             case 5:
+                ++_veryHappy;
+                break;
             case 4:
-                ++p;
+                ++_happy;
+                break;
+            case 3:
+                ++_soso;
                 break;
             case 2:
+                ++_notSoGreat;
+                break;
             case 1:
-                ++n;
+                ++_veryUnhappy;
                 break;
             default:
                 break;
             }
         }
-        final int size = moodValues.size();
-        _overallMood = (20 * sum) / size;
-        _positivePercentage = (100 * p) / size;
-        _negativePercentage = (100 * n) / size;
-        _neutralPercentage = 100 - _positivePercentage - _negativePercentage;
+        _size = moodValues.size();
+        if(_size > 0) {
+            _overallMood = (20 * sum) / _size;
+            _positivePercentage = (100 * (_veryHappy + _happy)) / _size;
+            _negativePercentage = (100 * (_notSoGreat + _veryUnhappy)) / _size;
+            _neutralPercentage = 100 - _positivePercentage - _negativePercentage;
+        }
     }
 
     public final int getOverallMood() {
         return _overallMood;
+    }
+
+    public final int getSize() {
+        return _size;
+    }
+
+    public final int getVeryHappy() {
+        return _veryHappy;
+    }
+
+    public final int getHappy() {
+        return _happy;
+    }
+
+    public final int getSoso() {
+        return _soso;
+    }
+
+    public final int getNotSoGreat() {
+        return _notSoGreat;
+    }
+
+    public final int getVeryUnhappy() {
+        return _veryUnhappy;
     }
 
     public final int getPositivePercentage() {

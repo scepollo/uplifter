@@ -181,7 +181,7 @@ public class UplifterData {
         }
     }
 
-    public void logMood(int mood) {
+    public void logMood(final int mood) {
         PersistData.setMoodData(new DailyMoodModel(mood));
     }
 
@@ -223,7 +223,7 @@ public class UplifterData {
         return new PositivityModel(context);
     }
 
-    public Map<String, DailyMoodModel> getMoodData() {
+    public Map<Long, DailyMoodModel> getMoodData() {
         return PersistData.getMoodData();
     }
 }
