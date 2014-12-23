@@ -14,7 +14,7 @@ import android.content.SharedPreferences.Editor;
 import com.uplifter.model.DailyAnswerModel;
 import com.uplifter.model.DailyMoodModel;
 
-public class PersistData {
+/*package*/ class PersistData {
     private static final String DEFAULT_ALARM_TIME = "8:00";
     private static final String COMMA = ",";
     private static final String UPLIFTER_PREFS = "UPLIFTER_PREFS";

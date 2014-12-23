@@ -11,7 +11,6 @@ import android.widget.Switch;
 import android.widget.TimePicker;
 
 import com.uplifter.R;
-import com.uplifter.util.PersistData;
 import com.uplifter.util.UplifterData;
 
 public class OnboardingScreen3 extends BaseOnboardingScreen {
