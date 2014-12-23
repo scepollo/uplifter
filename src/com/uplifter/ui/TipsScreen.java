@@ -40,7 +40,7 @@ public class TipsScreen extends UplifterActivity {
         outer.setBackgroundColor(background);
 
         final TextView left = new TextView(this);
-        left.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 30f));
+        left.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 20f));
         outer.addView(left);
 
         final LinearLayout l = new LinearLayout(this);
@@ -86,7 +86,7 @@ public class TipsScreen extends UplifterActivity {
         outer.addView(l);
 
         final TextView right = new TextView(this);
-        right.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 30f));
+        right.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 20f));
         outer.addView(right);
 
         return outer;

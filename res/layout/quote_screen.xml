@@ -15,7 +15,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:paddingTop="60dp"
-    android:textSize="23sp"
+    android:textSize="25sp"
     android:textColor="@color/white"
     android:text="" />
   <com.uplifter.ui.UplifterTextView android:id="@+id/quote_author"
@@ -25,7 +25,7 @@
     android:gravity="center"
     android:textStyle="normal|italic"
     android:paddingTop="40dp"
-    android:textSize="12sp"
+    android:textSize="16sp"
     android:textColor="@color/white"
     android:text="" />
   <com.uplifter.ui.UplifterTextView
@@ -34,7 +34,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:paddingTop="140dp"
-    android:textSize="12sp"
+    android:textSize="16sp"
     android:textColor="@color/white"
     android:text="@string/come_back_tomorrow" />
 </LinearLayout>
