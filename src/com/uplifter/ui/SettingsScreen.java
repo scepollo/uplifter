@@ -1,6 +1,7 @@
 package com.uplifter.ui;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
@@ -26,6 +27,12 @@ public class SettingsScreen extends BaseOnboardingScreen {
     @Override
     public void onCreate(final Bundle icicle) {
         super.onCreate(icicle);
+
+        final ActionBar a = getActionBar();
+        a.setDisplayShowHomeEnabled(false);
+        a.setDisplayShowTitleEnabled(false);
+        a.setDisplayUseLogoEnabled(false);
+
         setContentView(R.layout.settings_screen);
         ((Switch) findViewById(R.id.onboard_notification_switch)).setChecked(UplifterData.getInstance().getNotifications());
         setTimeUI();
