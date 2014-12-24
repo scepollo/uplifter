@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uplifter"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0.4" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -42,6 +42,8 @@
         <activity android:name=".ui.TodaysTrainingScreen" >
         </activity>
         <activity android:name=".ui.SettingsScreen" >
+        </activity>
+        <activity android:name=".ui.AboutScreen" >
         </activity>
         <activity android:name=".ui.LogMoodScreen" >
         </activity>

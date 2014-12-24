@@ -18,6 +18,7 @@ public class ScreenController {
         ACTIVITY_MAP.put(R.id.progress, TrainingHistoryScreen.class);
         ACTIVITY_MAP.put(R.id.tips, TipsScreen.class);
         ACTIVITY_MAP.put(R.id.settings, SettingsScreen.class);
+        ACTIVITY_MAP.put(R.id.about, AboutScreen.class);
     }
 
     private static ScreenController _instance;

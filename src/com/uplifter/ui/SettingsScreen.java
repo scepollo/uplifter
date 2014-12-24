@@ -22,6 +22,7 @@ public class SettingsScreen extends BaseOnboardingScreen {
     private static final String COLON = ":";
     private static final String PM = "PM";
     private static final String TIME_PICKER = "timePicker";
+    private static final String ZERO = "0";
 
     @Override
     public void onCreate(final Bundle icicle) {
@@ -82,7 +83,7 @@ public class SettingsScreen extends BaseOnboardingScreen {
 
         public void onTimeSet(final TimePicker view, final int hourOfDay, final int minute) {
             final SettingsScreen s = (SettingsScreen) getActivity();
-            UplifterData.getInstance().setAlarmDateTime(s, hourOfDay + COLON + minute);
+            UplifterData.getInstance().setAlarmDateTime(s, hourOfDay + COLON + (minute < 10 ? ZERO : "") + minute);
             s.setTimeUI();
         }
     }
