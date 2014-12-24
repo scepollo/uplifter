@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Map;
 
 import android.content.res.Resources;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.LinearLayout;
@@ -19,8 +18,8 @@ import com.uplifter.model.MultipartModel;
 import com.uplifter.model.TrainingModel;
 import com.uplifter.util.UplifterData;
 
-public class TrainingHistoryScreen extends UplifterActivity {
-    private static final int [] COLOURS = {R.color.green, R.color.purple, R.color.pink, R.color.yellow};
+public class TrainingHistoryScreen extends ActionActivity {
+    private static final int [] COLOURS = { R.color.green, R.color.purple, R.color.pink, R.color.yellow };
     private static final int SIDE_PADDING = 75;
 
     @Override
@@ -68,7 +67,7 @@ public class TrainingHistoryScreen extends UplifterActivity {
         date.setTextSize(16);
         date.setTextColor(getResources().getColor(R.color.white));
         date.setPadding(0, 20, 0, 0);
-        date.setTypeface(Typeface.DEFAULT_BOLD);
+        applyBold(date);
         date.setGravity(Gravity.CENTER);
         l.addView(date);
     }
@@ -97,8 +96,7 @@ public class TrainingHistoryScreen extends UplifterActivity {
     }
 
     private void populateQuestion(final String q, final LinearLayout l) {
-        final TextView text = getTextView(q, l);
-        text.setTypeface(Typeface.DEFAULT_BOLD);
+        applyBold(getTextView(q, l));
     }
 
     private TextView getTextView(final String s, final LinearLayout l) {
@@ -108,7 +106,6 @@ public class TrainingHistoryScreen extends UplifterActivity {
         text.setTextSize(16);
         text.setTextColor(getResources().getColor(R.color.white));
         text.setPadding(0, 3, 0, 0);
-        text.setTypeface(Typeface.DEFAULT);
         text.setGravity(Gravity.LEFT | Gravity.CENTER);
         l.addView(text);
         return text;

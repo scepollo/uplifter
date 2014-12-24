@@ -6,7 +6,7 @@ import android.view.View;
 import com.uplifter.R;
 import com.uplifter.util.UplifterData;
 
-public class LogMoodScreen extends UplifterActivity {
+public class LogMoodScreen extends ActionActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

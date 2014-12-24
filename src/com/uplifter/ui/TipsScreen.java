@@ -1,7 +1,6 @@
 package com.uplifter.ui;
 
 import android.content.res.Resources;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -14,7 +13,7 @@ import com.uplifter.R;
 import com.uplifter.model.TipModel;
 import com.uplifter.util.UplifterData;
 
-public class TipsScreen extends UplifterActivity {
+public class TipsScreen extends ActionActivity {
     private static final int [] COLOURS = {R.color.green, R.color.purple, R.color.pink, R.color.yellow};
     private int WHITE;
 
@@ -48,38 +47,29 @@ public class TipsScreen extends UplifterActivity {
         l.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 7f));
 
         final TextView topPadding = new UplifterTextView(this);
-        topPadding.setLayoutParams(new TableLayout.LayoutParams(
-                LayoutParams.WRAP_CONTENT,
-                LayoutParams.WRAP_CONTENT, 1f));
+        topPadding.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         topPadding.setTextSize(20);
         l.addView(topPadding);
 
         final TextView title = new UplifterTextView(this);
-        title.setLayoutParams(new TableLayout.LayoutParams(
-                LayoutParams.WRAP_CONTENT,
-                LayoutParams.WRAP_CONTENT, 1f));
+        title.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         title.setText(tip.getTitle());
         title.setTextSize(20);
         title.setTextColor(WHITE);
-        title.setTypeface(Typeface.DEFAULT_BOLD);
+        applyBold(title);
         title.setGravity(Gravity.LEFT | Gravity.CENTER);
         l.addView(title);
 
         final TextView body = new UplifterTextView(this);
-        body.setLayoutParams(new TableLayout.LayoutParams(
-                LayoutParams.WRAP_CONTENT,
-                LayoutParams.WRAP_CONTENT, 1f));
+        body.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         body.setText(tip.getTip());
         body.setTextSize(16);
         body.setTextColor(WHITE);
-        body.setTypeface(Typeface.DEFAULT);
         body.setGravity(Gravity.LEFT | Gravity.CENTER);
         l.addView(body);
 
         final TextView bottomPadding = new UplifterTextView(this);
-        bottomPadding.setLayoutParams(new TableLayout.LayoutParams(
-                LayoutParams.WRAP_CONTENT,
-                LayoutParams.WRAP_CONTENT, 1f));
+        bottomPadding.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         bottomPadding.setTextSize(30);
         l.addView(bottomPadding);
 

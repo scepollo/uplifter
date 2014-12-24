@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.uplifter.R;
 
-public class AboutScreen extends UplifterActivity {
+public class AboutScreen extends ActionActivity {
     @Override
     public void onCreate(final Bundle icicle) {
         super.onCreate(icicle);

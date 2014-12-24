@@ -1,15 +1,12 @@
 package com.uplifter.ui;
 
-import android.annotation.SuppressLint;
 import android.app.ActionBar;
-import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.FragmentActivity;
+import android.widget.TextView;
 
-import com.uplifter.R;
-
-public class UplifterActivity extends Activity {
+public class UplifterActivity extends FragmentActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,18 +17,23 @@ public class UplifterActivity extends Activity {
         a.setDisplayUseLogoEnabled(false);
     }
 
-    @SuppressLint("NewApi")
-    @Override
-    public boolean onCreateOptionsMenu(final Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    protected final void applyBold(final int [] bold) {
+        for(final int i: bold) {
+            applyBold((TextView) findViewById(i));
+        }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(final MenuItem item) {
-        if(!ScreenController.getInstance().switchActionBarScreen(this, item.getItemId())) {
-            return super.onOptionsItemSelected(item);
+    protected final void applyBold(final TextView tv) {
+        tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
+    }
+
+    protected final void applyItalics(final int [] italics) {
+        for(final int i: italics) {
+            applyItalics((TextView) findViewById(i));
         }
-        return true;
+    }
+
+    protected final void applyItalics(final TextView tv) {
+        tv.setTypeface(tv.getTypeface(), Typeface.ITALIC);
     }
 }

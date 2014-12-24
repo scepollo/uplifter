@@ -1,11 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/orange"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.uplifter.ui.TrainingScreen" >
-
+  xmlns:tools="http://schemas.android.com/tools"
+  android:background="@color/orange"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="com.uplifter.ui.TrainingScreen" >
   <RelativeLayout android:orientation="horizontal"
     android:id="@+id/training_screen_header"
     android:background="@color/white"

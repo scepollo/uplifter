@@ -5,14 +5,13 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GestureDetectorCompat;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-public class BaseOnboardingScreen extends FragmentActivity implements GestureDetector.OnGestureListener {
+public class BaseOnboardingScreen extends UplifterActivity implements GestureDetector.OnGestureListener {
     private Activity _this;
     private Class _prev;
     private Class _next;
@@ -98,19 +97,5 @@ public class BaseOnboardingScreen extends FragmentActivity implements GestureDet
     @Override
     public boolean onSingleTapUp(final MotionEvent arg0) {
         return false;
-    }
-
-
-    protected final void applyBold(final int [] bold) {
-        for(final int i: bold) {
-            ((TextView) findViewById(i)).setTypeface(Typeface.DEFAULT_BOLD);
-        }
-    }
-
-    protected final void applyItalics(final int [] italics) {
-        for(final int i: italics) {
-            final TextView v1 = (TextView) findViewById(i);
-            v1.setTypeface(v1.getTypeface(), Typeface.ITALIC);
-        }
     }
 }

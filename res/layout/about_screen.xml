@@ -44,7 +44,7 @@
       android:textSize="18sp"
       android:textStyle="normal"
       android:textColor="@color/white"
-      android:text=""/>
+      android:text="X.X.X"/>
   </LinearLayout>
   <com.uplifter.ui.UplifterTextView
     android:layout_width="wrap_content"

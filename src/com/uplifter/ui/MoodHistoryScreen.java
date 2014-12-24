@@ -7,7 +7,7 @@ import com.uplifter.R;
 import com.uplifter.model.PositivityModel;
 import com.uplifter.util.UplifterData;
 
-public class MoodHistoryScreen extends UplifterActivity {
+public class MoodHistoryScreen extends ActionActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
