@@ -24,6 +24,7 @@ public class OnboardingScreen3 extends BaseOnboardingScreen {
         super.onCreate(icicle);
         setThisPrevNext(this, OnboardingScreen2.class, OnboardingScreen4.class);
         setContentView(R.layout.onboarding_screen_3);
+        applyBold(new int [] {R.id.onboarding_3_1});
         ((Switch) findViewById(R.id.onboard_notification_switch)).setChecked(UplifterData.getInstance().getNotifications());
         setTimeUI();
     }
@@ -53,13 +54,12 @@ public class OnboardingScreen3 extends BaseOnboardingScreen {
             final int hour = Integer.parseInt(time.substring(0, indexOfColon));
             final int minute = Integer.parseInt(time.substring(indexOfColon + 1));
 
-            return new TimePickerDialog(getActivity(), this, hour, minute,
-                    DateFormat.is24HourFormat(getActivity()));
+            return new TimePickerDialog(getActivity(), this, hour, minute, DateFormat.is24HourFormat(getActivity()));
         }
 
         public void onTimeSet(final TimePicker view, final int hourOfDay, final int minute) {
             final OnboardingScreen3 s = (OnboardingScreen3) getActivity();
-            UplifterData.getInstance().setAlarmDateTime(s, hourOfDay + COLON + minute);
+            UplifterData.getInstance().setAlarmDateTime(s, hourOfDay + COLON + (minute < 10 ? "0" : "") + minute);
             s.setTimeUI();
         }
     }

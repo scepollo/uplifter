@@ -77,8 +77,7 @@ public class SettingsScreen extends BaseOnboardingScreen {
             final int hour = Integer.parseInt(time.substring(0, indexOfColon));
             final int minute = Integer.parseInt(time.substring(indexOfColon + 1));
 
-            return new TimePickerDialog(getActivity(), this, hour, minute,
-                    DateFormat.is24HourFormat(getActivity()));
+            return new TimePickerDialog(getActivity(), this, hour, minute, DateFormat.is24HourFormat(getActivity()));
         }
 
         public void onTimeSet(final TimePicker view, final int hourOfDay, final int minute) {
