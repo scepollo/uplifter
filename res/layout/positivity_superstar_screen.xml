@@ -1,14 +1,14 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/quotebg"
     tools:context="com.uplifter.ui.PositivitySuperstarScreen" >
+  <LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentTop="true"
+    android:orientation="vertical" >
     <com.uplifter.ui.UplifterTextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -42,15 +42,18 @@
       android:paddingTop="20dp"
       android:background="@drawable/little_dude"
     />
-    <Button
-      android:layout_width="200dp"
-      android:layout_height="wrap_content"
-      android:background="@drawable/uplifter_button"
-      android:textColor="@color/white"
-      android:layout_marginTop="20dp"
-      android:gravity="center"
-      android:layout_gravity="center"
-      android:onClick="sendMessage"
-      android:text="@string/awesome"
-    />
-</LinearLayout>
+  </LinearLayout>
+  <Button
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/uplifter_button"
+    android:textColor="@color/white"
+    android:layout_marginBottom="40dp"
+    android:gravity="center"
+    android:layout_centerHorizontal="true"
+    android:layout_alignParentBottom="true"
+    android:layout_gravity="center"
+    android:onClick="sendMessage"
+    android:text="@string/awesome"
+  />
+</RelativeLayout>

@@ -8,7 +8,7 @@ import com.uplifter.R;
 import com.uplifter.model.TrainingModel;
 import com.uplifter.util.UplifterData;
 
-public class TodaysTrainingScreen extends UplifterActivity {
+public class TodaysTrainingScreen extends ActionActivity {
     private static final int [] TITLE_ID = {R.id.q1, R.id.q2, R.id.q3};
     private static final int [] SUBTITLE_ID = {R.id.s1, R.id.s2, R.id.s3};
 
