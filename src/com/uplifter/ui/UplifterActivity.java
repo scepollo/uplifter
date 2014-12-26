@@ -10,11 +10,12 @@ public class UplifterActivity extends FragmentActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         final ActionBar a = getActionBar();
-        a.setDisplayShowHomeEnabled(false);
-        a.setDisplayShowTitleEnabled(false);
-        a.setDisplayUseLogoEnabled(false);
+        if(a != null) {
+            a.setDisplayShowHomeEnabled(false);
+            a.setDisplayShowTitleEnabled(false);
+            a.setDisplayUseLogoEnabled(false);
+        }
     }
 
     protected final void applyBold(final int [] bold) {
