@@ -11,6 +11,7 @@ public class LogMoodScreen extends ActionActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_mood_screen);
+        applyBold(new int [] { R.id.mood1, R.id.mood2, R.id.mood3, R.id.mood4, R.id.mood5 });
     }
 
     private final void logMood(final int mood) {

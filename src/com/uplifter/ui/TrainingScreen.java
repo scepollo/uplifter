@@ -3,11 +3,8 @@ package com.uplifter.ui;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.LinearLayout.LayoutParams;
 
 import com.uplifter.R;
 import com.uplifter.model.MultipartModel;
@@ -15,35 +12,27 @@ import com.uplifter.model.TrainingModel;
 import com.uplifter.util.UplifterData;
 
 public class TrainingScreen extends UplifterActivity {
-    private static final int [] ID = { R.id.dot1, R.id.dot2, R.id.dot3 };
-
+    private static final int [] COLOURS = { R.color.blue, R.color.green, R.color.yellow };
     private EditText[] _editFields;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.training_screen);
         final int index = ScreenController.getInstance().getCurrentTrainingIndex();
-        ((ImageView) findViewById(ID[index])).setBackgroundResource(R.drawable.darkgrey_dot);
+        ((View) findViewById(R.id.training_screen_header)).setBackgroundColor(getResources().getColor(COLOURS[index]));
         enableLayouts(UplifterData.getInstance().getTrainingForToday(this)[index]);
     }
 
     private void enableLayouts(final TrainingModel trainingModel) {
-        final LinearLayout ll = (LinearLayout) findViewById(R.id.training_screen_body);
-//        final TextView tv = new UplifterTextView(this);
-//        tv.setText(trainingModel.getTitle());
-//        tv.setTextColor(getResources().getColor(R.color.white));
-//        tv.setPadding(0, 20, 0, 20);
-//        tv.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
-//        tv.setTextSize(20);
-//        applyBold(tv);
-//        ll.addView(tv);
-//
+        final TextView tv = (TextView) findViewById(R.id.title);
+        tv.setText(trainingModel.getTitle());
+        applyBold(tv);
+
         if(trainingModel.getMultipart() != null) {
-            populateMultipartLayout(trainingModel, ll);
+            populateMultipartLayout(trainingModel);
         } else if(trainingModel.getQuestions() != null) {
-            populateQuestionsLayout(trainingModel, ll);
+            populateQuestionsLayout(trainingModel);
         }
         final String [] data = UplifterData.getInstance().getCurrentScreenTrainingData();
         if(data != null) {
@@ -56,7 +45,6 @@ public class TrainingScreen extends UplifterActivity {
     private final TextView getTextView(final String s) {
         final TextView tv = new UplifterTextView(this);
         tv.setText(s);
-        tv.setTextColor(getResources().getColor(R.color.white));
         tv.setPadding(0, 20, 0, 20);
         tv.setTextSize(16);
         applyBold(tv);
@@ -65,13 +53,13 @@ public class TrainingScreen extends UplifterActivity {
 
     private final EditText getEditText() {
         final EditText et = new UplifterEditText(this);
-        et.setTextColor(getResources().getColor(R.color.white));
         et.setPadding(0, 20, 0, 20);
         et.setTextSize(16);
         return et;
     }
 
-    private final void populateMultipartLayout(final TrainingModel trainingModel, final LinearLayout ll) {
+    private final void populateMultipartLayout(final TrainingModel trainingModel) {
+        final LinearLayout ll = (LinearLayout) findViewById(R.id.training_screen_body);
         final MultipartModel model = trainingModel.getMultipart();
         ll.addView(getTextView(model.getQuestion()));
 
@@ -82,7 +70,8 @@ public class TrainingScreen extends UplifterActivity {
         }
     }
 
-    private final void populateQuestionsLayout(final TrainingModel trainingModel, final LinearLayout ll) {
+    private final void populateQuestionsLayout(final TrainingModel trainingModel) {
+        final LinearLayout ll = (LinearLayout) findViewById(R.id.training_screen_body);
         final String [] questions = trainingModel.getQuestions();
 
         _editFields = new EditText [questions.length];

@@ -9,7 +9,23 @@
     android:layout_centerHorizontal="true"
     android:layout_alignParentTop="true"
     android:orientation="vertical" >
-    <com.uplifter.ui.UplifterTextView
+    <com.uplifter.ui.UplifterTextView android:id="@+id/streak"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:paddingTop="30dp"
+      android:textSize="25sp"
+      android:textColor="@color/green" />
+    <com.uplifter.ui.UplifterTextView android:id="@+id/total_days"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:paddingTop="2dp"
+      android:textSize="25sp"
+      android:textColor="@color/green" />
+    <com.uplifter.ui.UplifterTextView android:id="@+id/you_are_a"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
@@ -17,30 +33,23 @@
       android:paddingTop="30dp"
       android:textSize="25sp"
       android:textColor="@color/white"
+      android:text="@string/you_are_a" />
+    <com.uplifter.ui.UplifterTextView android:id="@+id/positivity_superstar"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:paddingTop="2dp"
+      android:paddingBottom="30dp"
+      android:textSize="25sp"
+      android:textColor="@color/white"
       android:text="@string/positivity_superstar" />
-    <com.uplifter.ui.UplifterTextView android:id="@+id/streak"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:gravity="center"
-      android:paddingTop="5dp"
-      android:textSize="25sp"
-      android:textColor="@color/dark_pink" />
-    <com.uplifter.ui.UplifterTextView android:id="@+id/total_days"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:gravity="center"
-      android:paddingTop="5dp"
-      android:textSize="25sp"
-      android:textColor="@color/dark_pink" />
     <ImageView
-      android:layout_width="150dp"
-      android:layout_height="200dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:gravity="center"
-      android:paddingTop="20dp"
-      android:background="@drawable/little_dude"
+      android:background="@drawable/star"
     />
   </LinearLayout>
   <Button

@@ -11,7 +11,7 @@ public class OnboardingScreen4 extends BaseOnboardingScreen {
         super.onCreate(icicle);
         setThisPrevNext(this, OnboardingScreen3.class, null);
         setContentView(R.layout.onboarding_screen_4);
-        applyBold(new int [] { R.id.onboarding_4_1 });
+        applyBold(new int [] { R.id.onboarding_4_1, R.id.button });
     }
 
     public void sendMessage(final View view) {

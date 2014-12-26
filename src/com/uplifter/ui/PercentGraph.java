@@ -1,4 +1,4 @@
-package com.uplifter.util;
+package com.uplifter.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,9 +9,10 @@ import android.view.View;
 
 import com.uplifter.R;
 import com.uplifter.model.PositivityModel;
+import com.uplifter.util.UplifterData;
 
 public class PercentGraph extends View {
-    private static final int [] COLOURS = { R.color.yellow, R.color.orange, R.color.grey1, R.color.grey2, R.color.grey3 };
+    private static final int [] COLOURS = { R.color.orange, R.color.yellow, R.color.green, R.color.blue, R.color.purple };
 
     private final float [] _percentages = new float [5];
     private Paint _paint;
@@ -47,7 +48,7 @@ public class PercentGraph extends View {
         _paint.setAntiAlias(true);
         _paint.setStyle(Paint.Style.FILL);
         _bgpaint = new Paint();
-        _bgpaint.setColor(getContext().getResources().getColor(R.color.yellow));
+        _bgpaint.setColor(getContext().getResources().getColor(R.color.orange));
         _bgpaint.setAntiAlias(true);
         _bgpaint.setStyle(Paint.Style.FILL);
         _rect = new RectF();

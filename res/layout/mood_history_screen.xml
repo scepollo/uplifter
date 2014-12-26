@@ -16,8 +16,9 @@
       android:layout_gravity="center"
       android:gravity="center"
       android:textSize="18sp"
-      android:textColor="@color/grey_title"
-      android:text="@string/mood_history"/>
+      android:background="@color/green"
+      android:textColor="@color/white"
+      android:text="@string/mood_history_title"/>
     <com.uplifter.ui.UplifterTextView android:id="@+id/overall_mood_score"
       android:layout_width="250dp"
       android:layout_height="wrap_content"
@@ -25,7 +26,6 @@
       android:gravity="center"
       android:paddingTop="10dp"
       android:textSize="16sp"
-      android:textColor="@color/orange"
       android:text="@string/overall_mood_score" />
     <com.uplifter.ui.UplifterTextView android:id="@+id/score"
       android:layout_width="wrap_content"
@@ -34,14 +34,13 @@
       android:gravity="center"
       android:textStyle="normal|italic"
       android:textSize="35sp"
-      android:textColor="@color/orange"
       android:text="" />
-    <com.uplifter.util.PercentGraph
+    <com.uplifter.ui.PercentGraph
       android:id="@+id/percentgraph"
       android:layout_gravity="center"
       android:gravity="center"
-      android:layout_width="100dp"
-      android:layout_height="100dp" />
+      android:layout_width="150dp"
+      android:layout_height="150dp" />
   </LinearLayout>
   <LinearLayout
     android:layout_centerHorizontal="true"
@@ -54,27 +53,32 @@
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:gravity="center"
-      android:paddingBottom="10dp"
-      android:textSize="16sp"
-      android:textColor="@color/orange"
+      android:paddingBottom="8dp"
+      android:textSize="14sp"
       android:text="" />
     <com.uplifter.ui.UplifterTextView android:id="@+id/neutral"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:gravity="center"
-      android:paddingBottom="10dp"
-      android:textSize="16sp"
-      android:textColor="@color/orange"
+      android:paddingBottom="8dp"
+      android:textSize="14sp"
       android:text="" />
     <com.uplifter.ui.UplifterTextView android:id="@+id/negative"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="center"
       android:gravity="center"
-      android:paddingBottom="30dp"
-      android:textSize="16sp"
-      android:textColor="@color/orange"
+      android:paddingBottom="25dp"
+      android:textSize="14sp"
       android:text="" />
-  </LinearLayout>
+    <com.uplifter.ui.UplifterTextView android:id="@+id/log_any_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:paddingBottom="30dp"
+      android:textSize="14sp"
+      android:text="@string/log_any_time" />
+    </LinearLayout>
 </RelativeLayout>

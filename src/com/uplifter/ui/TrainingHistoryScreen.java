@@ -19,7 +19,6 @@ import com.uplifter.model.TrainingModel;
 import com.uplifter.util.UplifterData;
 
 public class TrainingHistoryScreen extends ActionActivity {
-    private static final int [] COLOURS = { R.color.green, R.color.purple, R.color.pink, R.color.yellow };
     private static final int SIDE_PADDING = 75;
 
     @Override
@@ -28,7 +27,10 @@ public class TrainingHistoryScreen extends ActionActivity {
         setContentView(R.layout.list_screen);
         final LinearLayout view = (LinearLayout) findViewById(R.id.list);
         final Resources res = getResources();
-        ((TextView) findViewById(R.id.title)).setText(res.getString(R.string.history));
+        final TextView title = (TextView) findViewById(R.id.title);
+        title.setText(res.getString(R.string.history_title));
+        title.setBackgroundColor(res.getColor(R.color.orange));
+        title.setTextColor(res.getColor(R.color.white));
         final DailyAnswerModel [] dailyAnswers = UplifterData.getInstance().getTrainingHistory();
         Arrays.sort(dailyAnswers);
         final Map<Integer, TrainingModel> training = UplifterData.getInstance().getTraining(this);
@@ -37,7 +39,6 @@ public class TrainingHistoryScreen extends ActionActivity {
             final LinearLayout l = new LinearLayout(this);
             l.setOrientation(LinearLayout.VERTICAL);
             l.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-            l.setBackgroundColor(res.getColor(COLOURS[i % COLOURS.length]));
             l.setPadding(SIDE_PADDING, 20, SIDE_PADDING, 50);
 
             populateDate(dailyAnswers[i].getDate(), l);
@@ -65,7 +66,6 @@ public class TrainingHistoryScreen extends ActionActivity {
         date.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         date.setText(dateString);
         date.setTextSize(16);
-        date.setTextColor(getResources().getColor(R.color.white));
         date.setPadding(0, 20, 0, 0);
         applyBold(date);
         date.setGravity(Gravity.CENTER);
@@ -104,7 +104,6 @@ public class TrainingHistoryScreen extends ActionActivity {
         text.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         text.setText(s);
         text.setTextSize(16);
-        text.setTextColor(getResources().getColor(R.color.white));
         text.setPadding(0, 3, 0, 0);
         text.setGravity(Gravity.LEFT | Gravity.CENTER);
         l.addView(text);

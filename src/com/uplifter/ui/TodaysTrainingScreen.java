@@ -22,7 +22,7 @@ public class TodaysTrainingScreen extends ActionActivity {
             final TextView textView = (TextView) findViewById(TITLE_ID[i]);
             textView.setText(training[i].getTitle().toUpperCase());
             applyBold(textView);
-            ((TextView) findViewById(SUBTITLE_ID[i])).setText(training[i].getSubtitle());
+            ((TextView) findViewById(SUBTITLE_ID[i])).setText(training[i].getSubtitle().toUpperCase());
         }
     }
 

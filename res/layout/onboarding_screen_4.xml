@@ -28,58 +28,12 @@
       android:layout_marginTop="35dp"
       android:text="@string/onboarding_4_2"/>
   </LinearLayout>
-  <LinearLayout android:id="@+id/dots"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:background="@color/white" >
-    <LinearLayout
-      android:orientation="horizontal"
-      android:layout_width="wrap_content"
-      android:layout_height="50dp"
-      android:layout_gravity="center"
-      android:gravity="center" >
-      <ImageView android:background="@drawable/lightgrey_dot"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-      />
-      <ImageView android:background="@drawable/lightgrey_dot"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-      />
-      <ImageView android:background="@drawable/lightgrey_dot"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-      />
-      <ImageView android:background="@drawable/darkgrey_dot"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-      />
-      </LinearLayout>
-  </LinearLayout>
-  <Button
-    android:layout_width="250dp"
+  <com.uplifter.ui.UplifterButton android:id="@+id/button"
+    android:layout_width="150dp"
     android:layout_height="50dp"
-    android:layout_above="@id/dots"
-    android:background="@drawable/uplifter_button"
-    android:textColor="@color/white"
+    android:layout_alignParentBottom="true"
+    android:background="@color/white"
+    android:textColor="@color/blue"
     android:layout_marginTop="135dp"
     android:layout_marginBottom="50dp"
     android:textSize="18sp"
@@ -87,6 +41,6 @@
     android:gravity="center"
     android:layout_gravity="center"
     android:onClick="sendMessage"
-    android:text="@string/lets_go"
+    android:text="@string/go"
   />
 </RelativeLayout>

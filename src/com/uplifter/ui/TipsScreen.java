@@ -14,7 +14,7 @@ import com.uplifter.model.TipModel;
 import com.uplifter.util.UplifterData;
 
 public class TipsScreen extends ActionActivity {
-    private static final int [] COLOURS = {R.color.green, R.color.purple, R.color.pink, R.color.yellow};
+    private static final int [] COLOURS = {R.color.green, R.color.blue, R.color.yellow, R.color.orange, R.color.purple};
     private int WHITE;
 
     @Override
@@ -24,7 +24,7 @@ public class TipsScreen extends ActionActivity {
         setContentView(R.layout.list_screen);
         final LinearLayout view = (LinearLayout) findViewById(R.id.list);
         final Resources res = getResources();
-        ((TextView) findViewById(R.id.title)).setText(res.getString(R.string.happiness_tips));
+        ((TextView) findViewById(R.id.title)).setText(res.getString(R.string.happiness_tips_title));
         final TipModel [] tips = UplifterData.getInstance().getTips(this);
 
         for(int i = 0, ii = tips.length; i < ii; ++i) {

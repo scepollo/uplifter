@@ -187,16 +187,12 @@ public class UplifterData {
 
     public void setAlarmDateTime(final Context context, final String dateTime) {
         PersistData.setAlarmDateTime(dateTime);
-        if(PersistData.getNotifications()) {
-            UplifterUtil.setNotification(context);
-        }
+        UplifterUtil.setNotification(context, PersistData.getNotifications());
     }
 
     public void setNotifications(final Context context, final boolean checked) {
         PersistData.setNotifications(checked);
-        if(checked) {
-            UplifterUtil.setNotification(context);
-        }
+        UplifterUtil.setNotification(context, checked);
     }
 
     public String getAlarmDateTime() {

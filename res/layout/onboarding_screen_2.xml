@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
   android:id="@+id/onboarding_screen_2"
-  android:background="@color/green"
+  android:background="@color/purple"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
   <LinearLayout
@@ -85,51 +85,5 @@
       android:textSize="18sp"
       android:textColor="@color/white"
       android:text="@string/onboarding_2_5"/>
-  </LinearLayout>
-  <LinearLayout
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:background="@color/white" >
-    <LinearLayout android:id="@+id/dots"
-      android:orientation="horizontal"
-      android:layout_width="wrap_content"
-      android:layout_height="50dp"
-      android:layout_gravity="center"
-      android:gravity="center" >
-      <ImageView android:background="@drawable/lightgrey_dot"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-      />
-      <ImageView android:background="@drawable/darkgrey_dot"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-      />
-      <ImageView android:background="@drawable/lightgrey_dot"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-      />
-      <ImageView android:background="@drawable/lightgrey_dot"
-        android:layout_width="8dp"
-        android:layout_height="8dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-      />
-    </LinearLayout>
   </LinearLayout>
 </RelativeLayout>

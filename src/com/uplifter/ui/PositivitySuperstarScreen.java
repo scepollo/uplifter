@@ -13,8 +13,8 @@ public class PositivitySuperstarScreen extends UplifterActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.positivity_superstar_screen);
+        applyBold(new int [] { R.id.positivity_superstar });
         final DailyAnswerModel[] h = UplifterData.getInstance().getTrainingHistory();
         ((TextView) findViewById(R.id.streak)).setText(UplifterUtil.numberOfConsecutiveDays(h) + "-day streak");
         ((TextView) findViewById(R.id.total_days)).setText(h.length + " total day" + (h.length == 1 ? "" : "s"));

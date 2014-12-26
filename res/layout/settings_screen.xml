@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
   android:id="@+id/settings"
-  android:background="@color/purple"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
   <com.uplifter.ui.UplifterTextView android:id="@+id/title"
@@ -10,9 +9,9 @@
     android:layout_height="40dp"
     android:layout_gravity="center"
     android:gravity="center"
-    android:background="@color/white"
+    android:background="@color/orange"
     android:textSize="18sp"
-    android:textColor="@color/grey"
+    android:textColor="@color/white"
     android:text="@string/settings_title"/>
   <RelativeLayout
     android:layout_width="fill_parent"
@@ -29,7 +28,6 @@
       android:layout_gravity="left"
       android:layout_alignParentLeft="true"
       android:textSize="18sp"
-      android:textColor="@color/white"
       android:text="@string/reminders"/>
     <com.uplifter.ui.UplifterTextView android:id="@+id/onboard_time_label"
       android:layout_width="wrap_content"
@@ -37,9 +35,9 @@
       android:gravity="left"
       android:layout_gravity="left"
       android:layout_marginTop="15dp"
+      android:layout_marginRight="85dp"
       android:layout_alignParentLeft="true"
       android:textSize="18sp"
-      android:textColor="@color/white"
       android:layout_below="@id/onboard_notification_label"
       android:text="@string/time"/>
     <Switch android:id="@+id/onboard_notification_switch"
