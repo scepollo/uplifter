@@ -42,9 +42,9 @@ public class ScreenController {
         switchScreen(activity, UplifterData.getInstance().trainingAlreadyDone() ? QuoteScreen.class : TodaysTrainingScreen.class);
     }
 
-    public final void loadNextTrainingScreen(final Activity currentActivity, final String [] answers) {
+    public final void loadNextTrainingScreen(final Activity currentActivity, final String answer) {
         final UplifterData ulData = UplifterData.getInstance();
-        ulData.setTrainingData(_currentTrainingIndex, answers);
+        ulData.setTrainingData(_currentTrainingIndex, answer);
         if(++_currentTrainingIndex < UplifterData.DAILY_QUESTION_COUNT) {
             switchScreen(currentActivity, TrainingScreen.class);
         } else {
@@ -53,9 +53,9 @@ public class ScreenController {
         }
     }
 
-    public final void loadPrevTrainingScreen(final Activity currentActivity, final String [] answers) {
+    public final void loadPrevTrainingScreen(final Activity currentActivity, final String answer) {
         if(_currentTrainingIndex > 0) {
-            UplifterData.getInstance().setTrainingData(_currentTrainingIndex, answers);
+            UplifterData.getInstance().setTrainingData(_currentTrainingIndex, answer);
             --_currentTrainingIndex;
             switchScreen(currentActivity, TrainingScreen.class);
         }

@@ -4,84 +4,55 @@
          "title":"Anticipation",
          "subtitle":"Anticipating future events increases feelings of happiness",
          "index" : 1,
-         "questions":[
-            "What is one event in the future that you are looking forward to? (it can be anything ranging from a good meal you will have to a vacation)",
-            "What specifically about that event are you looking forward to?"
-         ]
+         "question":"Which event in the future are you excited about and why are you looking forward to it?"
       },
       {
          "title":"Gratitude",
          "subtitle":"Regular appreciation brings you in touch with positive feelings",
          "index" : 2,
-         "multipart":{
-            "question":"What are three things that you are grateful for?",
-            "number":3
-         }
+         "question":"What are three things that you are grateful for?"
       },
       {
          "title":"Appreciation For Others",
          "subtitle":"Appreciating people in your life deepens relationships and well-being",
          "index" : 3,
-         "questions":[
-            "Name one person that you are grateful towards",
-            "Why are you grateful towards this individual?",
-            "What can you do to show them you are grateful?"
-         ]
+         "question":"Name one person that you feel grateful towards. What makes you grateful towards this individual and what can you do to show them you are grateful?"
       },
       {
          "title":"Accomplishments",
          "subtitle":"Remembering and basking in your accomplishments help build self-esteem",
          "index" : 4,
-         "questions":[
-            "What is an accomplishment that you’ve made recently that you are proud of?",
-            "What makes you proud about it?"
-         ]
+         "question":"Name an accomplishment that you feel proud of. What makes you proud about it?"
       },
       {
          "title":"Enjoy The Moment",
          "subtitle":"Taking time to enjoy the moment is crucial for happiness",
          "index" : 5,
-         "questions":[
-            "Take 10 slow and deep breaths. Are you feeling calmer?",
-            "Take a scan of your surroundings. What pleasant things come to mind? (If you’d like, you can substitute surroundings with your favourite place)"
-         ]
+         "question":"Take 10 slow and deep breaths. Then, take a scan of your surroundings. What pleasant things come to mind? (If you’d like, you can substitute in your favourite place)"
       },
       {
          "title":"Express Gratitude",
          "subtitle":"Appreciating other people is one of the best ways to increase contentment",
          "index" : 6,
-         "questions":[
-            "Who is one person that you are grateful towards?",
-            "What would you say to them?"
-         ]
+         "question":"Name one person you feel grateful towards. What would you say to them?"
       },
       {
          "title":"3 Good Things",
          "subtitle":"Learning to see the good things in your life contributes strongly to happiness",
          "index" : 7,
-         "multipart":{
-            "question":"What are 3 Good things that have happened to you recently?",
-            "number":3
-         }
+         "question":"What 3 Good things have happened recently?"
       },
       {
          "title":"Compassion",
-         "subtitle":"Thinking compassionately about others has been shown to help people feel happier",
+         "subtitle":"Thinking compassionately about others helps people feel happier",
          "index" : 8,
-         "questions":[
-            "Think of your loved ones. Now write 3 blessings to them. (e.g. I wish you happiness, I wish you love, I wish you joy)",
-            "Now think of some people who are your acquaintances. Now write 3 blessings to them.",
-            "Finally, think of some people who you currently hold a grudge against. Now write 3 blessings to them."
-         ]
+         "question":"Think of your loved ones. What are 3 blessings you wish them? (i.e. I wish you happiness, I wish you love, I wish you joy)\nNow, in your head - repeat this for your acquaintances, and then towards those you may harbor less than positive feelings towards."
       },
       {
          "title":"Awesome Day",
          "subtitle":"Thinking About Awesome Things Is Awesome",
          "index" : 9,
-         "multipart":{
-            "question":"What are 3 things that would make today awesome?",
-            "number":3
-         }
+         "question":"What are 3 things that would make today awesome?"
       }
    ]
 }

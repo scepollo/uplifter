@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.uplifter.R;
 import com.uplifter.model.AnswerModel;
 import com.uplifter.model.DailyAnswerModel;
-import com.uplifter.model.MultipartModel;
 import com.uplifter.model.TrainingModel;
 import com.uplifter.util.UplifterData;
 
@@ -48,12 +47,7 @@ public class TrainingHistoryScreen extends ActionActivity {
                 ll.setOrientation(LinearLayout.VERTICAL);
                 ll.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
                 ll.setPadding(0, 20, 0, 0);
-                final TrainingModel trainingModel = training.get(answer.getIndex()) ;
-                if(trainingModel.getMultipart() != null) {
-                    populateMultipartLayout(trainingModel, answer, ll);
-                } else if(trainingModel.getQuestions() != null) {
-                    populateQuestionsLayout(trainingModel, answer, ll);
-                }
+                populateQuestionsLayout(training.get(answer.getIndex()), answer, ll);
                 l.addView(ll);
             }
 
@@ -73,22 +67,8 @@ public class TrainingHistoryScreen extends ActionActivity {
     }
 
     private void populateQuestionsLayout(final TrainingModel trainingModel, final AnswerModel answer, final LinearLayout l) {
-        final String [] questions = trainingModel.getQuestions();
-        final String [] answers = answer.getAnswers();
-
-        for(int i = 0; i < questions.length; ++i) {
-            populateQuestion(questions[i], l);
-            populateAnswer(answers[i], l);
-        }
-    }
-
-    private void populateMultipartLayout(final TrainingModel trainingModel, final AnswerModel answer, final LinearLayout l) {
-        final MultipartModel t = trainingModel.getMultipart();
-        populateQuestion(t.getQuestion(), l);
-        final String [] answers = answer.getAnswers();
-        for(int i = 0; i < answers.length; ++i) {
-            populateAnswer(answers[i], l);
-        }
+        populateQuestion(trainingModel.getQuestion(), l);
+        populateAnswer(answer.getAnswer(), l);
     }
 
     private void populateAnswer(final String a, LinearLayout l) {

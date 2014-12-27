@@ -169,23 +169,23 @@ public class UplifterData {
         PersistData.setTrainingData(_todaysTrainingIndex, new DailyAnswerModel(_trainingData));
     }
 
-    public String [] getCurrentScreenTrainingData() {
+    public String getCurrentScreenTrainingData() {
         final int index = ScreenController.getInstance().getCurrentTrainingIndex();
         if(_trainingData[index] == null) {
             return null;
         }
-        return _trainingData[index].getAnswers();
+        return _trainingData[index].getAnswer();
     }
 
     public DailyAnswerModel[] getTrainingHistory() {
         return PersistData.getTrainingData().values().toArray(new DailyAnswerModel [0]);
     }
 
-    public void setTrainingData(final int index, final String [] data) {
+    public void setTrainingData(final int index, final String data) {
         if(_trainingData[index] == null) {
             _trainingData[index] = new AnswerModel(_todaysTrainingIndex[index], data);
         } else {
-            _trainingData[index].setAnswers(data);
+            _trainingData[index].setAnswer(data);
         }
     }
 

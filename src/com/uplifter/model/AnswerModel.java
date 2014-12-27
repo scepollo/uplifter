@@ -4,11 +4,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class AnswerModel extends BaseModel {
-    private static final String ANSWERS_KEY = "answers";
+    private static final String ANSWER_KEY = "answer";
     private static final String INDEX_KEY = "index";
 
     private int _index;
-    private String [] _answers;
+    private String _answer;
 
     public AnswerModel(final JSONObject json) {
         if(json.has(INDEX_KEY)) {
@@ -17,36 +17,32 @@ public class AnswerModel extends BaseModel {
             } catch (final JSONException e) {
             }
         }
-        if(json.has(ANSWERS_KEY)) {
+        if(json.has(ANSWER_KEY)) {
             try {
-                _answers = getStringArray(json.getJSONArray(ANSWERS_KEY));
+                _answer = json.getString(ANSWER_KEY);
             } catch (final JSONException e) {
-                _answers = new String[0];
+                _answer = "";
             }
         }
     }
 
-    public AnswerModel(final int index, final String [] answers) {
+    public AnswerModel(final int index, final String answer) {
         _index = index;
-        _answers = answers;
+        _answer = answer;
     }
 
     public final int getIndex() {
         return _index;
     }
 
-    public final String[] getAnswers() {
-        return _answers;
+    public final String getAnswer() {
+        return _answer;
     }
 
     public final String toString() {
         final StringBuffer buff = new StringBuffer();
         buff.append("AnswerModel\nIndex: " + _index);
-        if (_answers != null) {
-            for (final String answer : _answers) {
-                buff.append('\n').append('\t').append(answer);
-            }
-        }
+        buff.append("\nAnswer: " + _answer);
         return buff.toString();
     }
 
@@ -56,11 +52,14 @@ public class AnswerModel extends BaseModel {
             json.put(INDEX_KEY, _index);
         } catch (final JSONException e) {
         }
-        putStringArray(json, ANSWERS_KEY, _answers);
+        try {
+            json.put(ANSWER_KEY, _answer);
+        } catch (final JSONException e) {
+        }
         return json;
     }
 
-    public void setAnswers(final String[] answers) {
-        _answers = answers;
+    public void setAnswer(final String answer) {
+        _answer = answer;
     }
 }

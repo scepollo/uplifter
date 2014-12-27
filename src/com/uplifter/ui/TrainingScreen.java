@@ -7,13 +7,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.uplifter.R;
-import com.uplifter.model.MultipartModel;
 import com.uplifter.model.TrainingModel;
 import com.uplifter.util.UplifterData;
 
 public class TrainingScreen extends UplifterActivity {
     private static final int [] COLOURS = { R.color.blue, R.color.green, R.color.yellow };
-    private EditText[] _editFields;
+    private EditText _editField;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -29,16 +28,10 @@ public class TrainingScreen extends UplifterActivity {
         tv.setText(trainingModel.getTitle());
         applyBold(tv);
 
-        if(trainingModel.getMultipart() != null) {
-            populateMultipartLayout(trainingModel);
-        } else if(trainingModel.getQuestions() != null) {
-            populateQuestionsLayout(trainingModel);
-        }
-        final String [] data = UplifterData.getInstance().getCurrentScreenTrainingData();
+        populateQuestionsLayout(trainingModel);
+        final String data = UplifterData.getInstance().getCurrentScreenTrainingData();
         if(data != null) {
-            for(int i = 0; i < data.length; ++i) {
-                _editFields[i].setText(data[i]);
-            }
+            _editField.setText(data);
         }
     }
 
@@ -58,28 +51,13 @@ public class TrainingScreen extends UplifterActivity {
         return et;
     }
 
-    private final void populateMultipartLayout(final TrainingModel trainingModel) {
-        final LinearLayout ll = (LinearLayout) findViewById(R.id.training_screen_body);
-        final MultipartModel model = trainingModel.getMultipart();
-        ll.addView(getTextView(model.getQuestion()));
-
-        _editFields = new EditText [model.getNumber()];
-        for(int i = 0; i < _editFields.length; ++i) {
-            _editFields[i] = getEditText();
-            ll.addView(_editFields[i]);
-        }
-    }
-
     private final void populateQuestionsLayout(final TrainingModel trainingModel) {
         final LinearLayout ll = (LinearLayout) findViewById(R.id.training_screen_body);
-        final String [] questions = trainingModel.getQuestions();
+        final String question = trainingModel.getQuestion();
 
-        _editFields = new EditText [questions.length];
-        for(int i = 0; i < _editFields.length; ++i) {
-            ll.addView(getTextView(questions[i]));
-            _editFields[i] = getEditText();
-            ll.addView(_editFields[i]);
-        }
+        ll.addView(getTextView(question));
+        _editField = getEditText();
+        ll.addView(_editField);
     }
 
     public void goBack(final View view) {
@@ -92,20 +70,11 @@ public class TrainingScreen extends UplifterActivity {
         }
     }
 
-    private final String [] getTrainingData() {
-        final String [] data = new String [_editFields.length];
-        for(int i = 0, ii = data.length; i < ii; ++i) {
-            data[i] = _editFields[i].getText().toString().trim();
-        }
-        return data;
+    private final String getTrainingData() {
+        return _editField.getText().toString().trim();
     }
 
     private boolean verifyEditFields() {
-        for(final EditText e: _editFields) {
-            if(e.getText().toString().trim().length() == 0) {
-                return false;
-            }
-        }
-        return true;
+        return getTrainingData().length() > 0;
     }
 }
