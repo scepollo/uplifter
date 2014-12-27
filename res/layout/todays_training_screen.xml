@@ -30,14 +30,12 @@
       android:layout_weight="70"
       android:layout_gravity="center"
       android:gravity="center"
-      android:layout_width="wrap_content"
+      android:layout_width="0dp"
       android:layout_height="wrap_content">
       <com.uplifter.ui.UplifterTextView android:id="@+id/q1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
         android:textColor="@color/purple"
         android:textSize="18sp"
         android:text=""/>
@@ -45,8 +43,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
         android:textSize="15sp"
         android:text=""/>
       </LinearLayout>
@@ -67,14 +63,12 @@
       android:layout_weight="70"
       android:layout_gravity="center"
       android:gravity="center"
-      android:layout_width="wrap_content"
+      android:layout_width="0dp"
       android:layout_height="wrap_content">
       <com.uplifter.ui.UplifterTextView android:id="@+id/q2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
         android:textColor="@color/purple"
         android:textSize="18sp"
         android:text=""/>
@@ -82,8 +76,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
         android:textSize="15sp"
         android:text=""/>
     </LinearLayout>
@@ -104,14 +96,12 @@
       android:layout_weight="70"
       android:layout_gravity="center"
       android:gravity="center"
-      android:layout_width="wrap_content"
+      android:layout_width="0dp"
       android:layout_height="wrap_content">
       <com.uplifter.ui.UplifterTextView android:id="@+id/q3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
         android:textColor="@color/purple"
         android:textSize="18sp"
         android:text=""/>
@@ -119,8 +109,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
         android:textSize="15sp"
         android:text=""/>
     </LinearLayout>
