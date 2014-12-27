@@ -28,7 +28,7 @@ import com.uplifter.model.DailyMoodModel;
     private static final String DAILY_MOOD_JSON_KEY = "dailyMood";
 
     private static String _alarmDateTime;
-    private static boolean _notifications;
+    private static boolean _notifications = true;
     private static boolean _alreadyOnboarded;
     private static int [] _yesterdaysQuestions;
 
@@ -46,13 +46,13 @@ import com.uplifter.model.DailyMoodModel;
             if(map.containsKey(ALREADY_ONBOARDED_KEY)) {
                 _alreadyOnboarded = (Boolean) map.get(ALREADY_ONBOARDED_KEY);
             }
+            if(map.containsKey(NOTIFICATIONS_KEY)) {
+                _notifications = (Boolean) map.get(NOTIFICATIONS_KEY);
+            }
             if(map.containsKey(ALARM_DATE_TIME_KEY)) {
                 _alarmDateTime = (String) map.get(ALARM_DATE_TIME_KEY);
             } else {
-                _alarmDateTime = DEFAULT_ALARM_TIME;
-            }
-            if(map.containsKey(NOTIFICATIONS_KEY)) {
-                _notifications = (Boolean) map.get(NOTIFICATIONS_KEY);
+                UplifterData.getInstance().setAlarmDateTime(activity, DEFAULT_ALARM_TIME);
             }
             if(map.containsKey(YESTERDAYS_QUESTIONS_KEY)) {
                 _yesterdaysQuestions = parseIntArray((String) map.get(YESTERDAYS_QUESTIONS_KEY));
