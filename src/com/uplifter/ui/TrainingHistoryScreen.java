@@ -96,7 +96,9 @@ public class TrainingHistoryScreen extends ActionActivity {
     }
 
     private void populateQuestion(final String q, final LinearLayout l) {
-        applyBold(getTextView(q, l));
+        final TextView question = getTextView(q, l);
+        question.setTextColor(getResources().getColor(R.color.orange));
+        applyBold(question);
     }
 
     private TextView getTextView(final String s, final LinearLayout l) {
