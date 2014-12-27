@@ -24,40 +24,14 @@ public class TrainingScreen extends UplifterActivity {
     }
 
     private void enableLayouts(final TrainingModel trainingModel) {
-        final TextView tv = (TextView) findViewById(R.id.title);
-        tv.setText(trainingModel.getTitle());
-        applyBold(tv);
+        ((TextView) findViewById(R.id.title)).setText(trainingModel.getTitle());
+        ((TextView) findViewById(R.id.question)).setText(trainingModel.getQuestion());
+        _editField = (EditText) findViewById(R.id.answer);
 
-        populateQuestionsLayout(trainingModel);
         final String data = UplifterData.getInstance().getCurrentScreenTrainingData();
         if(data != null) {
             _editField.setText(data);
         }
-    }
-
-    private final TextView getTextView(final String s) {
-        final TextView tv = new UplifterTextView(this);
-        tv.setText(s);
-        tv.setPadding(0, 20, 0, 20);
-        tv.setTextSize(20);
-        applyBold(tv);
-        return tv;
-    }
-
-    private final EditText getEditText() {
-        final EditText et = new UplifterEditText(this);
-        et.setPadding(0, 20, 0, 20);
-        et.setTextSize(16);
-        return et;
-    }
-
-    private final void populateQuestionsLayout(final TrainingModel trainingModel) {
-        final LinearLayout ll = (LinearLayout) findViewById(R.id.training_screen_body);
-        final String question = trainingModel.getQuestion();
-
-        ll.addView(getTextView(question));
-        _editField = getEditText();
-        ll.addView(_editField);
     }
 
     public void goBack(final View view) {

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
   android:id="@+id/todays_training_screen"
   android:background="@color/white"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
   <com.uplifter.ui.UplifterTextView
-    android:layout_weight="10"
+    android:id="@+id/title"
     android:layout_width="wrap_content"
-    android:layout_height="0dp"
+    android:layout_height="100dp"
     android:paddingBottom="15dp"
+    android:layout_alignParentTop="true"
     android:layout_gravity="bottom|center"
     android:gravity="bottom|center"
     android:textColor="@color/white"
@@ -17,116 +18,24 @@
     android:background="@drawable/landscape"
     android:text="@string/todays_training_title"
     />
-  <LinearLayout
-    android:orientation="horizontal"
-    android:layout_weight="10"
-    android:layout_width="fill_parent"
-    android:layout_height="0dp">
-    <View android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="15" />
-    <LinearLayout
-      android:orientation="vertical"
-      android:layout_weight="70"
-      android:layout_gravity="center"
-      android:gravity="center"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content">
-      <com.uplifter.ui.UplifterTextView android:id="@+id/q1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:textColor="@color/purple"
-        android:textSize="18sp"
-        android:text=""/>
-      <com.uplifter.ui.UplifterTextView android:id="@+id/s1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:textSize="15sp"
-        android:text=""/>
-    </LinearLayout>
-    <View android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="15" />
-  </LinearLayout>
-  <LinearLayout
-    android:orientation="horizontal"
-    android:layout_weight="10"
-    android:layout_width="fill_parent"
-    android:layout_height="0dp">
-  <View android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="15" />
-    <LinearLayout
-      android:orientation="vertical"
-      android:layout_weight="70"
-      android:layout_gravity="center"
-      android:gravity="center"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content">
-      <com.uplifter.ui.UplifterTextView android:id="@+id/q2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:textColor="@color/purple"
-        android:textSize="18sp"
-        android:text=""/>
-      <com.uplifter.ui.UplifterTextView android:id="@+id/s2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:textSize="15sp"
-        android:text=""/>
-    </LinearLayout>
-    <View android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="15" />
-  </LinearLayout>
-  <LinearLayout
-    android:orientation="horizontal"
-    android:layout_weight="10"
-    android:layout_width="fill_parent"
-    android:layout_height="0dp">
-    <View android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="15" />
-    <LinearLayout
-      android:orientation="vertical"
-      android:layout_weight="70"
-      android:layout_gravity="center"
-      android:gravity="center"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content">
-      <com.uplifter.ui.UplifterTextView android:id="@+id/q3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:textColor="@color/purple"
-        android:textSize="18sp"
-        android:text=""/>
-      <com.uplifter.ui.UplifterTextView android:id="@+id/s3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:textSize="15sp"
-        android:text=""/>
-    </LinearLayout>
-    <View android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_weight="15" />
-  </LinearLayout>
+  <ListView
+    android:id="@+id/list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/title"
+    />
   <com.uplifter.ui.UplifterButton
-    android:layout_weight="4"
     android:layout_width="200dp"
-    android:layout_height="0dp"
+    android:layout_height="30dp"
     android:background="@color/purple"
     android:textColor="@color/white"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerInParent="true"
     android:gravity="center"
     android:layout_gravity="center"
     android:onClick="sendMessage"
     android:text="@string/go"
   />
-</LinearLayout>
+</RelativeLayout>
