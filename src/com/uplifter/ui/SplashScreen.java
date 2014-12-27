@@ -10,7 +10,7 @@ import com.uplifter.util.FontManager;
 import com.uplifter.util.UplifterData;
 
 public class SplashScreen extends Activity {
-    private final int SPLASH_DISPLAY_LENGTH = 1000;
+    private final int SPLASH_DISPLAY_LENGTH = 2000;
 
     @Override
     public void onCreate(final Bundle icicle) {
