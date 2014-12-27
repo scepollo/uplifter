@@ -25,7 +25,7 @@ public class TodaysTrainingAdapter extends ArrayAdapter<TrainingModel> {
         final LayoutInflater inflater = (LayoutInflater) _context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View rowView = inflater.inflate(R.layout.todays_training_layout, parent, false);
         ((TextView) rowView.findViewById(R.id.question)).setText(_questions[position].getTitle().toUpperCase());
-        ((TextView) rowView.findViewById(R.id.subtitle)).setText(_questions[position].getSubtitle().toUpperCase());
+        ((TextView) rowView.findViewById(R.id.subtitle)).setText(_questions[position].getSubtitle());
         return rowView;
     }
 }
