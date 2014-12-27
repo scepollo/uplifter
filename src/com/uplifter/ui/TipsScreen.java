@@ -54,7 +54,7 @@ public class TipsScreen extends ActionActivity {
         final TextView title = new UplifterTextView(this);
         title.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
         title.setText(tip.getTitle());
-        title.setTextSize(20);
+        title.setTextSize(22);
         title.setTextColor(WHITE);
         applyBold(title);
         title.setGravity(Gravity.LEFT | Gravity.CENTER);

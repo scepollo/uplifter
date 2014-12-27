@@ -46,7 +46,7 @@ public class TrainingScreen extends UplifterActivity {
         final TextView tv = new UplifterTextView(this);
         tv.setText(s);
         tv.setPadding(0, 20, 0, 20);
-        tv.setTextSize(16);
+        tv.setTextSize(20);
         applyBold(tv);
         return tv;
     }
