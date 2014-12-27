@@ -26,6 +26,7 @@ public class UplifterData {
     private static final String TIPS = "tips.json";
     private static final String TRAINING = "training.json";
     public static final int DAILY_QUESTION_COUNT = 3;
+    private static final int[] DEFAULT_TRAINING_INDEX = { 5, 3, 9 };;
     private static UplifterData _instance;
 
     private Map<Integer, TrainingModel> _training;
@@ -60,14 +61,21 @@ public class UplifterData {
 
     public TrainingModel [] getTrainingForToday(final Context context) {
         if(_todaysTraining == null) {
-            _todaysTraining = new TrainingModel [3];
-            _todaysTrainingIndex = new int [3];
             // get list of previous day's questions
-            final int [] yesterdaysTrainingIndex = PersistData.getYesterdaysTrainingIndex();
             final Map<Integer, TrainingModel> training = loadTraining(context);
-            // randomly choose three questions without repetition
+            final int [] yesterdaysTrainingIndex = PersistData.getYesterdaysTrainingIndex();
+            if(yesterdaysTrainingIndex.length == 0) {
+                // Use the same training questions for the first time each user uses the app
+                _todaysTrainingIndex = DEFAULT_TRAINING_INDEX;
+            } else {
+                _todaysTrainingIndex = new int [3];
+                for(int i = 0; i < DAILY_QUESTION_COUNT; ++i) {
+                    // Randomly choose three questions without repetition
+                    _todaysTrainingIndex[i] = getRandomInt(_todaysTrainingIndex, yesterdaysTrainingIndex, 1, training.size());
+                }
+            }
+            _todaysTraining = new TrainingModel [3];
             for(int i = 0; i < DAILY_QUESTION_COUNT; ++i) {
-                _todaysTrainingIndex[i] = getRandomInt(_todaysTrainingIndex, yesterdaysTrainingIndex, 1, training.size());
                 _todaysTraining[i] = training.get(_todaysTrainingIndex[i]);
             }
         }
