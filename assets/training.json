@@ -75,39 +75,13 @@
          ]
       },
       {
-         "title":"Funny Things",
-         "subtitle":"Humour is a great way to recall positive emotions",
+         "title":"Awesome Day",
+         "subtitle":"Thinking About Awesome Things Is Awesome",
          "index" : 9,
-         "questions":[
-            "What is one funny or humourous instance that you can recall?"
-         ]
-      },
-      {
-         "title":"Meditation",
-         "subtitle":"Awareness of breath and visualization can improve well-being",
-         "index" : 10,
-         "questions":[
-            "Breathe in through your nose, and breathe out through your mouth and start to slow your breath over 10 breaths. Are you feeling better?",
-            "What is one a place that inspires you? Visualize the place for about 5-10 seconds. Now write a little bit about it."
-         ]
-      },
-      {
-         "title":"Strengths",
-         "subtitle":"Knowing your strengths and using them contributes towards greater happiness",
-         "index" : 8,
-         "questions":[
-            "What is one strength that you have that you like? (it can be something that your friend has noted)",
-            "What is one way that you can exercise that strength this week?"
-         ]
-      },
-      {
-         "title":"Compliments",
-         "subtitle":"Being able to see and share the good in others contributes to well-being",
-         "index" : 8,
-         "questions":[
-            "Think of a person – what is your favourite thing about this person?",
-            "How would you compliment this person? Write this down."
-         ]
+         "multipart":{
+            "question":"What are 3 things that would make today awesome?",
+            "number":3
+         }
       }
    ]
 }
