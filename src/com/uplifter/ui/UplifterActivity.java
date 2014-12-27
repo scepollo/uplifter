@@ -25,7 +25,7 @@ public class UplifterActivity extends FragmentActivity {
     }
 
     protected final void applyBold(final TextView tv) {
-        tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
+//        tv.setTypeface(tv.getTypeface(), Typeface.BOLD);
     }
 
     protected final void applyItalics(final int [] italics) {
