@@ -1,94 +1,23 @@
 package com.uplifter.ui;
 
-import java.util.Arrays;
-import java.util.Map;
-
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
-import android.widget.TableLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.uplifter.R;
-import com.uplifter.model.AnswerModel;
-import com.uplifter.model.DailyAnswerModel;
-import com.uplifter.model.TrainingModel;
 import com.uplifter.util.UplifterData;
 
 public class TrainingHistoryScreen extends ActionActivity {
-    private static final int SIDE_PADDING = 75;
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_screen);
-        final LinearLayout view = (LinearLayout) findViewById(R.id.list);
+        ((ListView) findViewById(R.id.list)).setAdapter(new TrainingHistoryAdapter(this, UplifterData.getInstance().getTrainingHistory()));
         final Resources res = getResources();
         final TextView title = (TextView) findViewById(R.id.title);
         title.setText(res.getString(R.string.history_title));
         title.setBackgroundColor(res.getColor(R.color.orange));
         title.setTextColor(res.getColor(R.color.white));
-        final DailyAnswerModel [] dailyAnswers = UplifterData.getInstance().getTrainingHistory();
-        Arrays.sort(dailyAnswers);
-        final Map<Integer, TrainingModel> training = UplifterData.getInstance().getTraining(this);
-
-        for(int i = 0, ii = dailyAnswers.length; i < ii; ++i) {
-            final LinearLayout l = new LinearLayout(this);
-            l.setOrientation(LinearLayout.VERTICAL);
-            l.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-            l.setPadding(SIDE_PADDING, 20, SIDE_PADDING, 50);
-
-            populateDate(dailyAnswers[i].getDate(), l);
-
-            for(final AnswerModel answer: dailyAnswers[i].getAnswers()) {
-                final LinearLayout ll = new LinearLayout(this);
-                ll.setOrientation(LinearLayout.VERTICAL);
-                ll.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-                ll.setPadding(0, 20, 0, 0);
-                populateQuestionsLayout(training.get(answer.getIndex()), answer, ll);
-                l.addView(ll);
-            }
-
-            view.addView(l);
-        }
-    }
-
-    private void populateDate(final String dateString, final LinearLayout l) {
-        final TextView date = new UplifterTextView(this);
-        date.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
-        date.setText(dateString);
-        date.setTextSize(16);
-        date.setPadding(0, 20, 0, 0);
-        applyBold(date);
-        date.setGravity(Gravity.CENTER);
-        l.addView(date);
-    }
-
-    private void populateQuestionsLayout(final TrainingModel trainingModel, final AnswerModel answer, final LinearLayout l) {
-        populateQuestion(trainingModel.getQuestion(), l);
-        populateAnswer(answer.getAnswer(), l);
-    }
-
-    private void populateAnswer(final String a, LinearLayout l) {
-        getTextView(a, l);
-    }
-
-    private void populateQuestion(final String q, final LinearLayout l) {
-        final TextView question = getTextView(q, l);
-        question.setTextColor(getResources().getColor(R.color.orange));
-        applyBold(question);
-    }
-
-    private TextView getTextView(final String s, final LinearLayout l) {
-        final TextView text = new UplifterTextView(this);
-        text.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1f));
-        text.setText(s);
-        text.setTextSize(16);
-        text.setPadding(0, 3, 0, 0);
-        text.setGravity(Gravity.LEFT | Gravity.CENTER);
-        l.addView(text);
-        return text;
     }
 }
