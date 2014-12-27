@@ -12,15 +12,9 @@
     android:gravity="center"
     android:textSize="18sp"
     android:text=""/>
-  <ScrollView
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-    <LinearLayout
-      android:id="@+id/list"
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      tools:context="com.uplifter.ui.LogMoodScreen" >
-    </LinearLayout>
-  </ScrollView>
+  <ListView
+    android:id="@+id/list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+  />
 </LinearLayout>
