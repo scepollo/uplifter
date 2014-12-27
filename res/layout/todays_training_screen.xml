@@ -25,8 +25,8 @@
     android:layout_below="@id/title"
     />
   <com.uplifter.ui.UplifterButton
-    android:layout_width="200dp"
-    android:layout_height="30dp"
+    android:layout_width="150dp"
+    android:layout_height="40dp"
     android:background="@color/purple"
     android:textColor="@color/white"
     android:layout_marginTop="10dp"
