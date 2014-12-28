@@ -28,7 +28,7 @@
          "title":"Enjoy The Moment",
          "subtitle":"Taking time to enjoy the moment is crucial for happiness",
          "index" : 5,
-         "question":"Take 10 slow and deep breaths. Then, take a scan of your surroundings. What pleasant things come to mind? (If you’d like, you can substitute in your favourite place)"
+         "question":"Take 10 slow and deep breaths. Then, take a scan of your surroundings. What pleasant things come to mind?"
       },
       {
          "title":"Express Gratitude",
@@ -50,7 +50,7 @@
       },
       {
          "title":"Awesome Day",
-         "subtitle":"Thinking About Awesome Things Is Awesome",
+         "subtitle":"The act of thinking about good events opens you up to new possibilities",
          "index" : 9,
          "question":"What are 3 things that would make today awesome?"
       }
