@@ -26,7 +26,7 @@ public class UplifterData {
     private static final String TIPS = "tips.json";
     private static final String TRAINING = "training.json";
     public static final int DAILY_QUESTION_COUNT = 3;
-    private static final int[] DEFAULT_TRAINING_INDEX = { 5, 3, 9 };;
+    private static final int[] DEFAULT_TRAINING_INDEX = { 5, 6, 9 };
     private static UplifterData _instance;
 
     private Map<Integer, TrainingModel> _training;
