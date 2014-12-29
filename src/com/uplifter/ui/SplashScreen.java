@@ -1,6 +1,5 @@
 package com.uplifter.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
@@ -9,7 +8,7 @@ import com.uplifter.R;
 import com.uplifter.util.FontManager;
 import com.uplifter.util.UplifterData;
 
-public class SplashScreen extends Activity {
+public class SplashScreen extends UplifterActivity {
     private final int SPLASH_DISPLAY_LENGTH = 2000;
 
     @Override
