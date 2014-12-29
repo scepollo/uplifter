@@ -51,6 +51,7 @@ public class ScreenController {
             ulData.setTrainingAlreadyDone();
             switchScreen(currentActivity, PositivitySuperstarScreen.class);
         }
+        currentActivity.overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
     }
 
     public final void loadPrevTrainingScreen(final Activity currentActivity, final String answer) {
@@ -58,12 +59,14 @@ public class ScreenController {
             UplifterData.getInstance().setTrainingData(_currentTrainingIndex, answer);
             --_currentTrainingIndex;
             switchScreen(currentActivity, TrainingScreen.class);
+            currentActivity.overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
         }
     }
 
     public final void loadFirstTrainingScreen(final Activity currentActivity) {
         _currentTrainingIndex = 0;
         switchScreen(currentActivity, TrainingScreen.class);
+        currentActivity.overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
     }
 
     public final int getCurrentTrainingIndex() {
