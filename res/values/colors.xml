@@ -10,8 +10,13 @@
   <color name="pink">#FF7B7B</color>
   <color name="dark_pink">#FF5B5B</color>
   <color name="green">#0CDAE8</color>
+  <color name="click_green">#7EECF4</color>
   <color name="purple">#CD41FF</color>
+  <color name="click_purple">#CD89FF</color>
   <color name="yellow">#FFC900</color>
+  <color name="click_yellow">#FFE400</color>
   <color name="blue">#00ACFF</color>
+  <color name="click_blue">#00D6FF</color>
   <color name="orange">#FFA900</color>
+  <color name="click_orange">#FFD400</color>
 </resources>
