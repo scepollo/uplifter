@@ -9,6 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageButton
+      android:id="@+id/back_arrow"
       android:layout_width="17sp"
       android:layout_height="18sp"
       android:focusable="true"

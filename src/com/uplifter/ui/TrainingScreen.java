@@ -3,7 +3,7 @@ package com.uplifter.ui;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.uplifter.R;
@@ -19,6 +19,9 @@ public class TrainingScreen extends UplifterActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_screen);
         final int index = ScreenController.getInstance().getCurrentTrainingIndex();
+        if(index == 0) {
+            ((ImageView) findViewById(R.id.back_arrow)).setVisibility(View.INVISIBLE);
+        }
         ((View) findViewById(R.id.training_screen_header)).setBackgroundColor(getResources().getColor(COLOURS[index]));
         enableLayouts(UplifterData.getInstance().getTrainingForToday(this)[index]);
     }
