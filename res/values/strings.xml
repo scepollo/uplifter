@@ -24,6 +24,7 @@
     <string name="mood5">Very Happy</string>
     <string name="negative">negative</string>
     <string name="neutral">neutral</string>
+    <string name="onboarding_1_footer">Swipe Left To Continue</string>
     <string name="onboarding_1_title">Get Training</string>
     <string name="onboarding_1">Increase Happiness\nDaily By Answering\n3 Questions That Tap\nPositive Emotions</string>
     <string name="onboarding_2_title">See the Positive</string>
