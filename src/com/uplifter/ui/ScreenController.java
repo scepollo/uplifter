@@ -97,11 +97,12 @@ public class ScreenController {
         current.finish();
     }
 
-    public final void loadQuoteScreen(final Activity current) {
-        switchScreen(current, QuoteScreen.class);
+    public final void loadQuoteScreen(final Activity currentActivity) {
+        switchScreen(currentActivity, QuoteScreen.class);
     }
 
-    public void loadMoodHistoryScreen(final Activity current) {
-        switchScreen(current, MoodHistoryScreen.class);
+    public void loadMoodHistoryScreen(final Activity currentActivity) {
+        switchScreen(currentActivity, MoodHistoryScreen.class);
+        currentActivity.overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
     }
 }
