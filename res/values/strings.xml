@@ -24,8 +24,9 @@
     <string name="mood5">Very Happy</string>
     <string name="negative">negative</string>
     <string name="neutral">neutral</string>
-    <string name="onboarding_1">Get Positivity Training\nProven to Increase\nHappiness With\n3 Questions Daily</string>
-    <string name="onboarding_2_1">Train Your Brain to\nSee the Positive</string>
+    <string name="onboarding_1_title">Get Training</string>
+    <string name="onboarding_1">Increase Happiness\nDaily By Answering\n3 Questions That Tap\nPositive Emotions</string>
+    <string name="onboarding_2_title">See the Positive</string>
     <string name="onboarding_2_2_1">Express\u00A0</string>
     <string name="onboarding_2_2_2">Gratitude</string>
     <string name="onboarding_2_3_1">Enjoy\u00A0</string>
@@ -33,9 +34,9 @@
     <string name="onboarding_2_4_1">Build\u00A0</string>
     <string name="onboarding_2_4_2">Compassion</string>
     <string name="onboarding_2_5">and more...</string>
-    <string name="onboarding_3_1">Make Time for Positivity\nSchedule It Into Your Day</string>
+    <string name="onboarding_3_title">Schedule It In</string>
     <string name="onboarding_3_2">(psssst, we recommend mornings so\nthat you start the day right and spread\nthe positivity around!)</string>
-    <string name="onboarding_4_1">Get the Happiness\nBoost You Need</string>
+    <string name="onboarding_4_title">Get A Boost</string>
     <string name="onboarding_4_2">Keep Track of Your\nMood and Get Daily\nMotivation!</string>
     <string name="overall_mood_score">Overall Mood Score</string>
     <string name="positive">positive</string>

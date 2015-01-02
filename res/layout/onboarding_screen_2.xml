@@ -1,89 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
   android:id="@+id/onboarding_screen_2"
   android:background="@color/purple"
   android:layout_width="fill_parent"
-  android:layout_height="fill_parent">
-  <LinearLayout
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  >
+  <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_1"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    >
-    <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_1"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_marginTop="100dp"
+    android:textSize="28sp"
+    android:textStyle="normal|bold"
+    android:textColor="@color/white"
+    android:text="@string/onboarding_2_title"/>
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="35sp"
+    android:layout_gravity="center" >
+    <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_2_1"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:gravity="center"
-      android:layout_gravity="center"
-      android:layout_marginTop="100dp"
-      android:textSize="18sp"
-      android:textStyle="normal|bold"
-      android:textColor="@color/white"
-      android:text="@string/onboarding_2_1"/>
-    <LinearLayout
-      android:orientation="horizontal"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="20sp"
-      android:layout_gravity="center" >
-      <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_2_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:text="@string/onboarding_2_2_1"/>
-      <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_2_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:text="@string/onboarding_2_2_2"/>
-    </LinearLayout>
-    <LinearLayout
-      android:orientation="horizontal"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="15sp"
-      android:layout_gravity="center" >
-      <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_3_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:text="@string/onboarding_2_3_1"/>
-      <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_3_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:text="@string/onboarding_2_3_2"/>
-    </LinearLayout>
-    <LinearLayout
-      android:orientation="horizontal"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="15sp"
-      android:layout_gravity="center" >
-      <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_4_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:text="@string/onboarding_2_4_1"/>
-      <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_4_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:text="@string/onboarding_2_4_2"/>
-    </LinearLayout>
-    <com.uplifter.ui.UplifterTextView android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:layout_gravity="center"
-      android:layout_marginTop="30sp"
       android:textSize="18sp"
       android:textColor="@color/white"
-      android:text="@string/onboarding_2_5"/>
+      android:text="@string/onboarding_2_2_1"/>
+    <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_2_2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:textColor="@color/white"
+      android:text="@string/onboarding_2_2_2"/>
   </LinearLayout>
-</RelativeLayout>
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15sp"
+    android:layout_gravity="center" >
+    <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_3_1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:textColor="@color/white"
+      android:text="@string/onboarding_2_3_1"/>
+    <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_3_2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:textColor="@color/white"
+      android:text="@string/onboarding_2_3_2"/>
+  </LinearLayout>
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15sp"
+    android:layout_gravity="center" >
+    <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_4_1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:textColor="@color/white"
+      android:text="@string/onboarding_2_4_1"/>
+    <com.uplifter.ui.UplifterTextView android:id="@+id/onboarding_2_4_2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textSize="18sp"
+      android:textColor="@color/white"
+      android:text="@string/onboarding_2_4_2"/>
+  </LinearLayout>
+  <com.uplifter.ui.UplifterTextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_marginTop="30sp"
+    android:textSize="18sp"
+    android:textColor="@color/white"
+    android:text="@string/onboarding_2_5"/>
+</LinearLayout>
