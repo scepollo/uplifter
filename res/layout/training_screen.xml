@@ -49,24 +49,29 @@
       />
     </RelativeLayout>
   </RelativeLayout>
-  <LinearLayout android:orientation="vertical"
-    android:id="@+id/training_screen_body"
-    android:paddingBottom="30dp"
-    android:paddingLeft="40dp"
-    android:paddingRight="40dp"
-    android:paddingTop="15dp"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <com.uplifter.ui.UplifterTextView android:id="@+id/question"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="left"
-      android:textSize="17sp"
-      android:text=""/>
-    <com.uplifter.ui.UplifterEditText android:id="@+id/answer"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_gravity="left"
-      android:textSize="17sp"/>
-  </LinearLayout>
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+  >
+    <LinearLayout android:orientation="vertical"
+      android:id="@+id/training_screen_body"
+      android:paddingBottom="30dp"
+      android:paddingLeft="40dp"
+      android:paddingRight="40dp"
+      android:paddingTop="15dp"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent">
+      <com.uplifter.ui.UplifterTextView android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textSize="17sp"
+        android:text=""/>
+      <com.uplifter.ui.UplifterEditText android:id="@+id/answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:textSize="17sp"/>
+    </LinearLayout>
+  </ScrollView>
 </LinearLayout>
