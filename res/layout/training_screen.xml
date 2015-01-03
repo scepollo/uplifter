@@ -8,17 +8,22 @@
     android:id="@+id/training_screen_header"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <ImageButton
+    <RelativeLayout
       android:id="@+id/back_arrow"
-      android:layout_width="17sp"
-      android:layout_height="18sp"
-      android:focusable="true"
-      android:layout_marginLeft="@dimen/activity_horizontal_margin"
+      android:layout_width="64sp"
+      android:layout_height="64sp"
       android:layout_centerVertical="true"
       android:layout_alignParentLeft="true"
       android:onClick="goBack"
-      android:background="@drawable/arrow"
-    />
+    >
+      <ImageView
+        android:layout_width="17sp"
+        android:layout_height="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/arrow"
+      />
+    </RelativeLayout>
     <com.uplifter.ui.UplifterTextView android:id="@+id/title"
       android:layout_width="match_parent"
       android:layout_height="64dp"
@@ -27,16 +32,22 @@
       android:textSize="18sp"
       android:textColor="@color/white"
       android:text=""/>
-    <ImageButton
-      android:layout_width="23sp"
-      android:layout_height="18sp"
-      android:focusable="true" 
+    <RelativeLayout
+      android:id="@+id/checkmark"
+      android:layout_width="64sp"
+      android:layout_height="64sp"
       android:layout_centerVertical="true"
-      android:layout_marginRight="@dimen/activity_horizontal_margin"
       android:layout_alignParentRight="true"
       android:onClick="goForward"
-      android:background="@drawable/checkmark"
-    />
+    >
+      <ImageView
+        android:layout_width="23sp"
+        android:layout_height="18sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/checkmark"
+      />
+    </RelativeLayout>
   </RelativeLayout>
   <LinearLayout android:orientation="vertical"
     android:id="@+id/training_screen_body"

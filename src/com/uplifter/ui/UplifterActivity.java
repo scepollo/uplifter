@@ -3,6 +3,8 @@ package com.uplifter.ui;
 import android.app.ActionBar;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
@@ -17,6 +19,14 @@ public class UplifterActivity extends FragmentActivity {
             a.setDisplayShowHomeEnabled(false);
             a.setDisplayShowTitleEnabled(false);
             a.setDisplayUseLogoEnabled(false);
+        }
+    }
+
+    protected final void setBackgroundDrawable(final int id, final Drawable d) {
+        if (Build.VERSION.SDK_INT >= 16) {
+            findViewById(id).setBackground(d);
+        } else {
+            findViewById(id).setBackgroundDrawable(d);
         }
     }
 

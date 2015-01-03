@@ -1,9 +1,10 @@
 package com.uplifter.ui;
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.uplifter.R;
@@ -12,6 +13,8 @@ import com.uplifter.util.UplifterData;
 
 public class TrainingScreen extends UplifterActivity {
     private static final int [] COLOURS = { R.color.blue, R.color.green, R.color.yellow };
+    private static final int [] BACKGROUNDS = { R.drawable.blue_bg, R.drawable.green_bg, R.drawable.yellow_bg };
+
     private EditText _editField;
 
     @Override
@@ -19,10 +22,14 @@ public class TrainingScreen extends UplifterActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.training_screen);
         final int index = ScreenController.getInstance().getCurrentTrainingIndex();
+        final Resources res = getResources();
         if(index == 0) {
-            ((ImageView) findViewById(R.id.back_arrow)).setVisibility(View.INVISIBLE);
+            findViewById(R.id.back_arrow).setVisibility(View.INVISIBLE);
+        } else {
+            setBackgroundDrawable(R.id.back_arrow, res.getDrawable(BACKGROUNDS[index]));
         }
-        ((View) findViewById(R.id.training_screen_header)).setBackgroundColor(getResources().getColor(COLOURS[index]));
+        setBackgroundDrawable(R.id.checkmark, res.getDrawable(BACKGROUNDS[index]));
+        findViewById(R.id.training_screen_header).setBackgroundColor(res.getColor(COLOURS[index]));
         enableLayouts(UplifterData.getInstance().getTrainingForToday(this)[index]);
     }
 
