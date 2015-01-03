@@ -55,7 +55,7 @@
   <Button
     android:layout_width="200dp"
     android:layout_height="wrap_content"
-    android:background="@drawable/uplifter_button"
+    android:background="@drawable/clear_bg"
     android:textColor="@color/white"
     android:layout_marginBottom="40dp"
     android:gravity="center"
