@@ -9,10 +9,20 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.uplifter.UplifterApplication;
+import com.uplifter.UplifterApplication.TrackerName;
+
 public class UplifterActivity extends FragmentActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final Tracker t = ((UplifterApplication) getApplication()).getTracker(TrackerName.APP_TRACKER);
+        t.setScreenName(getScreenName());
+        t.send(new HitBuilders.AppViewBuilder().build());
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         final ActionBar a = getActionBar();
         if(a != null) {
@@ -20,6 +30,10 @@ public class UplifterActivity extends FragmentActivity {
             a.setDisplayShowTitleEnabled(false);
             a.setDisplayUseLogoEnabled(false);
         }
+    }
+
+    protected String getScreenName() {
+        return getClass().getName();
     }
 
     protected final void setBackgroundDrawable(final int id, final Drawable d) {

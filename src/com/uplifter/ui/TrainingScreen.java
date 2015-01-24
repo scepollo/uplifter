@@ -1,7 +1,6 @@
 package com.uplifter.ui;
 
 import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -31,6 +30,10 @@ public class TrainingScreen extends UplifterActivity {
         setBackgroundDrawable(R.id.checkmark, res.getDrawable(BACKGROUNDS[index]));
         findViewById(R.id.training_screen_header).setBackgroundColor(res.getColor(COLOURS[index]));
         enableLayouts(UplifterData.getInstance().getTrainingForToday(this)[index]);
+    }
+
+    protected String getScreenName() {
+        return super.getScreenName() + ScreenController.getInstance().getCurrentTrainingIndex();
     }
 
     private void enableLayouts(final TrainingModel trainingModel) {
