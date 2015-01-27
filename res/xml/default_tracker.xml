@@ -22,5 +22,5 @@
     <screenName name="com.uplifter.ui.PositivitySuperstarScreen">UplifterApplication PositivitySuperstarScreen</screenName>
     <screenName name="com.uplifter.ui.QuoteScreen">UplifterApplication QuoteScreen</screenName>
 
-    <string name="ga_trackingId">UA-58886404-1</string>
+    <string name="ga_trackingId">UA-53473604-2</string>
 </resources>
